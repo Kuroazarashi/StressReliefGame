@@ -61,7 +61,7 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/03.Scripts/PlayerPunchController.cs" />
+    <Compile Include="Assets/07_InputActions/PlayerInputActions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
