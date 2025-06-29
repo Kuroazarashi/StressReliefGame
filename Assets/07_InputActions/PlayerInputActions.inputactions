@@ -3,12 +3,12 @@
     "maps": [
         {
             "name": "Gameplay",
-            "id": "50c7b94b-57a0-4862-be99-7350efeced90",
+            "id": "521cee4e-c705-494a-ab73-7dc46b2cadcf",
             "actions": [
                 {
                     "name": "Punch",
                     "type": "Button",
-                    "id": "7851ca6d-20e8-4d00-b2be-d455b88ef4d7",
+                    "id": "ed18b53e-7642-40f3-94d7-afc32cd26dff",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -18,7 +18,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "63e3e1e1-3bd0-4ddb-8fd4-d299bba798ff",
+                    "id": "34006176-d547-4c7c-acfd-1750d966cc63",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
