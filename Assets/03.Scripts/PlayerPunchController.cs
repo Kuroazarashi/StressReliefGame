@@ -11,11 +11,27 @@ public class PlayerPunchController : MonoBehaviour
     private PlayerInputActions playerInputActions; // 自動生成された Input Actions クラスのインスタンス
 
     // Cinemachine Virtual Cameraへの参照
-    [SerializeField] private CinemachineVirtualCamera virtualCamera; // Inspectorで設定できるように
+    // ここを CinemachineVirtualCamera から Unity.Cinemachine.CinemachineCamera に変更
+    [SerializeField] private Unity.Cinemachine.CinemachineCamera virtualCamera; // Inspectorで設定できるように
 
     // スローモーション関連の変数
     [SerializeField] private float slowMotionDuration = 3.0f; // スローモーションの持続時間
     [SerializeField] private float slowMotionTimeScale = 0.1f; // スローモーション時のTime.timeScale
+
+    // Awake() メソッドを追加し、virtualCameraが設定されていない場合に自動で探す
+    void Awake()
+    {
+        if (virtualCamera == null)
+        {
+            // シーン内の最初のUnity.Cinemachine.CinemachineCameraコンポーネントを自動で探して割り当てる
+            virtualCamera = FindObjectOfType<Unity.Cinemachine.CinemachineCamera>();
+            if (virtualCamera == null)
+            {
+                // もし見つからなければエラーログを出力
+                Debug.LogError("PlayerPunchController: CinemachineCamera not found in scene! Please assign it in the Inspector or ensure one exists.", this);
+            }
+        }
+    }
 
     void Start()
     {
@@ -56,13 +72,15 @@ public class PlayerPunchController : MonoBehaviour
                 // 力を加える (Impulseモードで瞬間的に力を加える)
                 hitRigidbody.AddForce(punchDirection * punchForce, ForceMode.Impulse);
 
-                // --- ここから追加・修正する部分 ---
-
                 // CinemachineカメラのTracking Targetをヒットしたオブジェクトに切り替える
                 if (virtualCamera != null)
                 {
                     virtualCamera.LookAt = hitRigidbody.transform;
                     virtualCamera.Follow = hitRigidbody.transform;
+                }
+                else
+                {
+                    Debug.LogWarning("PlayerPunchController: virtualCamera is not assigned! Cannot change camera target.", this);
                 }
 
                 // スローモーションを開始するコルーチンを呼び出す
@@ -96,6 +114,10 @@ public class PlayerPunchController : MonoBehaviour
             virtualCamera.LookAt = this.transform; // このスクリプトがアタッチされているオブジェクト（プレイヤー）に戻す
             virtualCamera.Follow = this.transform;
         }
+        else
+        {
+            Debug.LogWarning("PlayerPunchController: virtualCamera is not assigned! Cannot reset camera target.", this);
+        }
     }
 
     // スクリプトが無効になったときにInput Actionsを無効にする
@@ -104,6 +126,8 @@ public class PlayerPunchController : MonoBehaviour
         if (playerInputActions != null)
         {
             playerInputActions.Gameplay.Disable();
+            // イベント購読の解除 (メモリリーク防止のため)
+            playerInputActions.Gameplay.Punch.performed -= OnPunchPerformed;
         }
     }
 }
