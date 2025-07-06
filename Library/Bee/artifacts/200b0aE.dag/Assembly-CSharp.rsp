@@ -408,6 +408,7 @@
 -analyzer:"/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
+"Assets/03.Scripts/GameManager.cs"
 "Assets/03.Scripts/PlayerPunchController.cs"
 "Assets/07_InputActions/PlayerInputActions.cs"
 -langversion:9.0

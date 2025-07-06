@@ -72,6 +72,12 @@ public class PlayerPunchController : MonoBehaviour
                 // 力を加える (Impulseモードで瞬間的に力を加える)
                 hitRigidbody.AddForce(punchDirection * punchForce, ForceMode.Impulse);
 
+                // スコアを加算
+                if (GameManager.Instance != null)
+                {
+                    GameManager.Instance.AddScore(10); // 例として10点加算
+                }
+
                 // CinemachineカメラのTracking Targetをヒットしたオブジェクトに切り替える
                 if (virtualCamera != null)
                 {
