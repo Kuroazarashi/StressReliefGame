@@ -411,6 +411,11 @@
 "Assets/03.Scripts/GameManager.cs"
 "Assets/03.Scripts/PlayerPunchController.cs"
 "Assets/07_InputActions/PlayerInputActions.cs"
+"Assets/Enviroment/enviroment/Office building/scripts/Door.cs"
+"Assets/Enviroment/enviroment/Office building/scripts/DoorAction.cs"
+"Assets/Enviroment/enviroment/Office building/scripts/evelator_controll.cs"
+"Assets/Enviroment/enviroment/Office building/scripts/Fix_elevator_fall.cs"
+"Assets/Enviroment/enviroment/Office building/scripts/pass_on_parent.cs"
 -langversion:9.0
 /deterministic
 /optimize+

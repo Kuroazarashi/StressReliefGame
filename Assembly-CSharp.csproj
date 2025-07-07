@@ -61,9 +61,14 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Enviroment/enviroment/Office building/scripts/evelator_controll.cs" />
     <Compile Include="Assets/03.Scripts/PlayerPunchController.cs" />
     <Compile Include="Assets/03.Scripts/GameManager.cs" />
+    <Compile Include="Assets/Enviroment/enviroment/Office building/scripts/Door.cs" />
+    <Compile Include="Assets/Enviroment/enviroment/Office building/scripts/DoorAction.cs" />
     <Compile Include="Assets/07_InputActions/PlayerInputActions.cs" />
+    <Compile Include="Assets/Enviroment/enviroment/Office building/scripts/pass_on_parent.cs" />
+    <Compile Include="Assets/Enviroment/enviroment/Office building/scripts/Fix_elevator_fall.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
@@ -87,6 +92,7 @@
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />
     <None Include="Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" />
+    <None Include="Assets/Enviroment/enviroment/Office building/Read me.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" />
   </ItemGroup>
