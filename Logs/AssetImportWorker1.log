@@ -765,3 +765,107 @@ Memory consumption went from 114.4 MB to 113.5 MB.
 Total: 5.752167 ms (FindLiveObjects: 0.294125 ms CreateObjectMapping: 0.288792 ms MarkObjects: 3.962667 ms  DeleteObjects: 1.206458 ms)
 
 Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 1250.520425 seconds.
+  path: Assets/02.Assets/FightingMotionsVolume1/FBX/bd_front_A.fbx
+  artifactKey: Guid(570197eb6cbea1c479c35bda442dada9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/FightingMotionsVolume1/FBX/bd_front_A.fbx using Guid(570197eb6cbea1c479c35bda442dada9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '26b185ddfc1fb33c465b1e4c96a4bbba') in 0.133535208 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 54
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/02.Assets/FightingMotionsVolume1/FBX/hp_hook_left_Tiramis.fbx
+  artifactKey: Guid(e96932110ac686d4ca3d30528d498dde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/FightingMotionsVolume1/FBX/hp_hook_left_Tiramis.fbx using Guid(e96932110ac686d4ca3d30528d498dde) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '01691bfd65b50b2475107e4c69cd5b29') in 0.008978375 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 54
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/02.Assets/FightingMotionsVolume1/FBX/bp_hook_right_A.fbx
+  artifactKey: Guid(8b6ca66cf21170749b7c0644ee77cc39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/FightingMotionsVolume1/FBX/bp_hook_right_A.fbx using Guid(8b6ca66cf21170749b7c0644ee77cc39) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9cbfc5b6bbf0ce9a188fd45a05a5b1cb') in 0.011079417 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 54
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/02.Assets/FightingMotionsVolume1/FBX/idle_A.fbx
+  artifactKey: Guid(6c88f17ac7ff45543a0878e71288c038) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/FightingMotionsVolume1/FBX/idle_A.fbx using Guid(6c88f17ac7ff45543a0878e71288c038) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6f9ee1526f7aeb86c26080a467f24166') in 0.009645042 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 54
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/02.Assets/FightingMotionsVolume1/FBX/getup_A.fbx
+  artifactKey: Guid(17004ac38f600ff4f90db12b9b2d5433) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/FightingMotionsVolume1/FBX/getup_A.fbx using Guid(17004ac38f600ff4f90db12b9b2d5433) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '481a4f728f801829e9ed4e2ebaac3ce1') in 0.008826542 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 54
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/02.Assets/FightingMotionsVolume1/FBX/bk_push_left_A.fbx
+  artifactKey: Guid(e4f3ef320ac0e124fbd5766ab8a38cde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/FightingMotionsVolume1/FBX/bk_push_left_A.fbx using Guid(e4f3ef320ac0e124fbd5766ab8a38cde) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '22b932d51dcf07eb2aa6e2eded8a248a') in 0.008942792 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 54
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/02.Assets/FightingMotionsVolume1/FBX/BlueGuy.fbx
+  artifactKey: Guid(0bf37dc7372c57146bfc553d666ef609) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/FightingMotionsVolume1/FBX/BlueGuy.fbx using Guid(0bf37dc7372c57146bfc553d666ef609) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '08c688beaef1cc74b6065ba9076c6355') in 0.008940708 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 55
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/02.Assets/FightingMotionsVolume1/FBX/lk_rh_right_A.fbx
+  artifactKey: Guid(eea3a4476bab05b458d87a5b376889c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/FightingMotionsVolume1/FBX/lk_rh_right_A.fbx using Guid(eea3a4476bab05b458d87a5b376889c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f0fab27bb38db55dae17d63114249ab6') in 0.00848575 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 54
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/02.Assets/FightingMotionsVolume1/FBX/move_forward_B.fbx
+  artifactKey: Guid(5c75701039296084fb07becd1460ad4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/FightingMotionsVolume1/FBX/move_forward_B.fbx using Guid(5c75701039296084fb07becd1460ad4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '650da8e67b89c4fe257d6fc88bcc4e5a') in 0.009573542 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 54
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/02.Assets/FightingMotionsVolume1/FBX/lk_rh_left_A.fbx
+  artifactKey: Guid(b89157ae667535c4480304ff481b791b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/FightingMotionsVolume1/FBX/lk_rh_left_A.fbx using Guid(b89157ae667535c4480304ff481b791b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '59ef0ac8bcf3e64ae02fbb6195214791') in 0.008448916 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 54
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/02.Assets/FightingMotionsVolume1/FBX/hb_front_A.fbx
+  artifactKey: Guid(6f36d974de0fac648a26b5796fbfc3c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/FightingMotionsVolume1/FBX/hb_front_A.fbx using Guid(6f36d974de0fac648a26b5796fbfc3c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b16691618121c9e9fa5ab3f59f57e54d') in 0.011585833 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 54
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/02.Assets/FightingMotionsVolume1/FBX/lb_front_A.fbx
+  artifactKey: Guid(095c255e0c1c0744d9160d43cdc9e041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/FightingMotionsVolume1/FBX/lb_front_A.fbx using Guid(095c255e0c1c0744d9160d43cdc9e041) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5cfa74f74b2cf1e91b642fbf64e270b9') in 0.008060916 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 54
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000096 seconds.
+  path: Assets/02.Assets/FightingMotionsVolume1/FBX/idle_Tiramis.fbx
+  artifactKey: Guid(243b013a8548d9344b2e92934493d476) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/FightingMotionsVolume1/FBX/idle_Tiramis.fbx using Guid(243b013a8548d9344b2e92934493d476) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c73667648b9e5b9236b0b9e06fb90a0c') in 0.011043917 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 54
+
