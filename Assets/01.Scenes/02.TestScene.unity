@@ -764,7 +764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   punchForce: 1000
   upwardForceMultiplier: 0.5
-  virtualCamera: {fileID: 339708251}
+  virtualCameraComponent: {fileID: 339708251}
   slowMotionDuration: 3
   slowMotionTimeScale: 0.1
 --- !u!54 &956413569
@@ -1350,6 +1350,14 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 491c776c444ba4eeeb063f0393452e7a, type: 2}
+    - target: {fileID: 20500000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

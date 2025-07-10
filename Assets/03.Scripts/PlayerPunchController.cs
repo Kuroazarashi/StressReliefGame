@@ -1,139 +1,104 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // Input Systemを使用するために必要
+using UnityEngine.InputSystem;
 using Unity.Cinemachine; // Cinemachineを使用するために必要
-using System.Collections; // コルーチンを使用するために必要
+using System.Collections;
 
 public class PlayerPunchController : MonoBehaviour
 {
-    [SerializeField] private float punchForce = 1000f; // パンチの強さ (Inspectorで調整可能)
-    [SerializeField] private float upwardForceMultiplier = 0.5f; // 上方向への力の倍率 (少し上にも飛ぶように)
+    [SerializeField] private float punchForce = 1000f;
+    [SerializeField] private float upwardForceMultiplier = 0.5f;
 
-    private PlayerInputActions playerInputActions; // 自動生成された Input Actions クラスのインスタンス
+    private PlayerInputActions playerInputActions;
 
-    // Cinemachine Virtual Cameraへの参照
-    // ここを CinemachineVirtualCamera から Unity.Cinemachine.CinemachineCamera に変更
-    [SerializeField] private Unity.Cinemachine.CinemachineCamera virtualCamera; // Inspectorで設定できるように
+    // ★★★ここを修正！★★★
+    [SerializeField] private Unity.Cinemachine.CinemachineCamera virtualCameraComponent;
 
     // スローモーション関連の変数
-    [SerializeField] private float slowMotionDuration = 3.0f; // スローモーションの持続時間
-    [SerializeField] private float slowMotionTimeScale = 0.1f; // スローモーション時のTime.timeScale
+    [SerializeField] private float slowMotionDuration = 3.0f;
+    [SerializeField] private float slowMotionTimeScale = 0.1f;
 
-    // Awake() メソッドを追加し、virtualCameraが設定されていない場合に自動で探す
+    private Animator animator;
+
     void Awake()
     {
-        if (virtualCamera == null)
+        playerInputActions = new PlayerInputActions();
+        animator = GetComponentInChildren<Animator>();
+        if (animator == null)
         {
-            // シーン内の最初のUnity.Cinemachine.CinemachineCameraコンポーネントを自動で探して割り当てる
-            virtualCamera = FindObjectOfType<Unity.Cinemachine.CinemachineCamera>();
-            if (virtualCamera == null)
-            {
-                // もし見つからなければエラーログを出力
-                Debug.LogError("PlayerPunchController: CinemachineCamera not found in scene! Please assign it in the Inspector or ensure one exists.", this);
-            }
+            Debug.LogError("Animator component not found on Player or its children!");
         }
     }
 
-    void Start()
+    void OnEnable()
     {
-        // Input Actionsのインスタンスを作成
-        playerInputActions = new PlayerInputActions();
-
-        // Gameplay Action Mapを有効にする
-        playerInputActions.Gameplay.Enable();
-
-        // PunchアクションがPerformed (実行された) 時に呼び出されるメソッドを設定
+        playerInputActions.Enable();
         playerInputActions.Gameplay.Punch.performed += OnPunchPerformed;
+    }
+
+    void OnDisable()
+    {
+        playerInputActions.Gameplay.Punch.performed -= OnPunchPerformed;
+        playerInputActions.Disable();
     }
 
     void OnPunchPerformed(InputAction.CallbackContext context)
     {
-        // マウスのクリック位置を取得
+        if (animator != null)
+        {
+            animator.SetTrigger("PunchTrigger");
+        }
+
         Vector2 mousePosition = Mouse.current.position.ReadValue();
 
-        // Rayを飛ばす準備
         Ray ray = Camera.main.ScreenPointToRay(mousePosition);
-        RaycastHit hit; // Rayが当たったオブジェクトの情報
+        RaycastHit hit;
 
-        // Rayを飛ばし、何かに当たったかチェック
         if (Physics.Raycast(ray, out hit))
         {
-            // Rayが当たったオブジェクトがRigidbodyを持っているか確認
             Rigidbody hitRigidbody = hit.collider.GetComponent<Rigidbody>();
 
             if (hitRigidbody != null)
             {
-                // パンチの方向を計算
-                Vector3 punchDirection = (hit.point - Camera.main.transform.position).normalized;
-
-                // 少し上方向にも力を加えることで、物体を浮かせて吹き飛ばすように調整
+                Vector3 punchDirection = (hit.point - transform.position).normalized;
                 punchDirection.y += upwardForceMultiplier;
-                punchDirection.Normalize(); // 再び正規化
+                punchDirection = punchDirection.normalized;
 
-                // 力を加える (Impulseモードで瞬間的に力を加える)
                 hitRigidbody.AddForce(punchDirection * punchForce, ForceMode.Impulse);
 
-                // スコアを加算
+                StartCoroutine(DoSlowMotion());
+
+                // ★★★ここも修正します★★★
+                if (virtualCameraComponent != null)
+                {
+                    virtualCameraComponent.Follow = hitRigidbody.transform;
+                    virtualCameraComponent.LookAt = hitRigidbody.transform;
+                }
+
                 if (GameManager.Instance != null)
                 {
-                    GameManager.Instance.AddScore(10); // 例として10点加算
+                    GameManager.Instance.AddScore(10);
                 }
-
-                // CinemachineカメラのTracking Targetをヒットしたオブジェクトに切り替える
-                if (virtualCamera != null)
-                {
-                    virtualCamera.LookAt = hitRigidbody.transform;
-                    virtualCamera.Follow = hitRigidbody.transform;
-                }
-                else
-                {
-                    Debug.LogWarning("PlayerPunchController: virtualCamera is not assigned! Cannot change camera target.", this);
-                }
-
-                // スローモーションを開始するコルーチンを呼び出す
-                StartCoroutine(SlowMotionEffect());
             }
         }
     }
 
-    // スローモーション効果のコルーチン
-    IEnumerator SlowMotionEffect()
+    IEnumerator DoSlowMotion()
     {
-        // 現在のTime.timeScaleを保存
-        float originalTimeScale = Time.timeScale;
         float originalFixedDeltaTime = Time.fixedDeltaTime;
 
-        // スローモーションにする
         Time.timeScale = slowMotionTimeScale;
-        // FixedDeltaTimeも合わせて調整 (物理演算の更新頻度を維持するため)
-        Time.fixedDeltaTime = originalFixedDeltaTime * slowMotionTimeScale;
+        Time.fixedDeltaTime = originalFixedDeltaTime * Time.timeScale;
 
-        // 指定された持続時間だけ待機
-        yield return new WaitForSecondsRealtime(slowMotionDuration); // Realtimeを使用することで、スローモーション中でも正確な時間を待機
+        yield return new WaitForSecondsRealtime(slowMotionDuration);
 
-        // 通常速度に戻す
-        Time.timeScale = originalTimeScale;
+        Time.timeScale = 1f;
         Time.fixedDeltaTime = originalFixedDeltaTime;
 
-        // カメラのTracking TargetをPlayerに戻す
-        if (virtualCamera != null)
+        // ★★★ここも修正します★★★
+        if (virtualCameraComponent != null)
         {
-            virtualCamera.LookAt = this.transform; // このスクリプトがアタッチされているオブジェクト（プレイヤー）に戻す
-            virtualCamera.Follow = this.transform;
-        }
-        else
-        {
-            Debug.LogWarning("PlayerPunchController: virtualCamera is not assigned! Cannot reset camera target.", this);
-        }
-    }
-
-    // スクリプトが無効になったときにInput Actionsを無効にする
-    void OnDisable()
-    {
-        if (playerInputActions != null)
-        {
-            playerInputActions.Gameplay.Disable();
-            // イベント購読の解除 (メモリリーク防止のため)
-            playerInputActions.Gameplay.Punch.performed -= OnPunchPerformed;
+            virtualCameraComponent.Follow = transform; // Playerに戻す
+            virtualCameraComponent.LookAt = transform;
         }
     }
 }
