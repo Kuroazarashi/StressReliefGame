@@ -1,14 +1,15 @@
 ﻿<Properties StartupConfiguration="{A79F4D05-8018-189D-1E2B-66AE9AB7AA56}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/03.Scripts/PlayerPunchController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/02.Assets/Enviroment/enviroment/Office building/Read me.txt">
     <Files>
-      <File FileName="Assets/03.Scripts/PlayerPunchController.cs" Line="102" Column="2" />
+      <File FileName="Assets/03.Scripts/PlayerPunchController.cs" Line="23" Column="6" />
       <File FileName="Assets/07_InputActions/PlayerInputActions.cs" />
       <File FileName="Assets/03.Scripts/GameManager.cs" />
+      <File FileName="Assets/02.Assets/Enviroment/enviroment/Office building/Read me.txt" Line="19" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b14de92b-4994-44d2-b71b-ea6b897f10e0" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="626f5f32-7646-42c9-b251-d3ac7296483b" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
