@@ -980,7 +980,6 @@ GameObject:
   - component: {fileID: 956413566}
   - component: {fileID: 956413565}
   - component: {fileID: 956413564}
-  - component: {fileID: 956413568}
   - component: {fileID: 956413569}
   m_Layer: 0
   m_Name: Player
@@ -1081,23 +1080,6 @@ Transform:
   - {fileID: 1500694602}
   m_Father: {fileID: 314395764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &956413568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956413563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0acbe8fbe969e4f86b49ac490dddd01b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  punchForce: 1000
-  upwardForceMultiplier: 0.5
-  virtualCameraComponent: {fileID: 339708251}
-  slowMotionDuration: 3
-  slowMotionTimeScale: 0.1
 --- !u!54 &956413569
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1367,6 +1349,11 @@ Transform:
   - {fileID: 1318233656}
   m_Father: {fileID: 466459472}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1160390831 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
+  m_PrefabInstance: {fileID: 1609794845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1199033992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1568,6 +1555,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
   m_PrefabInstance: {fileID: 1609794845}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1500694604 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
+  m_PrefabInstance: {fileID: 1609794845}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1500694606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160390831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0acbe8fbe969e4f86b49ac490dddd01b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  punchForce: 1000
+  kickForce: 800
+  upwardForceMultiplier: 0.5
+  playerAnimator: {fileID: 1500694604}
+  punchCollider: {fileID: 1047652897}
+  kickCollider: {fileID: 720395003}
+  slowMotionDuration: 3
+  slowMotionTimeScale: 0.1
+  virtualCameraComponent: {fileID: 339708251}
 --- !u!1001 &1510611248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1728,6 +1741,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1500694606}
     - targetCorrespondingSourceObject: {fileID: 100056, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
       insertIndex: -1
       addedObject: {fileID: 720395003}
@@ -2081,7 +2097,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1684257613}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1500694606}
+        m_TargetAssemblyTypeName: PlayerPunchController, Assembly-CSharp
+        m_MethodName: OnKickButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1684257613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2343,7 +2371,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1980900279}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1500694606}
+        m_TargetAssemblyTypeName: PlayerPunchController, Assembly-CSharp
+        m_MethodName: OnPunchButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1980900279
 MonoBehaviour:
   m_ObjectHideFlags: 0
