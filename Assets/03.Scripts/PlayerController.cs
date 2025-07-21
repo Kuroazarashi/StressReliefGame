@@ -58,9 +58,10 @@ public class PlayerController : MonoBehaviour
         {
             kickColliderObject.SetActive(false);
         }
+
         // === 修正: キャラクターの初期Y座標を固定する ===
         // 現在のtransform.position.yが意図しない値になっている可能性があるので、
-        // 単純にY座標を0に設定します。
+        // 単純にY座標を0.1fに設定します。（地面から少し浮かせたい場合）
         // もし地面のY座標が0以外の場合は、その値に合わせてください。
         transform.position = new Vector3(transform.position.x, 0.1f, transform.position.z);
         // ===========================================
@@ -92,36 +93,34 @@ public class PlayerController : MonoBehaviour
         // ジョイスティックの入力方向を取得
         Vector2 inputDir = joystick.InputDirection;
 
-        // 移動方向ベクトルを作成 (Y軸は無視し、X, Z平面で移動)
-        // ジョイスティックのY軸入力は、キャラクターのZ軸方向の移動に対応させる
-        Vector3 moveDirection = new Vector3(inputDir.x, 0f, inputDir.y).normalized;
+        // X, Z平面での移動方向ベクトル (Y軸は無視)
+        // ジョイスティックのXはワールドX、YはワールドZに直接対応
+        // ★ここをワールド座標基準の移動に戻しました★
+        Vector3 horizontalMoveDirection = new Vector3(inputDir.x, 0f, inputDir.y);
 
-        // 地面に対して重力を適用 (CharacterControllerが地面にいない場合)
-        // CharacterController.Moveは重力を自動で適用しないため、手動で加える
-        if (!characterController.isGrounded)
+        // CharacterControllerによる水平移動
+        if (horizontalMoveDirection.magnitude >= 0.1f) // ある程度の入力がある場合のみ移動
         {
-            moveDirection.y += Physics.gravity.y * Time.deltaTime;
-        }
+            // 移動 (正規化して速度を一定に保つ)
+            characterController.Move(horizontalMoveDirection.normalized * moveSpeed * Time.deltaTime);
 
-        // CharacterControllerを使ってプレイヤーを移動
-        // Time.deltaTimeを乗算してフレームレートに依存しない移動にする
-        characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
-
-        // プレイヤーの向きを移動方向に向ける (ジョイスティックに一定以上の入力がある場合のみ)
-        if (moveDirection.magnitude >= 0.1f) // 微妙な入力で回転しないように閾値を設ける
-        {
-            // Y軸回転のみを考慮し、キャラクターの正面を移動方向に向ける
-            Quaternion targetRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z));
-            // 徐々に目標の向きに回転させることで、滑らかな動きを実現
+            // プレイヤーの向きを移動方向に向ける (Y軸回転のみ)
+            // ワールドのZ軸を「上」とした時のジョイスティックのY方向入力は、
+            // キャラクターのZ方向の移動に対応するため、LookRotationに渡すベクトルもそれに合わせる
+            Quaternion targetRotation = Quaternion.LookRotation(horizontalMoveDirection.normalized);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
         }
 
-        // Animatorに移動速度を渡す (アニメーション制御用)
-        // "Speed"パラメーターは、Animator Controllerで歩行/走行アニメーションのブレンドツリーに使用する予定
+        // 重力は常時適用
+        if (!characterController.isGrounded)
+        {
+            // CharacterControllerはMoveメソッドで重力の影響を別途適用する必要がある
+            characterController.Move(Vector3.up * Physics.gravity.y * Time.deltaTime);
+        }
+
+        // Animatorに移動速度を渡す
         if (animator != null)
         {
-            // ジョイスティックの入力の大きさをAnimatorの"Speed"パラメーターに渡す
-            // magnitudeはベクトルの長さ（強さ）を表し、0〜1の値になる
             animator.SetFloat("Speed", inputDir.magnitude);
         }
     }
