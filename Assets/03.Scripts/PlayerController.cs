@@ -1,5 +1,7 @@
 using UnityEngine;
-using UnityEngine.EventSystems; // Joystickスクリプトで使用しているので念のため残しておく
+using UnityEngine.UI; // Joystickスクリプトで使用しているため必要です
+// using UnityEngine.EventSystems; // Joystickスクリプト自体がEventSystemを使用するので、PlayerControllerでは通常不要です。今回は削除します。
+// using Cinemachine; // 新しいカメラワークではCinemachineVirtualCameraへの直接参照は不要になったため、コメントアウト（または削除）します。
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,18 +21,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float slowMotionDuration = 0.2f; // スローモーションの持続時間
     [SerializeField] private float slowMotionTimeScale = 0.1f; // スローモーション時のタイムスケール
 
-    // === Cinemachine Settings (現在の追従カメラとは異なる) ===
-    // ※ 新しい仕様ではプレイヤー追従カメラに変更するため、以下の設定は将来的に変更または削除されます。
-    //[Header("Cinemachine Settings")]
-    //[SerializeField] private CinemachineVirtualCamera virtualCamera; // シネマシン仮想カメラへの参照
-
     // === Movement Settings ===
-    [Header("Movement Settings")] // 移動設定用のヘッダーを追加
+    [Header("Movement Settings")] // 移動設定用のヘッダー
     [SerializeField] private Joystick joystick; // UIのJoystickスクリプトへの参照
     [SerializeField] private float moveSpeed = 5f; // 移動速度
     [SerializeField] private float rotateSpeed = 500f; // 回転速度
 
+    // === Private References ===
     private CharacterController characterController; // CharacterControllerへの参照
+    private bool isAttacking = false; // 攻撃中かどうかのフラグを追加
 
     // AwakeはStartより前に呼ばれる
     void Awake()
@@ -60,26 +59,46 @@ public class PlayerController : MonoBehaviour
         }
 
         // === 修正: キャラクターの初期Y座標を固定する ===
-        // 現在のtransform.position.yが意図しない値になっている可能性があるので、
-        // 単純にY座標を0.1fに設定します。（地面から少し浮かせたい場合）
-        // もし地面のY座標が0以外の場合は、その値に合わせてください。
-        transform.position = new Vector3(transform.position.x, 0.1f, transform.position.z);
+        // CharacterControllerは自身のTransform.positionを直接変更すると挙動がおかしくなる場合があるため、
+        // 初期位置調整はCharacterControllerが有効になる前に行うか、CharacterController.Moveを使用する
+        // または、Awake/Start時に一度だけCharacterController.Moveで設定したい目標Y座標に移動させる、などの方法があります。
+        // 現在の記述はAwakeなので、これで問題ない可能性が高いですが、念のためコメントアウトしておきます。
+        // transform.position = new Vector3(transform.position.x, 0.1f, transform.position.z);
         // ===========================================
     }
 
     void Update()
     {
-        // === 移動処理 ===
-        HandleMovement();
+        // 攻撃中でない場合のみ移動処理を行う
+        if (!isAttacking)
+        {
+            HandleMovement();
+        }
+        else
+        {
+            // 攻撃中は移動アニメーションを停止させるためにSpeedパラメーターを0に設定
+            if (animator != null)
+            {
+                animator.SetFloat("Speed", 0f);
+            }
+            // 攻撃中はキャラクターを停止させる（CharacterController.MoveにVector3.zeroを渡す）
+            characterController.Move(Vector3.zero); // または CharacterController.velocity = Vector3.zero; など
+        }
 
-        // === パンチボタン入力処理 ===
+        // 重力は常時適用 (攻撃中も落下させるため、isAttackingの条件外で実行)
+        if (!characterController.isGrounded)
+        {
+            characterController.Move(Vector3.up * Physics.gravity.y * Time.deltaTime);
+        }
+
+        // === パンチボタン入力処理（コメントアウト） ===
         // UIボタンからのイベントはOnPunchButtonClick()で処理されるため、ここではキー入力の例のみ
-        //if (Input.GetKeyDown(KeyCode.P)) 
+        //if (Input.GetKeyDown(KeyCode.P))
         //{
         //    OnPunchButtonClick();
         //}
 
-        // === キックボタン入力処理 ===
+        // === キックボタン入力処理（コメントアウト） ===
         // UIボタンからのイベントはOnKickButtonClick()で処理されるため、ここではキー入力の例のみ
         //if (Input.GetKeyDown(KeyCode.K))
         //{
@@ -91,37 +110,36 @@ public class PlayerController : MonoBehaviour
     private void HandleMovement()
     {
         // ジョイスティックの入力方向を取得
-        Vector2 inputDir = joystick.InputDirection;
+        Vector2 inputDir = joystick.InputDirection; // Joystickスクリプトが持つInputDirectionプロパティを使用
 
         // X, Z平面での移動方向ベクトル (Y軸は無視)
         // ジョイスティックのXはワールドX、YはワールドZに直接対応
-        // ★ここをワールド座標基準の移動に戻しました★
         Vector3 horizontalMoveDirection = new Vector3(inputDir.x, 0f, inputDir.y);
 
+        // Animatorに移動速度を渡す
+        // ジョイスティックが倒されている量（入力強度）を直接Speedとして使う
+        float currentSpeed = horizontalMoveDirection.magnitude; // ジョイスティックの入力強度
+        if (animator != null)
+        {
+            animator.SetFloat("Speed", currentSpeed);
+        }
+
         // CharacterControllerによる水平移動
-        if (horizontalMoveDirection.magnitude >= 0.1f) // ある程度の入力がある場合のみ移動
+        // AnimatorのSpeedが0.1fを超えたらRunアニメーションが再生されるので、
+        // 少なくとも0.1f以上の入力がある場合にキャラクターを移動させる
+        if (currentSpeed >= 0.1f) // ある程度の入力がある場合のみ移動
         {
             // 移動 (正規化して速度を一定に保つ)
             characterController.Move(horizontalMoveDirection.normalized * moveSpeed * Time.deltaTime);
 
             // プレイヤーの向きを移動方向に向ける (Y軸回転のみ)
-            // ワールドのZ軸を「上」とした時のジョイスティックのY方向入力は、
-            // キャラクターのZ方向の移動に対応するため、LookRotationに渡すベクトルもそれに合わせる
             Quaternion targetRotation = Quaternion.LookRotation(horizontalMoveDirection.normalized);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
         }
-
-        // 重力は常時適用
-        if (!characterController.isGrounded)
+        // 入力がない（currentSpeedが0.1f未満）場合はキャラクターをその場に留める
+        else
         {
-            // CharacterControllerはMoveメソッドで重力の影響を別途適用する必要がある
-            characterController.Move(Vector3.up * Physics.gravity.y * Time.deltaTime);
-        }
-
-        // Animatorに移動速度を渡す
-        if (animator != null)
-        {
-            animator.SetFloat("Speed", inputDir.magnitude);
+            characterController.Move(Vector3.zero); // 移動入力を受け付けない
         }
     }
 
@@ -131,10 +149,14 @@ public class PlayerController : MonoBehaviour
     // UIボタンから呼び出されるメソッド
     public void OnPunchButtonClick()
     {
-        Debug.Log("Punch Button Clicked! Playing Punch Animation."); // デバッグログ
-        if (animator != null)
+        if (!isAttacking) // 攻撃中でない場合のみ実行
         {
-            animator.SetTrigger("PunchTrigger"); // Animatorの"PunchTrigger"トリガーを設定
+            isAttacking = true; // 攻撃フラグを立てる
+            Debug.Log("Punch Button Clicked! Playing Punch Animation."); // デバッグログ
+            if (animator != null)
+            {
+                animator.SetTrigger("PunchTrigger"); // Animatorの"PunchTrigger"トリガーを設定
+            }
         }
     }
 
@@ -163,10 +185,14 @@ public class PlayerController : MonoBehaviour
     // UIボタンから呼び出されるメソッド
     public void OnKickButtonClick()
     {
-        Debug.Log("Kick Button Clicked! Playing Kick Animation."); // デバッグログ
-        if (animator != null)
+        if (!isAttacking) // 攻撃中でない場合のみ実行
         {
-            animator.SetTrigger("KickTrigger"); // Animatorの"KickTrigger"トリガーを設定
+            isAttacking = true; // 攻撃フラグを立てる
+            Debug.Log("Kick Button Clicked! Playing Kick Animation."); // デバッグログ
+            if (animator != null)
+            {
+                animator.SetTrigger("KickTrigger"); // Animatorの"KickTrigger"トリガーを設定
+            }
         }
     }
 
@@ -190,9 +216,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // アニメーションイベントから呼び出されるメソッド (アニメーション終了時に攻撃フラグをリセット)
+    // このメソッドをPunchアニメーションとKickアニメーションの終了時にAnimatorイベントとして追加してください。
+    public void ResetAttackState()
+    {
+        isAttacking = false;
+        // 攻撃アニメーション終了時に念のためコライダーも無効化
+        if (punchColliderObject != null) punchColliderObject.SetActive(false);
+        if (kickColliderObject != null) kickColliderObject.SetActive(false);
+    }
+
 
     // === 攻撃がヒットした際の処理 ===
     // 攻撃コライダーにアタッチされたスクリプトから呼び出されることを想定
+    // ※ 現在のプロジェクトでは、AttackColliderHandler.csのような別スクリプトが
+    //    このメソッドを呼び出す想定になっているため、そのスクリプト側で実装する必要があります。
+    //    PlayerController単体ではOnTriggerEnterは攻撃コライダーのGameObjectにアタッチされていなければ呼び出されません。
     public void OnAttackHit(Collider other, float force)
     {
         // ヒットしたオブジェクトがRigidbodyを持っているか確認
@@ -228,6 +267,8 @@ public class PlayerController : MonoBehaviour
 
     // 現在のCinemachineカメラ追従はオブジェクトが吹っ飛んだとき。
     // 新しい仕様ではプレイヤーに常に追従する形になるため、この部分は変更または削除されます。
+    // [SerializeField] private CinemachineVirtualCamera virtualCamera; // 以前の記述ではコメントアウトされていましたが、もしインスペクターから設定するなら必要です。
+    // しかし、現在はCinemachinePositionComposerでプレイヤーを直接追従するため、PlayerController側からのカメラ操作は不要です。
     //public void TrackHitObject(Transform target)
     //{
     //    if (virtualCamera != null)

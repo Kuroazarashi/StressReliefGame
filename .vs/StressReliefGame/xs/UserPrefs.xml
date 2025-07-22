@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{A79F4D05-8018-189D-1E2B-66AE9AB7AA56}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/03.Scripts/GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/03.Scripts/PlayerController.cs">
     <Files>
       <File FileName="Assets/07_InputActions/PlayerInputActions.cs" Line="1" Column="1" />
       <File FileName="Assets/03.Scripts/GameManager.cs" Line="1" Column="1" />
@@ -10,7 +10,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fa457ffb-90aa-4dfa-923a-64ce055b8a86" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d02b3492-b93e-432c-9868-1fbb079decaa" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
