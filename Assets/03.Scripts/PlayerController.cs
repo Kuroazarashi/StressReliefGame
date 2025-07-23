@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI; // Joystickスクリプトで使用しているため必要です
-// using UnityEngine.EventSystems; // Joystickスクリプト自体がEventSystemを使用するので、PlayerControllerでは通常不要です。今回は削除します。
-// using Cinemachine; // 新しいカメラワークではCinemachineVirtualCameraへの直接参照は不要になったため、コメントアウト（または削除）します。
+using UnityEngine.UI;
+using System.Collections; // コルーチンを使うために必要
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,6 +19,9 @@ public class PlayerController : MonoBehaviour
     [Header("Slow Motion Settings")]
     [SerializeField] private float slowMotionDuration = 0.2f; // スローモーションの持続時間
     [SerializeField] private float slowMotionTimeScale = 0.1f; // スローモーション時のタイムスケール
+
+    // スローモーション時の物理演算の滑らかさ調整用
+    private float originalFixedDeltaTime; // 元のFixed Delta Timeを保存する変数
 
     // === Movement Settings ===
     [Header("Movement Settings")] // 移動設定用のヘッダー
@@ -57,6 +59,9 @@ public class PlayerController : MonoBehaviour
         {
             kickColliderObject.SetActive(false);
         }
+
+        // オリジナルのFixed Delta Timeを保存
+        originalFixedDeltaTime = Time.fixedDeltaTime;
 
         // === 修正: キャラクターの初期Y座標を固定する ===
         // CharacterControllerは自身のTransform.positionを直接変更すると挙動がおかしくなる場合があるため、
@@ -234,10 +239,16 @@ public class PlayerController : MonoBehaviour
     //    PlayerController単体ではOnTriggerEnterは攻撃コライダーのGameObjectにアタッチされていなければ呼び出されません。
     public void OnAttackHit(Collider other, float force)
     {
-        // ヒットしたオブジェクトがRigidbodyを持っているか確認
+        // 衝突したオブジェクトのRigidbodyを取得
         Rigidbody hitRigidbody = other.GetComponent<Rigidbody>();
         if (hitRigidbody != null)
         {
+            // オブジェクトがキネマティック状態の場合、物理演算を有効にする
+            if (hitRigidbody.isKinematic)
+            {
+                hitRigidbody.isKinematic = false; // ここでIs Kinematicをオフにする
+            }
+
             // 攻撃の方向（プレイヤーからヒットしたオブジェクトへの方向）
             Vector3 attackDirection = (other.transform.position - transform.position).normalized;
             // 上方向への力を少し加える
@@ -256,13 +267,31 @@ public class PlayerController : MonoBehaviour
     // === スローモーション演出 ===
     private void StartSlowMotion()
     {
-        Time.timeScale = slowMotionTimeScale; // タイムスケールをスローモーション用の値に変更
-        Invoke("EndSlowMotion", slowMotionDuration); // 指定時間後にスローモーションを終了するメソッドを呼び出す
+        // タイムスケールをスローモーション用の値に変更
+        Time.timeScale = slowMotionTimeScale;
+        // Fixed Delta Timeもタイムスケールに合わせて調整
+        // これにより、スローモーション中の物理演算の更新頻度がリアルタイムで増え、滑らかになる
+        Time.fixedDeltaTime = originalFixedDeltaTime * Time.timeScale;
+
+        // Invokeではなくコルーチンを使うように変更 (より柔軟な制御のため)
+        StartCoroutine(DoSlowMotion());
+    }
+
+    // Invokeの代わりにコルーチンを使用
+    private IEnumerator DoSlowMotion()
+    {
+        // WaitForSecondsRealtimeを使うことで、Time.timeScaleに影響されずにリアルタイムで待機します。
+        // これにより、スローモーション中でも指定したslowMotionDuration秒後に正確に終了します。
+        yield return new WaitForSecondsRealtime(slowMotionDuration);
+
+        EndSlowMotion();
     }
 
     private void EndSlowMotion()
     {
         Time.timeScale = 1f; // タイムスケールを通常速度に戻す
+        // Fixed Delta Timeも元の値に戻す
+        Time.fixedDeltaTime = originalFixedDeltaTime; // 元のFixed Delta Timeに戻す
     }
 
     // 現在のCinemachineカメラ追従はオブジェクトが吹っ飛んだとき。
