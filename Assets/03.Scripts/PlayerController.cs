@@ -1,12 +1,15 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections; // コルーチンを使うために必要
 
 public class PlayerController : MonoBehaviour
 {
+    // === Animator Settings ===
+    [Header("Animator Settings")]
+    [SerializeField] private Animator animator; // アニメーターへの参照
+
     // === Attack Settings ===
     [Header("Attack Settings")]
-    [SerializeField] private Animator animator; // アニメーターへの参照
     [SerializeField] private float punchForce = 1000f; // パンチの吹っ飛ばし力
     [SerializeField] private float kickForce = 800f; // キックの吹っ飛ばし力
     [SerializeField] private float upwardForceMultiplier = 0.5f; // 上方向への力の倍率
@@ -22,12 +25,19 @@ public class PlayerController : MonoBehaviour
 
     // スローモーション時の物理演算の滑らかさ調整用
     private float originalFixedDeltaTime; // 元のFixed Delta Timeを保存する変数
+    private Coroutine slowMotionCoroutine; // スローモーションのコルーチン管理用
 
     // === Movement Settings ===
     [Header("Movement Settings")] // 移動設定用のヘッダー
     [SerializeField] private Joystick joystick; // UIのJoystickスクリプトへの参照
     [SerializeField] private float moveSpeed = 5f; // 移動速度
     [SerializeField] private float rotateSpeed = 500f; // 回転速度
+
+    // === Effects & Sounds Settings ===
+    [Header("Effects & Sounds Settings")]
+    [SerializeField] private GameObject hitEffectPrefab; // ヒット時に再生するパーティクルエフェクトのプレハブ
+    // private AudioClip hitSoundClip;      // ★削除: SoundManagerで一元管理するため削除
+    // private AudioSource audioSource;     // ★削除: SoundManagerで一元管理するため削除
 
     // === Private References ===
     private CharacterController characterController; // CharacterControllerへの参照
@@ -38,16 +48,64 @@ public class PlayerController : MonoBehaviour
     {
         // CharacterControllerとAnimatorコンポーネントを取得
         characterController = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>(); // MaleSuit_AのAnimatorを取得
+        animator = GetComponent<Animator>();
 
         // コンポーネントがアタッチされているか確認（エラーログ用）
         if (characterController == null)
         {
-            Debug.LogError("CharacterController not found on " + gameObject.name);
+            Debug.LogError("CharacterController not found on " + gameObject.name + ". Please add one.", this);
+            enabled = false;
+            return;
         }
         if (animator == null)
         {
-            Debug.LogError("Animator not found on " + gameObject.name);
+            Debug.LogError("Animator not found on " + gameObject.name + ". Please assign in Inspector or add one.", this);
+            enabled = false;
+            return;
+        }
+
+        // Joystickが設定されていない場合の警告
+        if (joystick == null)
+        {
+            Debug.LogWarning("Joystick is not assigned in Inspector. Movement will not work.", this);
+        }
+
+        // PlayerControllerが自身にアタッチされているパンチ・キックコライダーに
+        // 自身のインスタンスと攻撃力を渡す
+        if (punchColliderObject != null)
+        {
+            AttackColliderHandler punchHandler = punchColliderObject.GetComponent<AttackColliderHandler>();
+            if (punchHandler != null)
+            {
+                punchHandler.SetPlayerController(this);
+                punchHandler.AttackForce = punchForce;
+            }
+            else
+            {
+                Debug.LogWarning("AttackColliderHandler not found on Punch Collider Object.", punchColliderObject);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Punch Collider Object is not assigned in Inspector.", this);
+        }
+
+        if (kickColliderObject != null)
+        {
+            AttackColliderHandler kickHandler = kickColliderObject.GetComponent<AttackColliderHandler>();
+            if (kickHandler != null)
+            {
+                kickHandler.SetPlayerController(this);
+                kickHandler.AttackForce = kickForce;
+            }
+            else
+            {
+                Debug.LogWarning("AttackColliderHandler not found on Kick Collider Object.", kickColliderObject);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Kick Collider Object is not assigned in Inspector.", this);
         }
 
         // 初期状態で攻撃コライダーを無効にしておく
@@ -60,206 +118,182 @@ public class PlayerController : MonoBehaviour
             kickColliderObject.SetActive(false);
         }
 
+        // ★削除: AudioSourceの取得・初期化はSoundManagerが担当するため不要
+        // audioSource = GetComponent<AudioSource>();
+        // if (audioSource == null)
+        // {
+        //     audioSource = gameObject.AddComponent<AudioSource>();
+        // }
+        // audioSource.loop = false;
+        // audioSource.playOnAwake = false;
+
         // オリジナルのFixed Delta Timeを保存
         originalFixedDeltaTime = Time.fixedDeltaTime;
-
-        // === 修正: キャラクターの初期Y座標を固定する ===
-        // CharacterControllerは自身のTransform.positionを直接変更すると挙動がおかしくなる場合があるため、
-        // 初期位置調整はCharacterControllerが有効になる前に行うか、CharacterController.Moveを使用する
-        // または、Awake/Start時に一度だけCharacterController.Moveで設定したい目標Y座標に移動させる、などの方法があります。
-        // 現在の記述はAwakeなので、これで問題ない可能性が高いですが、念のためコメントアウトしておきます。
-        // transform.position = new Vector3(transform.position.x, 0.1f, transform.position.z);
-        // ===========================================
     }
 
     void Update()
     {
-        // 攻撃中でない場合のみ移動処理を行う
         if (!isAttacking)
         {
             HandleMovement();
         }
         else
         {
-            // 攻撃中は移動アニメーションを停止させるためにSpeedパラメーターを0に設定
             if (animator != null)
             {
                 animator.SetFloat("Speed", 0f);
             }
-            // 攻撃中はキャラクターを停止させる（CharacterController.MoveにVector3.zeroを渡す）
-            characterController.Move(Vector3.zero); // または CharacterController.velocity = Vector3.zero; など
+            characterController.Move(Vector3.zero);
         }
 
-        // 重力は常時適用 (攻撃中も落下させるため、isAttackingの条件外で実行)
         if (!characterController.isGrounded)
         {
             characterController.Move(Vector3.up * Physics.gravity.y * Time.deltaTime);
         }
-
-        // === パンチボタン入力処理（コメントアウト） ===
-        // UIボタンからのイベントはOnPunchButtonClick()で処理されるため、ここではキー入力の例のみ
-        //if (Input.GetKeyDown(KeyCode.P))
-        //{
-        //    OnPunchButtonClick();
-        //}
-
-        // === キックボタン入力処理（コメントアウト） ===
-        // UIボタンからのイベントはOnKickButtonClick()で処理されるため、ここではキー入力の例のみ
-        //if (Input.GetKeyDown(KeyCode.K))
-        //{
-        //    OnKickButtonClick();
-        //}
     }
 
     // === 移動処理メソッド ===
     private void HandleMovement()
     {
         // ジョイスティックの入力方向を取得
-        Vector2 inputDir = joystick.InputDirection; // Joystickスクリプトが持つInputDirectionプロパティを使用
+        Vector2 inputDir = joystick.InputDirection;
 
-        // X, Z平面での移動方向ベクトル (Y軸は無視)
-        // ジョイスティックのXはワールドX、YはワールドZに直接対応
         Vector3 horizontalMoveDirection = new Vector3(inputDir.x, 0f, inputDir.y);
 
-        // Animatorに移動速度を渡す
-        // ジョイスティックが倒されている量（入力強度）を直接Speedとして使う
-        float currentSpeed = horizontalMoveDirection.magnitude; // ジョイスティックの入力強度
+        float currentSpeed = horizontalMoveDirection.magnitude;
         if (animator != null)
         {
             animator.SetFloat("Speed", currentSpeed);
         }
 
-        // CharacterControllerによる水平移動
-        // AnimatorのSpeedが0.1fを超えたらRunアニメーションが再生されるので、
-        // 少なくとも0.1f以上の入力がある場合にキャラクターを移動させる
-        if (currentSpeed >= 0.1f) // ある程度の入力がある場合のみ移動
+        if (currentSpeed >= 0.1f)
         {
-            // 移動 (正規化して速度を一定に保つ)
             characterController.Move(horizontalMoveDirection.normalized * moveSpeed * Time.deltaTime);
 
-            // プレイヤーの向きを移動方向に向ける (Y軸回転のみ)
             Quaternion targetRotation = Quaternion.LookRotation(horizontalMoveDirection.normalized);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
         }
-        // 入力がない（currentSpeedが0.1f未満）場合はキャラクターをその場に留める
         else
         {
-            characterController.Move(Vector3.zero); // 移動入力を受け付けない
+            characterController.Move(Vector3.zero);
         }
     }
 
-
     // === パンチ関連メソッド ===
-
-    // UIボタンから呼び出されるメソッド
     public void OnPunchButtonClick()
     {
-        if (!isAttacking) // 攻撃中でない場合のみ実行
+        if (!isAttacking)
         {
-            isAttacking = true; // 攻撃フラグを立てる
-            Debug.Log("Punch Button Clicked! Playing Punch Animation."); // デバッグログ
+            isAttacking = true;
+            Debug.Log("Punch Button Clicked! Playing Punch Animation.");
             if (animator != null)
             {
-                animator.SetTrigger("PunchTrigger"); // Animatorの"PunchTrigger"トリガーを設定
+                animator.SetTrigger("PunchTrigger"); // ★修正: "Punch" から "PunchTrigger" へ
             }
         }
     }
 
-    // アニメーションイベントから呼び出されるメソッド (パンチコライダー有効化)
     public void EnablePunchCollider()
     {
         if (punchColliderObject != null)
         {
-            punchColliderObject.SetActive(true); // パンチコライダーを有効化
-            Debug.Log("Punch Collider Enabled!"); // デバッグログ
+            punchColliderObject.SetActive(true);
+            Debug.Log("Punch Collider Enabled!");
         }
     }
 
-    // アニメーションイベントから呼び出されるメソッド (パンチコライダー無効化)
     public void DisablePunchCollider()
     {
         if (punchColliderObject != null)
         {
-            punchColliderObject.SetActive(false); // パンチコライダーを無効化
-            Debug.Log("Punch Collider Disabled!"); // デバッグログ
+            punchColliderObject.SetActive(false);
+            Debug.Log("Punch Collider Disabled!");
         }
     }
 
     // === キック関連メソッド ===
-
-    // UIボタンから呼び出されるメソッド
     public void OnKickButtonClick()
     {
-        if (!isAttacking) // 攻撃中でない場合のみ実行
+        if (!isAttacking)
         {
-            isAttacking = true; // 攻撃フラグを立てる
-            Debug.Log("Kick Button Clicked! Playing Kick Animation."); // デバッグログ
+            isAttacking = true;
+            Debug.Log("Kick Button Clicked! Playing Kick Animation.");
             if (animator != null)
             {
-                animator.SetTrigger("KickTrigger"); // Animatorの"KickTrigger"トリガーを設定
+                animator.SetTrigger("KickTrigger"); // ★修正: "Kick" から "KickTrigger" へ
             }
         }
     }
 
-    // アニメーションイベントから呼び出されるメソッド (キックコライダー有効化)
     public void EnableKickCollider()
     {
         if (kickColliderObject != null)
         {
-            kickColliderObject.SetActive(true); // キックコライダーを有効化
-            Debug.Log("Kick Collider Enabled!"); // デバッグログ
+            kickColliderObject.SetActive(true);
+            Debug.Log("Kick Collider Enabled!");
         }
     }
 
-    // アニメーションイベントから呼び出されるメソッド (キックコライダー無効化)
     public void DisableKickCollider()
     {
         if (kickColliderObject != null)
         {
-            kickColliderObject.SetActive(false); // キックコライダーを無効化
-            Debug.Log("Kick Collider Disabled!"); // デバッグログ
+            kickColliderObject.SetActive(false);
+            Debug.Log("Kick Collider Disabled!");
         }
     }
 
-    // アニメーションイベントから呼び出されるメソッド (アニメーション終了時に攻撃フラグをリセット)
-    // このメソッドをPunchアニメーションとKickアニメーションの終了時にAnimatorイベントとして追加してください。
     public void ResetAttackState()
     {
         isAttacking = false;
-        // 攻撃アニメーション終了時に念のためコライダーも無効化
         if (punchColliderObject != null) punchColliderObject.SetActive(false);
         if (kickColliderObject != null) kickColliderObject.SetActive(false);
     }
 
-
     // === 攻撃がヒットした際の処理 ===
-    // 攻撃コライダーにアタッチされたスクリプトから呼び出されることを想定
-    // ※ 現在のプロジェクトでは、AttackColliderHandler.csのような別スクリプトが
-    //    このメソッドを呼び出す想定になっているため、そのスクリプト側で実装する必要があります。
-    //    PlayerController単体ではOnTriggerEnterは攻撃コライダーのGameObjectにアタッチされていなければ呼び出されません。
     public void OnAttackHit(Collider other, float force)
     {
-        // 衝突したオブジェクトのRigidbodyを取得
         Rigidbody hitRigidbody = other.GetComponent<Rigidbody>();
         if (hitRigidbody != null)
         {
-            // オブジェクトがキネマティック状態の場合、物理演算を有効にする
             if (hitRigidbody.isKinematic)
             {
-                hitRigidbody.isKinematic = false; // ここでIs Kinematicをオフにする
+                hitRigidbody.isKinematic = false;
             }
 
-            // 攻撃の方向（プレイヤーからヒットしたオブジェクトへの方向）
             Vector3 attackDirection = (other.transform.position - transform.position).normalized;
-            // 上方向への力を少し加える
             Vector3 totalForce = (attackDirection + Vector3.up * upwardForceMultiplier).normalized * force;
 
-            hitRigidbody.AddForce(totalForce, ForceMode.Impulse); // 力を加える
+            hitRigidbody.AddForce(totalForce, ForceMode.Impulse);
+
+            // ヒットエフェクトの再生
+            if (hitEffectPrefab != null)
+            {
+                GameObject effectInstance = Instantiate(hitEffectPrefab, other.transform.position, Quaternion.identity);
+                ParticleSystem ps = effectInstance.GetComponent<ParticleSystem>();
+                if (ps != null)
+                {
+                    Destroy(effectInstance, ps.main.duration + ps.main.startLifetime.constantMax);
+                }
+                else
+                {
+                    Destroy(effectInstance, 2f);
+                }
+            }
+
+            // ★修正: SoundManager経由でヒットサウンドを再生
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlayHitSound(other.gameObject); // ヒットしたオブジェクトを渡す
+            }
+            else
+            {
+                Debug.LogWarning("SoundManager.Instance is not found. Cannot play hit sound.", this);
+            }
 
             // スローモーション演出を呼び出す
             StartSlowMotion();
 
-            // ここにスコア加算ロジックや破壊エフェクトなどを追加する
             Debug.Log($"Hit {other.name} with force {force}!");
         }
     }
@@ -267,21 +301,18 @@ public class PlayerController : MonoBehaviour
     // === スローモーション演出 ===
     private void StartSlowMotion()
     {
-        // タイムスケールをスローモーション用の値に変更
-        Time.timeScale = slowMotionTimeScale;
-        // Fixed Delta Timeもタイムスケールに合わせて調整
-        // これにより、スローモーション中の物理演算の更新頻度がリアルタイムで増え、滑らかになる
-        Time.fixedDeltaTime = originalFixedDeltaTime * Time.timeScale;
-
-        // Invokeではなくコルーチンを使うように変更 (より柔軟な制御のため)
-        StartCoroutine(DoSlowMotion());
+        if (slowMotionCoroutine != null)
+        {
+            StopCoroutine(slowMotionCoroutine);
+        }
+        slowMotionCoroutine = StartCoroutine(DoSlowMotion());
     }
 
-    // Invokeの代わりにコルーチンを使用
     private IEnumerator DoSlowMotion()
     {
-        // WaitForSecondsRealtimeを使うことで、Time.timeScaleに影響されずにリアルタイムで待機します。
-        // これにより、スローモーション中でも指定したslowMotionDuration秒後に正確に終了します。
+        Time.timeScale = slowMotionTimeScale;
+        Time.fixedDeltaTime = originalFixedDeltaTime * Time.timeScale;
+
         yield return new WaitForSecondsRealtime(slowMotionDuration);
 
         EndSlowMotion();
@@ -289,21 +320,7 @@ public class PlayerController : MonoBehaviour
 
     private void EndSlowMotion()
     {
-        Time.timeScale = 1f; // タイムスケールを通常速度に戻す
-        // Fixed Delta Timeも元の値に戻す
-        Time.fixedDeltaTime = originalFixedDeltaTime; // 元のFixed Delta Timeに戻す
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime = originalFixedDeltaTime;
     }
-
-    // 現在のCinemachineカメラ追従はオブジェクトが吹っ飛んだとき。
-    // 新しい仕様ではプレイヤーに常に追従する形になるため、この部分は変更または削除されます。
-    // [SerializeField] private CinemachineVirtualCamera virtualCamera; // 以前の記述ではコメントアウトされていましたが、もしインスペクターから設定するなら必要です。
-    // しかし、現在はCinemachinePositionComposerでプレイヤーを直接追従するため、PlayerController側からのカメラ操作は不要です。
-    //public void TrackHitObject(Transform target)
-    //{
-    //    if (virtualCamera != null)
-    //    {
-    //        virtualCamera.Follow = target;
-    //        virtualCamera.LookAt = target;
-    //    }
-    //}
 }

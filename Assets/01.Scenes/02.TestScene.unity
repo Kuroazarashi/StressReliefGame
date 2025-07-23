@@ -616,6 +616,52 @@ Transform:
   - {fileID: 30208250}
   m_Father: {fileID: 466459472}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &403586391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 403586392}
+  - component: {fileID: 403586393}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &403586392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403586391}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 567638063}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &403586393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403586391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dec403598bf04ac88515b3b5467d563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSoundConfigs: []
+  defaultHitSound: {fileID: 0}
 --- !u!1 &419961760
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,6 +998,7 @@ Transform:
   m_Children:
   - {fileID: 569469854}
   - {fileID: 999502037}
+  - {fileID: 403586392}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &569469851
@@ -1411,8 +1458,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8ecb94672b24982baad52ad8d8e5e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 1500694609}
-  attackForce: 10
 --- !u!1 &721443239
 GameObject:
   m_ObjectHideFlags: 0
@@ -2469,8 +2514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8ecb94672b24982baad52ad8d8e5e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 1500694609}
-  attackForce: 10
 --- !u!1 &1098679812
 GameObject:
   m_ObjectHideFlags: 0
@@ -3808,8 +3851,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1500694611}
-  punchForce: 1000
-  kickForce: 800
+  punchForce: 10
+  kickForce: 10
   upwardForceMultiplier: 0.5
   punchColliderObject: {fileID: 1047652895}
   kickColliderObject: {fileID: 720395001}
@@ -3818,6 +3861,7 @@ MonoBehaviour:
   joystick: {fileID: 790160679}
   moveSpeed: 5
   rotateSpeed: 500
+  hitEffectPrefab: {fileID: 0}
 --- !u!95 &1500694611 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}

@@ -418,8 +418,10 @@
 "Assets/02.Assets/Human Animations/Scripts/SpineProxy.cs"
 "Assets/03.Scripts/AttackColliderHandler.cs"
 "Assets/03.Scripts/GameManager.cs"
+"Assets/03.Scripts/HitSoundConfig.cs"
 "Assets/03.Scripts/Joystick.cs"
 "Assets/03.Scripts/PlayerController.cs"
+"Assets/03.Scripts/SoundManager.cs"
 "Assets/07_InputActions/PlayerInputActions.cs"
 -langversion:9.0
 /deterministic
