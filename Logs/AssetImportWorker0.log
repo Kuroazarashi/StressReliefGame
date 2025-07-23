@@ -1007,3 +1007,43 @@ Memory consumption went from 97.2 MB to 96.4 MB.
 Total: 4.948125 ms (FindLiveObjects: 0.262292 ms CreateObjectMapping: 0.205875 ms MarkObjects: 3.779333 ms  DeleteObjects: 0.700292 ms)
 
 Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 895.165047 seconds.
+  path: Assets/08.Sounds
+  artifactKey: Guid(71867451e7c544545b3e47386277f27f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/08.Sounds using Guid(71867451e7c544545b3e47386277f27f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6a2d768f55af15fea6d7a8a9143c6abb') in 0.011560084 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.592316 seconds.
+  path: Assets/08.Sounds/02.SE
+  artifactKey: Guid(61464ce58ccd74e3f83f738f247d85d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/08.Sounds/02.SE using Guid(61464ce58ccd74e3f83f738f247d85d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '26e25e1d0d7c386fe70ded1596589ec6') in 0.000400208 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.230252 seconds.
+  path: Assets/08.Sounds/02.SE/Punch_S.mp3
+  artifactKey: Guid(be59fee2e2d9d4d0db09864fc4983f17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/08.Sounds/02.SE/Punch_S.mp3 using Guid(be59fee2e2d9d4d0db09864fc4983f17) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0dbdeb95dd9ba3f9d53db957e8cad4ed') in 0.206288541 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 68.691566 seconds.
+  path: Assets/08.Sounds/03.VOICE
+  artifactKey: Guid(d1f271e7fa8da4e1e813ee791b003a20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/08.Sounds/03.VOICE using Guid(d1f271e7fa8da4e1e813ee791b003a20) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3c2d851bfabce10edc2c26724acd05b2') in 0.006195459 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.336752 seconds.
+  path: Assets/08.Sounds/03.VOICE/Voice_test.mp3
+  artifactKey: Guid(112829e364adf452eb1290a7769231c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/08.Sounds/03.VOICE/Voice_test.mp3 using Guid(112829e364adf452eb1290a7769231c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7235901b4b75ef4c6b39b11ab1858231') in 0.01317925 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
