@@ -9,6 +9,16 @@
     "/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/BuiltInPackagesCombined.sha1"
   ],
   "outputs": {
+    "com.unity.2d.sprite@1.0.0": {
+      "name": "com.unity.2d.sprite",
+      "displayName": "2D Sprite",
+      "resolvedPath": "/Users/sakashita_kohei/Desktop/start/repos/StressReliefGame/Library/PackageCache/com.unity.2d.sprite@a1146c20a947",
+      "fingerprint": "a1146c20a94767d627b9db262ae136cedef9c2c7",
+      "editorCompatibility": "2019.2.0a1",
+      "version": "1.0.0",
+      "source": "builtin",
+      "testable": false
+    },
     "com.unity.cinemachine@3.1.4": {
       "name": "com.unity.cinemachine",
       "displayName": "Cinemachine",
