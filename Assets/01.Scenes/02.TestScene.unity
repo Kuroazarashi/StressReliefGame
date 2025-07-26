@@ -3863,7 +3863,10 @@ MonoBehaviour:
   joystick: {fileID: 790160679}
   moveSpeed: 5
   rotateSpeed: 500
-  hitEffectPrefab: {fileID: 0}
+  hitEffectPrefab: {fileID: 162584487599433031, guid: f923e2db444734ec9ad652dd3ca39878, type: 3}
+  swingSoundClip: {fileID: 0}
+  concentrationEffectImage: {fileID: 0}
+  concentrationEffectDuration: 0.1
 --- !u!95 &1500694611 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}

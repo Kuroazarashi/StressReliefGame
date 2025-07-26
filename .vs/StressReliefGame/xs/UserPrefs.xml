@@ -4,16 +4,16 @@
       <File FileName="Assets/07_InputActions/PlayerInputActions.cs" Line="1" Column="1" />
       <File FileName="Assets/03.Scripts/GameManager.cs" />
       <File FileName="Assets/02.Assets/Enviroment/enviroment/Office building/Read me.txt" />
-      <File FileName="Assets/03.Scripts/Joystick.cs" Line="16" Column="6" />
-      <File FileName="Assets/03.Scripts/AttackColliderHandler.cs" Line="16" Column="73" />
+      <File FileName="Assets/03.Scripts/Joystick.cs" />
+      <File FileName="Assets/03.Scripts/AttackColliderHandler.cs" />
       <File FileName="Assets/03.Scripts/PlayerController.cs" Line="326" Column="2" />
-      <File FileName="Assets/03.Scripts/HitSoundConfig.cs" Line="10" Column="2" />
-      <File FileName="Assets/03.Scripts/SoundManager.cs" Line="83" Column="2" />
+      <File FileName="Assets/03.Scripts/HitSoundConfig.cs" />
+      <File FileName="Assets/03.Scripts/SoundManager.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0c85aa77-03e2-4044-b392-1e0461e943e7" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fa4191b9-c07b-409b-906b-2b6f26a5b33b" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

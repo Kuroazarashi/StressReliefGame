@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UI; // UI.Imageを使用するため追加
 
 public class PlayerController : MonoBehaviour
 {
@@ -36,12 +36,15 @@ public class PlayerController : MonoBehaviour
     // === Effects & Sounds Settings ===
     [Header("Effects & Sounds Settings")]
     [SerializeField] private GameObject hitEffectPrefab; // ヒット時に再生するパーティクルエフェクトのプレハブ
-    // private AudioClip hitSoundClip;      // ★削除: SoundManagerで一元管理するため削除
-    // private AudioSource audioSource;     // ★削除: SoundManagerで一元管理するため削除
+    [SerializeField] private AudioClip swingSoundClip; // 空振り時に再生するサウンドクリップ
+    [SerializeField] private Image concentrationEffectImage; // 集中線エフェクトのUI Image
+    [SerializeField] private float concentrationEffectDuration = 0.1f; // 集中線エフェクトの表示時間
 
     // === Private References ===
     private CharacterController characterController; // CharacterControllerへの参照
-    private bool isAttacking = false; // 攻撃中かどうかのフラグを追加
+    private bool isAttacking = false; // 攻撃中かどうかのフラグ
+    private bool hasHitTarget = false; // ★追加: 今回の攻撃で何かにヒットしたかどうかのフラグ
+    private AudioSource playerAudioSource; // ★修正: 空振りSE再生用のAudioSourceを専用変数に
 
     // AwakeはStartより前に呼ばれる
     void Awake()
@@ -69,6 +72,16 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogWarning("Joystick is not assigned in Inspector. Movement will not work.", this);
         }
+
+        // ★修正: 空振りSE再生用のAudioSourceを専用変数に格納
+        playerAudioSource = GetComponent<AudioSource>();
+        if (playerAudioSource == null)
+        {
+            playerAudioSource = gameObject.AddComponent<AudioSource>();
+        }
+        playerAudioSource.loop = false; // ループ再生はしない
+        playerAudioSource.playOnAwake = false; // 自動再生しない
+
 
         // PlayerControllerが自身にアタッチされているパンチ・キックコライダーに
         // 自身のインスタンスと攻撃力を渡す
@@ -118,14 +131,11 @@ public class PlayerController : MonoBehaviour
             kickColliderObject.SetActive(false);
         }
 
-        // ★削除: AudioSourceの取得・初期化はSoundManagerが担当するため不要
-        // audioSource = GetComponent<AudioSource>();
-        // if (audioSource == null)
-        // {
-        //     audioSource = gameObject.AddComponent<AudioSource>();
-        // }
-        // audioSource.loop = false;
-        // audioSource.playOnAwake = false;
+        // 集中線エフェクトの初期状態を非アクティブにする
+        if (concentrationEffectImage != null)
+        {
+            concentrationEffectImage.gameObject.SetActive(false);
+        }
 
         // オリジナルのFixed Delta Timeを保存
         originalFixedDeltaTime = Time.fixedDeltaTime;
@@ -146,6 +156,7 @@ public class PlayerController : MonoBehaviour
             characterController.Move(Vector3.zero);
         }
 
+        // 地面にいるかどうかのチェック (CharacterControllerはPhysics.gravityを自動で適用しないため)
         if (!characterController.isGrounded)
         {
             characterController.Move(Vector3.up * Physics.gravity.y * Time.deltaTime);
@@ -185,10 +196,18 @@ public class PlayerController : MonoBehaviour
         if (!isAttacking)
         {
             isAttacking = true;
+            hasHitTarget = false; // ★追加: 攻撃開始時にヒットフラグをリセット
             Debug.Log("Punch Button Clicked! Playing Punch Animation.");
+            // ★削除: ここでの空振りSE再生は削除
+            // AudioSource currentAudioSource = GetComponent<AudioSource>();
+            // if (swingSoundClip != null && currentAudioSource != null)
+            // {
+            //     currentAudioSource.PlayOneShot(swingSoundClip);
+            // }
+
             if (animator != null)
             {
-                animator.SetTrigger("PunchTrigger"); // ★修正: "Punch" から "PunchTrigger" へ
+                animator.SetTrigger("PunchTrigger");
             }
         }
     }
@@ -217,10 +236,18 @@ public class PlayerController : MonoBehaviour
         if (!isAttacking)
         {
             isAttacking = true;
+            hasHitTarget = false; // ★追加: 攻撃開始時にヒットフラグをリセット
             Debug.Log("Kick Button Clicked! Playing Kick Animation.");
+            // ★削除: ここでの空振りSE再生は削除
+            // AudioSource currentAudioSource = GetComponent<AudioSource>();
+            // if (swingSoundClip != null && currentAudioSource != null)
+            // {
+            //     currentAudioSource.PlayOneShot(swingSoundClip);
+            // }
+
             if (animator != null)
             {
-                animator.SetTrigger("KickTrigger"); // ★修正: "Kick" から "KickTrigger" へ
+                animator.SetTrigger("KickTrigger");
             }
         }
     }
@@ -245,7 +272,15 @@ public class PlayerController : MonoBehaviour
 
     public void ResetAttackState()
     {
+        // ★修正: 攻撃がヒットしなかった場合にのみ空振りSEを再生
+        if (!hasHitTarget && swingSoundClip != null && playerAudioSource != null) // playerAudioSourceを使用
+        {
+            playerAudioSource.PlayOneShot(swingSoundClip);
+            Debug.Log("Swing sound played (miss)!");
+        }
+
         isAttacking = false;
+        hasHitTarget = false; // ★追加: フラグをリセット
         if (punchColliderObject != null) punchColliderObject.SetActive(false);
         if (kickColliderObject != null) kickColliderObject.SetActive(false);
     }
@@ -256,6 +291,8 @@ public class PlayerController : MonoBehaviour
         Rigidbody hitRigidbody = other.GetComponent<Rigidbody>();
         if (hitRigidbody != null)
         {
+            hasHitTarget = true; // ★追加: ヒットしたことを記録
+
             if (hitRigidbody.isKinematic)
             {
                 hitRigidbody.isKinematic = false;
@@ -277,14 +314,14 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    Destroy(effectInstance, 2f);
+                    Destroy(effectInstance, 2f); // ParticleSystemがない場合の安全策
                 }
             }
 
-            // ★修正: SoundManager経由でヒットサウンドを再生
+            // SoundManager経由でヒットサウンドを再生
             if (SoundManager.Instance != null)
             {
-                SoundManager.Instance.PlayHitSound(other.gameObject); // ヒットしたオブジェクトを渡す
+                SoundManager.Instance.PlayHitSound(other.gameObject);
             }
             else
             {
@@ -293,6 +330,12 @@ public class PlayerController : MonoBehaviour
 
             // スローモーション演出を呼び出す
             StartSlowMotion();
+
+            // 集中線エフェクトの表示
+            if (concentrationEffectImage != null)
+            {
+                StartCoroutine(ShowConcentrationEffect());
+            }
 
             Debug.Log($"Hit {other.name} with force {force}!");
         }
@@ -322,5 +365,16 @@ public class PlayerController : MonoBehaviour
     {
         Time.timeScale = 1f;
         Time.fixedDeltaTime = originalFixedDeltaTime;
+    }
+
+    // 集中線エフェクト表示用のコルーチン
+    private IEnumerator ShowConcentrationEffect()
+    {
+        if (concentrationEffectImage != null)
+        {
+            concentrationEffectImage.gameObject.SetActive(true); // 画像をアクティブにする
+            yield return new WaitForSeconds(concentrationEffectDuration); // 指定時間待つ
+            concentrationEffectImage.gameObject.SetActive(false); // 画像を非アクティブにする
+        }
     }
 }
