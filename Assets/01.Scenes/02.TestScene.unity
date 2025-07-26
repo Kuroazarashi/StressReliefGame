@@ -660,8 +660,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dec403598bf04ac88515b3b5467d563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitSoundConfigs: []
-  defaultHitSound: {fileID: 0}
+  hitSoundConfigs:
+  - targetObject: {fileID: 1040843150}
+    hitSoundClip: {fileID: 8300000, guid: 4580959d9e9844c199c8429112cc418c, type: 3}
+  defaultHitSound: {fileID: 8300000, guid: e9c73f84fe27b4e39b890a9e9c86d9fa, type: 3}
 --- !u!1 &419961760
 GameObject:
   m_ObjectHideFlags: 0
