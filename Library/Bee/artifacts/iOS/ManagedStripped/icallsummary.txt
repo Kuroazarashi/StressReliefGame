@@ -133,6 +133,8 @@ UnityEngine.Application::get_isPlaying
 UnityEngine.Application::get_runInBackground
 UnityEngine.Application::OpenURL_Injected
 UnityEngine.Application::get_platform
+UnityEngine.AsyncOperation::InternalDestroy
+UnityEngine.AsyncOperation::InternalSetManagedObject
 UnityEngine.Audio.AudioClipPlayable::InternalCreateAudioClipPlayable_Injected
 UnityEngine.Audio.AudioClipPlayable::SetPauseDelayInternal
 UnityEngine.Audio.AudioClipPlayable::SetSpatialBlendInternal
@@ -148,6 +150,9 @@ UnityEngine.AudioClip::get_samples_Injected
 UnityEngine.AudioClip::get_length_Injected
 UnityEngine.AudioSettings::StartAudioOutput
 UnityEngine.AudioSettings::StopAudioOutput
+UnityEngine.AudioSource::PlayOneShotHelper_Injected
+UnityEngine.AudioSource::set_loop_Injected
+UnityEngine.AudioSource::set_playOnAwake_Injected
 UnityEngine.Avatar::get_humanDescription_Injected
 UnityEngine.AvatarMask::GetHumanoidBodyPartActive_Injected
 UnityEngine.AvatarMask::get_transformCount_Injected
@@ -635,8 +640,10 @@ UnityEngine.Object::FindObjectFromInstanceID_Injected
 UnityEngine.Object::ForceLoadFromInstanceID_Injected
 UnityEngine.Object::Internal_CloneSingleWithParent_Injected
 UnityEngine.Object::Internal_CloneSingle_Injected
+UnityEngine.Object::Internal_InstantiateSingle_Injected
 UnityEngine.Object::DestroyImmediate_Injected
 UnityEngine.Object::Destroy_Injected
+UnityEngine.Object::DontDestroyOnLoad_Injected
 UnityEngine.Object::GetName_Injected
 UnityEngine.Object::SetName_Injected
 UnityEngine.Object::ToString_Injected
@@ -656,6 +663,7 @@ UnityEngine.ParticleSystem::set_randomSeed_Injected
 UnityEngine.ParticleSystem::set_useAutoRandomSeed_Injected
 UnityEngine.ParticleSystem/MainModule::get_loop
 UnityEngine.ParticleSystem/MainModule::get_duration
+UnityEngine.ParticleSystem/MainModule::get_startLifetimeBlittable_Injected
 UnityEngine.ParticleSystem/SubEmittersModule::get_subEmittersCount
 UnityEngine.ParticleSystem/SubEmittersModule::GetSubEmitterSystem_Injected
 UnityEngine.ParticleSystemRenderer::GetMeshes_Injected
@@ -851,6 +859,11 @@ UnityEngine.Rigidbody::set_detectCollisions_Injected
 UnityEngine.Rigidbody::set_isKinematic_Injected
 UnityEngine.Rigidbody2D::get_mass_Injected
 UnityEngine.Rigidbody2D::get_linearVelocity_Injected
+UnityEngine.SceneManagement.Scene::GetNameInternal_Injected
+UnityEngine.SceneManagement.SceneManager::get_sceneCount
+UnityEngine.SceneManagement.SceneManager::GetActiveScene_Injected
+UnityEngine.SceneManagement.SceneManager::GetSceneAt_Injected
+UnityEngine.SceneManagement.SceneManagerAPIInternal::LoadSceneAsyncNameIndexInternal_Injected
 UnityEngine.Screen::get_fullScreen
 UnityEngine.Screen::get_height
 UnityEngine.Screen::get_width

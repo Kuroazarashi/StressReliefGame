@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - GameManager
     - Joystick
     - PlayerController
+    - SoundManager
     Unity.Cinemachine.dll:
     - Unity.Cinemachine.CinemachineBrain
     - Unity.Cinemachine.CinemachineCamera
@@ -36,10 +37,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -53,6 +52,9 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
   serializedClasses:
+    Assembly-CSharp:
+    - GameManager/ScoreEntry
+    - HitSoundConfig
     Unity.Cinemachine:
     - Unity.Cinemachine.CameraTarget
     - Unity.Cinemachine.CinemachineBlendDefinition
@@ -140,6 +142,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 90
@@ -153,45 +157,47 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 26738}
+      Script: {instanceID: 26828}
     - Class: 114
-      Script: {instanceID: 27032}
+      Script: {instanceID: 27124}
     - Class: 114
-      Script: {instanceID: 27364}
+      Script: {instanceID: 27460}
     - Class: 114
-      Script: {instanceID: 27602}
+      Script: {instanceID: 27702}
     - Class: 114
-      Script: {instanceID: 27656}
+      Script: {instanceID: 27756}
     - Class: 114
-      Script: {instanceID: 28458}
+      Script: {instanceID: 28570}
     - Class: 114
-      Script: {instanceID: 28930}
+      Script: {instanceID: 29044}
     - Class: 114
-      Script: {instanceID: 29048}
+      Script: {instanceID: 29162}
     - Class: 114
       Script: {instanceID: 29602}
     - Class: 114
-      Script: {instanceID: 30862}
+      Script: {instanceID: 29720}
     - Class: 114
-      Script: {instanceID: 32030}
+      Script: {instanceID: 30992}
     - Class: 114
-      Script: {instanceID: 32188}
+      Script: {instanceID: 32168}
     - Class: 114
-      Script: {instanceID: 32330}
+      Script: {instanceID: 32326}
     - Class: 114
-      Script: {instanceID: 32470}
+      Script: {instanceID: 32468}
     - Class: 114
-      Script: {instanceID: 32888}
+      Script: {instanceID: 32612}
     - Class: 114
-      Script: {instanceID: 32966}
+      Script: {instanceID: 32838}
     - Class: 114
-      Script: {instanceID: 33458}
+      Script: {instanceID: 33034}
     - Class: 114
-      Script: {instanceID: 33536}
+      Script: {instanceID: 33114}
     - Class: 114
-      Script: {instanceID: 33590}
+      Script: {instanceID: 33610}
     - Class: 114
-      Script: {instanceID: 39982}
+      Script: {instanceID: 33688}
+    - Class: 114
+      Script: {instanceID: 33742}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -205,6 +211,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 205
       Script: {instanceID: 0}
@@ -405,7 +415,7 @@ ScriptsOnlyBuild:
     className: UnityMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 6e2351161763eb4b42bd6c6f989302cc
+      Hash: a7121ae54cf30cb4bf4ca375e10007ef
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameManager
@@ -781,6 +791,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnMoveMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 6dda6b3ad0562747d7896a59446032f5
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AttackColliderHandler
   - hash:
       serializedVersion: 2
       Hash: e2ea44611601de69f4be725bfb72be4b
@@ -1365,6 +1381,12 @@ ScriptsOnlyBuild:
     className: UnityOnTriggerExit2DMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 87fb0d08d2b278b3c4977bcf8287992a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SoundManager
+  - hash:
+      serializedVersion: 2
       Hash: 28fd3d045acc780719a17f02073eb448
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -1425,7 +1447,7 @@ ScriptsOnlyBuild:
     className: RemoteInputPlayerConnection
   - hash:
       serializedVersion: 2
-      Hash: 4c3c9921a940dfcad275c02de14d5c98
+      Hash: 7849a028add21df6580950a7e3c6ed1f
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerController
@@ -1555,6 +1577,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TextMeshPro
+  - hash:
+      serializedVersion: 2
+      Hash: a45b24381960c17767d1035c8035bddc
+    assemblyName: Assembly-CSharp
+    namespaceName: MatthewAssets
+    className: PrefabManager
   - hash:
       serializedVersion: 2
       Hash: 48c646ce0442b8e8e8dd0ebbea1a6837
@@ -1699,12 +1727,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Splines
     namespaceName: UnityEngine.Splines
     className: SplineExtrude
-  - hash:
-      serializedVersion: 2
-      Hash: 485f31cd3e25932ed4202d61e2a0e5dd
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: AttackColliderHandler
   platform: 9
   scenePathNames:
   - Assets/01.Scenes/02.TestScene.unity
