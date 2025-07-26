@@ -19,15 +19,29 @@ public class AttackColliderHandler : MonoBehaviour
 
     void Awake()
     {
-        if (playerController == null)
-        {
-            Debug.LogWarning("PlayerController is not set for AttackColliderHandler on " + gameObject.name + ". Make sure PlayerController assigns itself to this handler.", this);
-        }
+        // ★修正: Awake()でのplayerControllerのnullチェックは削除します。
+        // PlayerController.Awake()がSetPlayerControllerを呼び出す前に
+        // このAttackColliderHandler.Awake()が呼ばれる可能性があるため、
+        // ここでチェックすると誤った警告が出てしまいます。
+        // Start()で改めてnullチェックを行います。
 
         Collider col = GetComponent<Collider>();
         if (col != null && !col.isTrigger)
         {
             Debug.LogWarning(gameObject.name + " collider is not set to Is Trigger. Please enable Is Trigger for attack colliders.");
+        }
+    }
+
+    // ★追加: Start()メソッドでplayerControllerが設定されているか最終確認を行う
+    void Start()
+    {
+        // GameManagerのAwake()はPlayerControllerのAwake()より先に実行されることが保証されないため、
+        // ここでの参照がまだ設定されていない場合がある。
+        // ただし、PlayerControllerから明示的にSetPlayerControllerが呼ばれるため、
+        // 通常はStart()の時点では設定されているはず。
+        if (playerController == null)
+        {
+            Debug.LogError("PlayerController is STILL not set for AttackColliderHandler on " + gameObject.name + ". This should not happen if PlayerController's Awake() ran correctly and assigned it.", this);
         }
     }
 
@@ -62,6 +76,36 @@ public class AttackColliderHandler : MonoBehaviour
             else
             {
                 Debug.LogWarning("GameManager.Instance is null. Cannot add score.");
+            }
+        }
+    }
+    // もしOnCollisionEnterを使っている場合はそちらも考慮する
+    void OnCollisionEnter(Collision collision)
+    {
+        // OnTriggerEnterと同様のロジックを適用
+        if (playerController == null)
+        {
+            Debug.LogWarning("PlayerController is not assigned to AttackColliderHandler on " + gameObject.name + ". Cannot process hit (OnCollisionEnter).", this);
+            return;
+        }
+
+        if (collision.gameObject.CompareTag("Player") || (playerController != null && collision.transform.IsChildOf(playerController.transform)))
+        {
+            return;
+        }
+
+        Rigidbody otherRigidbody = collision.collider.GetComponent<Rigidbody>();
+        if (otherRigidbody != null)
+        {
+            playerController.OnAttackHit(collision.collider, AttackForce);
+
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.AddScore(collision.gameObject, collision.gameObject.tag);
+            }
+            else
+            {
+                Debug.LogWarning("GameManager.Instance is null. Cannot add score (OnCollisionEnter).");
             }
         }
     }

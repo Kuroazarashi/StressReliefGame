@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro; // TextMeshProを使用するために必要
+using UnityEngine.SceneManagement; // ★この行は正しいです
 
 public class GameManager : MonoBehaviour
 {
@@ -124,9 +125,8 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning($"No score value defined for tag: {objTag}. Object: {obj.name}");
         }
 
-        // ★追加: 敵を吹っ飛ばした場合、その時点でゲームクリア
-        // ただし、この段階では「ターゲットとなる敵」のタグが確定していないので、仮に"Enemy"とする
-        if (objTag == "Enemy") // ここはターゲットとなる敵のタグに置き換える
+        // 敵を吹っ飛ばした場合、その時点でゲームクリア
+        if (objTag == "Enemy")
         {
             EndGame(true); // 敵を吹っ飛ばしたのでゲームクリア
         }
@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // ★変更: ゲーム終了処理を一本化し、成功/失敗を引数で渡す
+    // ゲーム終了処理を一本化し、成功/失敗を引数で渡す
     public void EndGame(bool isClear)
     {
         if (!isGameActive) return; // すでにゲームが終了している場合は何もしない
@@ -167,6 +167,9 @@ public class GameManager : MonoBehaviour
             Debug.Log("Game Over! Final Score: " + currentScore + ", Time Expired.");
             // 今後のゲームオーバー画面表示ロジックをここに追加
         }
+
+        Debug.Log($"Game Ended. Current Time.timeScale: {Time.timeScale}"); // この行で値を確認できます
+
         // TODO: ここでリザルト画面などを表示する処理を実装
     }
 
@@ -174,7 +177,8 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f; // 時間を元に戻す
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        // ★ここを修正しました！
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         // シーンをリロードしてゲームをリセット
         // DontDestroyOnLoadを使っているため、GameManager自体はシーンロード後も残りますが、
         // AwakeでInitializeGameが再度呼ばれるため問題ありません。

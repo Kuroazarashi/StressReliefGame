@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic; // HashSetを使用するために追加 (今回は不要だが念のため)
 using UnityEngine;
 using UnityEngine.UI; // UI.Imageを使用するため追加
 
@@ -43,8 +44,8 @@ public class PlayerController : MonoBehaviour
     // === Private References ===
     private CharacterController characterController; // CharacterControllerへの参照
     private bool isAttacking = false; // 攻撃中かどうかのフラグ
-    private bool hasHitTarget = false; // ★追加: 今回の攻撃で何かにヒットしたかどうかのフラグ
-    private AudioSource playerAudioSource; // ★修正: 空振りSE再生用のAudioSourceを専用変数に
+    private bool hasHitTarget = false; // 今回の攻撃で何かにヒットしたかどうかのフラグ
+    private AudioSource playerAudioSource; // 空振りSE再生用のAudioSourceを専用変数に
 
     // AwakeはStartより前に呼ばれる
     void Awake()
@@ -73,7 +74,7 @@ public class PlayerController : MonoBehaviour
             Debug.LogWarning("Joystick is not assigned in Inspector. Movement will not work.", this);
         }
 
-        // ★修正: 空振りSE再生用のAudioSourceを専用変数に格納
+        // 空振りSE再生用のAudioSourceを専用変数に格納
         playerAudioSource = GetComponent<AudioSource>();
         if (playerAudioSource == null)
         {
@@ -82,44 +83,13 @@ public class PlayerController : MonoBehaviour
         playerAudioSource.loop = false; // ループ再生はしない
         playerAudioSource.playOnAwake = false; // 自動再生しない
 
-
+        // --- ★ここから修正・確認箇所★ ---
         // PlayerControllerが自身にアタッチされているパンチ・キックコライダーに
         // 自身のインスタンスと攻撃力を渡す
-        if (punchColliderObject != null)
-        {
-            AttackColliderHandler punchHandler = punchColliderObject.GetComponent<AttackColliderHandler>();
-            if (punchHandler != null)
-            {
-                punchHandler.SetPlayerController(this);
-                punchHandler.AttackForce = punchForce;
-            }
-            else
-            {
-                Debug.LogWarning("AttackColliderHandler not found on Punch Collider Object.", punchColliderObject);
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Punch Collider Object is not assigned in Inspector.", this);
-        }
 
-        if (kickColliderObject != null)
-        {
-            AttackColliderHandler kickHandler = kickColliderObject.GetComponent<AttackColliderHandler>();
-            if (kickHandler != null)
-            {
-                kickHandler.SetPlayerController(this);
-                kickHandler.AttackForce = kickForce;
-            }
-            else
-            {
-                Debug.LogWarning("AttackColliderHandler not found on Kick Collider Object.", kickColliderObject);
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Kick Collider Object is not assigned in Inspector.", this);
-        }
+        SetupAttackColliderHandler(punchColliderObject, punchForce, "Punch");
+        SetupAttackColliderHandler(kickColliderObject, kickForce, "Kick");
+        // --- ★ここまで修正・確認箇所★ ---
 
         // 初期状態で攻撃コライダーを無効にしておく
         if (punchColliderObject != null)
@@ -196,14 +166,8 @@ public class PlayerController : MonoBehaviour
         if (!isAttacking)
         {
             isAttacking = true;
-            hasHitTarget = false; // ★追加: 攻撃開始時にヒットフラグをリセット
+            hasHitTarget = false; // 攻撃開始時にヒットフラグをリセット
             Debug.Log("Punch Button Clicked! Playing Punch Animation.");
-            // ★削除: ここでの空振りSE再生は削除
-            // AudioSource currentAudioSource = GetComponent<AudioSource>();
-            // if (swingSoundClip != null && currentAudioSource != null)
-            // {
-            //     currentAudioSource.PlayOneShot(swingSoundClip);
-            // }
 
             if (animator != null)
             {
@@ -236,14 +200,8 @@ public class PlayerController : MonoBehaviour
         if (!isAttacking)
         {
             isAttacking = true;
-            hasHitTarget = false; // ★追加: 攻撃開始時にヒットフラグをリセット
+            hasHitTarget = false; // 攻撃開始時にヒットフラグをリセット
             Debug.Log("Kick Button Clicked! Playing Kick Animation.");
-            // ★削除: ここでの空振りSE再生は削除
-            // AudioSource currentAudioSource = GetComponent<AudioSource>();
-            // if (swingSoundClip != null && currentAudioSource != null)
-            // {
-            //     currentAudioSource.PlayOneShot(swingSoundClip);
-            // }
 
             if (animator != null)
             {
@@ -272,15 +230,15 @@ public class PlayerController : MonoBehaviour
 
     public void ResetAttackState()
     {
-        // ★修正: 攻撃がヒットしなかった場合にのみ空振りSEを再生
-        if (!hasHitTarget && swingSoundClip != null && playerAudioSource != null) // playerAudioSourceを使用
+        // 攻撃がヒットしなかった場合にのみ空振りSEを再生
+        if (!hasHitTarget && swingSoundClip != null && playerAudioSource != null)
         {
             playerAudioSource.PlayOneShot(swingSoundClip);
             Debug.Log("Swing sound played (miss)!");
         }
 
         isAttacking = false;
-        hasHitTarget = false; // ★追加: フラグをリセット
+        hasHitTarget = false; // フラグをリセット
         if (punchColliderObject != null) punchColliderObject.SetActive(false);
         if (kickColliderObject != null) kickColliderObject.SetActive(false);
     }
@@ -291,7 +249,7 @@ public class PlayerController : MonoBehaviour
         Rigidbody hitRigidbody = other.GetComponent<Rigidbody>();
         if (hitRigidbody != null)
         {
-            hasHitTarget = true; // ★追加: ヒットしたことを記録
+            hasHitTarget = true; // ヒットしたことを記録
 
             if (hitRigidbody.isKinematic)
             {
@@ -375,6 +333,37 @@ public class PlayerController : MonoBehaviour
             concentrationEffectImage.gameObject.SetActive(true); // 画像をアクティブにする
             yield return new WaitForSeconds(concentrationEffectDuration); // 指定時間待つ
             concentrationEffectImage.gameObject.SetActive(false); // 画像を非アクティブにする
+        }
+    }
+
+    // --- PlayerControllerクラスのどこかに以下のヘルパーメソッドを追加してください（Awake()の後や末尾など） ---
+    /// <summary>
+    /// 指定されたコライダーオブジェクトのAttackColliderHandlerを初期設定します。
+    /// </summary>
+    /// <param name="colliderObject">AttackColliderHandlerがアタッチされているゲームオブジェクト。</param>
+    /// <param name="force">この攻撃で適用される力。</param>
+    /// <param name="colliderName">ログ表示用のコライダーの名前（例: "Punch", "Kick"）。</param>
+    private void SetupAttackColliderHandler(GameObject colliderObject, float force, string colliderName)
+    {
+        if (colliderObject != null)
+        {
+            AttackColliderHandler handler = colliderObject.GetComponent<AttackColliderHandler>();
+            if (handler != null)
+            {
+                handler.SetPlayerController(this); // PlayerController自身をセット
+                handler.AttackForce = force;       // 攻撃力をセット
+                Debug.Log($"{colliderName} Collider Handler setup complete for {colliderObject.name}.");
+            }
+            else
+            {
+                // AttackColliderHandlerがコライダーオブジェクトに見つからない場合の警告
+                Debug.LogWarning($"AttackColliderHandler not found on {colliderName} Collider Object: {colliderObject.name}. Please add it.", colliderObject);
+            }
+        }
+        else
+        {
+            // コライダーオブジェクトがInspectorにアサインされていない場合の警告
+            Debug.LogWarning($"{colliderName} Collider Object is not assigned in PlayerController's Inspector. Please assign it.", this);
         }
     }
 }
