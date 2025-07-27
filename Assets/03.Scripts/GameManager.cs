@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     private float currentTime; // 現在の残り時間
     private bool isGameActive = false; // ゲームがアクティブ状態か（タイマーが動いているか）
 
+    // ★追加：EnemyRagdollControllerへの参照
+    private EnemyRagdollController enemyRagdollController;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -39,12 +42,28 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject); // GameManagerはシーン遷移しても破壊されないようにする
 
         UpdateScoreText();
 
         // ★追加: ゲーム開始時にタイマーを初期化し、ゲームをアクティブにする
         InitializeGame();
+
+        // ★追加：シーン内のEnemyオブジェクトを探して、EnemyRagdollControllerの参照を取得
+        // Enemyオブジェクトに"Enemy"タグが付いていることを前提とします
+        GameObject enemyObject = GameObject.FindGameObjectWithTag("Enemy");
+        if (enemyObject != null)
+        {
+            enemyRagdollController = enemyObject.GetComponent<EnemyRagdollController>();
+            if (enemyRagdollController == null)
+            {
+                Debug.LogError("EnemyRagdollController not found on Enemy object with tag 'Enemy'!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Enemy object with tag 'Enemy' not found in scene!");
+        }
     }
 
     void Update()
@@ -75,6 +94,12 @@ public class GameManager : MonoBehaviour
         isGameActive = true; // ゲームをアクティブ状態にする
         UpdateTimerUI(); // 初期タイマー表示を更新
 
+        // ★ラグドールを無効化（アニメーション状態に戻す）
+        if (enemyRagdollController != null)
+        {
+            enemyRagdollController.SetRagdollState(false);
+        }
+
         Debug.Log("Game Started!");
     }
 
@@ -96,7 +121,7 @@ public class GameManager : MonoBehaviour
 
     public void AddScore(GameObject obj, string objTag)
     {
-        // 既存のAddScoreメソッド...
+        // 既にスコア加算済みのオブジェクトか確認
         if (scoredObjects.Contains(obj))
         {
             Debug.Log($"Object {obj.name} (Tag: {objTag}) already scored. No additional points.");
@@ -116,7 +141,7 @@ public class GameManager : MonoBehaviour
         if (scoreToAdd > 0)
         {
             currentScore += scoreToAdd;
-            scoredObjects.Add(obj);
+            scoredObjects.Add(obj); // スコア加算済みリストに追加
             UpdateScoreText();
             Debug.Log($"Score Added! Object: {obj.name} (Tag: {objTag}), Points: {scoreToAdd}, Total Score: {currentScore}");
         }
@@ -128,6 +153,24 @@ public class GameManager : MonoBehaviour
         // 敵を吹っ飛ばした場合、その時点でゲームクリア
         if (objTag == "Enemy")
         {
+            if (enemyRagdollController != null)
+            {
+                enemyRagdollController.SetRagdollState(true); // ラグドールを有効化
+
+                // 吹っ飛ぶ力を加える
+                // 現在のAddScoreにはヒットした位置情報がないため、プレイヤーの位置を基準に仮の力を設定します
+                // プレイヤーの参照をGameManagerに持つか、AttackColliderHandlerからhitPointとforceDirectionを渡す方がより正確です
+                // 今回は仮に、敵の少し上方向から、敵の中心から外側へ押す力を加えます
+                Vector3 forceDirection = (obj.transform.position - transform.position).normalized; // GameManagerから敵への方向
+                // GameManagerの位置が原点付近だと、方向が適切でなくなる可能性があります。
+                // 理想的にはプレイヤーのパンチ/キックが発生した位置からの方向を取得すべきです。
+                // ここでは仮に上方向と少しランダムな横方向の力を混ぜてみます
+                Vector3 pushDirection = (obj.transform.up * 0.5f + Random.insideUnitSphere * 0.2f).normalized; // 上方向+ランダムな横方向
+                float forceMagnitude = 700f; // 吹っ飛ぶ力の大きさ。調整してください。
+                Vector3 hitPoint = obj.transform.position + Vector3.up * 1f; // 敵の中心より少し上
+
+                enemyRagdollController.ApplyForce(pushDirection * forceMagnitude, hitPoint);
+            }
             EndGame(true); // 敵を吹っ飛ばしたのでゲームクリア
         }
     }

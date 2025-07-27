@@ -73,6 +73,7 @@
     <Compile Include="Assets/03.Scripts/GameManager.cs" />
     <Compile Include="Assets/02.Assets/Enviroment/enviroment/Office building/scripts/DoorAction.cs" />
     <Compile Include="Assets/03.Scripts/HitSoundConfig.cs" />
+    <Compile Include="Assets/03.Scripts/EnemyRagdollController.cs" />
     <Compile Include="Assets/07_InputActions/PlayerInputActions.cs" />
     <Compile Include="Assets/03.Scripts/SoundManager.cs" />
   </ItemGroup>
