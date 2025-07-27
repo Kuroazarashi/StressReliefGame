@@ -2,6 +2,8 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AttackColliderHandler
+    - EnemyRagdollController
+    - EnemyStressVisuals
     - GameManager
     - Joystick
     - PlayerController
@@ -28,6 +30,8 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    Unity.TextMeshPro.Editor.dll:
+    - TMPro.EditorUtilities.TMPro_FontAssetCreatorWindow
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
@@ -157,56 +161,64 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 26828}
+      Script: {instanceID: 26832}
     - Class: 114
-      Script: {instanceID: 27124}
+      Script: {instanceID: 27128}
     - Class: 114
-      Script: {instanceID: 27460}
+      Script: {instanceID: 27166}
     - Class: 114
-      Script: {instanceID: 27702}
+      Script: {instanceID: 27466}
     - Class: 114
-      Script: {instanceID: 27756}
+      Script: {instanceID: 27708}
     - Class: 114
-      Script: {instanceID: 28570}
+      Script: {instanceID: 27762}
     - Class: 114
-      Script: {instanceID: 29044}
+      Script: {instanceID: 28576}
     - Class: 114
-      Script: {instanceID: 29162}
+      Script: {instanceID: 29050}
     - Class: 114
-      Script: {instanceID: 29602}
+      Script: {instanceID: 29168}
     - Class: 114
-      Script: {instanceID: 29720}
+      Script: {instanceID: 29608}
     - Class: 114
-      Script: {instanceID: 30992}
+      Script: {instanceID: 29726}
     - Class: 114
-      Script: {instanceID: 32168}
+      Script: {instanceID: 30998}
     - Class: 114
-      Script: {instanceID: 32326}
+      Script: {instanceID: 32174}
     - Class: 114
-      Script: {instanceID: 32468}
+      Script: {instanceID: 32332}
     - Class: 114
-      Script: {instanceID: 32612}
+      Script: {instanceID: 32474}
     - Class: 114
-      Script: {instanceID: 32838}
+      Script: {instanceID: 32618}
     - Class: 114
-      Script: {instanceID: 33034}
+      Script: {instanceID: 32844}
     - Class: 114
-      Script: {instanceID: 33114}
+      Script: {instanceID: 33040}
     - Class: 114
-      Script: {instanceID: 33610}
+      Script: {instanceID: 33120}
     - Class: 114
-      Script: {instanceID: 33688}
+      Script: {instanceID: 33616}
     - Class: 114
-      Script: {instanceID: 33742}
+      Script: {instanceID: 33694}
+    - Class: 114
+      Script: {instanceID: 33748}
+    - Class: 114
+      Script: {instanceID: 34634}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
     - Class: 135
       Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
     - Class: 137
       Script: {instanceID: 0}
     - Class: 143
+      Script: {instanceID: 0}
+    - Class: 144
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -305,6 +317,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.InputSystem
     namespaceName: UnityEngine.InputSystem.Editor
     className: InputActionImporterEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 046392a6d52583cddd0fc6e29b949f64
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: EnemyStressVisuals
   - hash:
       serializedVersion: 2
       Hash: e6f8333cc8a800e2866870a5ef7efc35
@@ -1643,6 +1661,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Cinemachine
     namespaceName: Unity.Cinemachine
     className: CinemachineExternalCamera
+  - hash:
+      serializedVersion: 2
+      Hash: 19ebefd24a2afd404e9a21cb8f65c38b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: EnemyRagdollController
   - hash:
       serializedVersion: 2
       Hash: 83cfda82082c233d96cc677c19f57e07

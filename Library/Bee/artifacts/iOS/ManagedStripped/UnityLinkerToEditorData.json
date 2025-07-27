@@ -863,7 +863,9 @@
           },
           {
             "name": "CapsuleCollider",
-            "scenes": [],
+            "scenes": [
+              "Assets/01.Scenes/02.TestScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -876,7 +878,21 @@
             "icon": null
           },
           {
+            "name": "CharacterJoint",
+            "scenes": [
+              "Assets/01.Scenes/02.TestScene.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "Collider",
+            "scenes": [],
+            "dependencyType": 1,
+            "icon": null
+          },
+          {
+            "name": "Joint",
             "scenes": [],
             "dependencyType": 1,
             "icon": null

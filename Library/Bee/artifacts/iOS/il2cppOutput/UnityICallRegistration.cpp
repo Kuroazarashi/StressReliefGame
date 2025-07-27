@@ -1370,6 +1370,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Collider_get_bounds_Injected();
 		Register_UnityEngine_Collider_get_bounds_Injected();
 
+		//System.Void UnityEngine.Collider::set_enabled_Injected(System.IntPtr,System.Boolean)
+		void Register_UnityEngine_Collider_set_enabled_Injected();
+		Register_UnityEngine_Collider_set_enabled_Injected();
+
 		//System.Void UnityEngine.Collider::set_isTrigger_Injected(System.IntPtr,System.Boolean)
 		void Register_UnityEngine_Collider_set_isTrigger_Injected();
 		Register_UnityEngine_Collider_set_isTrigger_Injected();
@@ -1821,6 +1825,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.IntPtr UnityEngine.GameObject::CreatePrimitive_Injected(UnityEngine.PrimitiveType)
 		void Register_UnityEngine_GameObject_CreatePrimitive_Injected();
 		Register_UnityEngine_GameObject_CreatePrimitive_Injected();
+
+		//System.IntPtr UnityEngine.GameObject::FindGameObjectWithTag_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
+		void Register_UnityEngine_GameObject_FindGameObjectWithTag_Injected();
+		Register_UnityEngine_GameObject_FindGameObjectWithTag_Injected();
 
 		//System.IntPtr UnityEngine.GameObject::GetComponentInChildren_Injected(System.IntPtr,System.Type,System.Boolean)
 		void Register_UnityEngine_GameObject_GetComponentInChildren_Injected();
@@ -2954,6 +2962,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Object_Internal_CloneSingle_Injected();
 		Register_UnityEngine_Object_Internal_CloneSingle_Injected();
 
+		//System.IntPtr UnityEngine.Object::Internal_InstantiateSingleWithParent_Injected(System.IntPtr,System.IntPtr,UnityEngine.Vector3&,UnityEngine.Quaternion&)
+		void Register_UnityEngine_Object_Internal_InstantiateSingleWithParent_Injected();
+		Register_UnityEngine_Object_Internal_InstantiateSingleWithParent_Injected();
+
 		//System.IntPtr UnityEngine.Object::Internal_InstantiateSingle_Injected(System.IntPtr,UnityEngine.Vector3&,UnityEngine.Quaternion&)
 		void Register_UnityEngine_Object_Internal_InstantiateSingle_Injected();
 		Register_UnityEngine_Object_Internal_InstantiateSingle_Injected();
@@ -3598,6 +3610,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Random_InitState();
 		Register_UnityEngine_Random_InitState();
 
+		//System.Void UnityEngine.Random::get_insideUnitSphere_Injected(UnityEngine.Vector3&)
+		void Register_UnityEngine_Random_get_insideUnitSphere_Injected();
+		Register_UnityEngine_Random_get_insideUnitSphere_Injected();
+
 		//System.Void UnityEngine.Random::get_state_Injected(UnityEngine.Random/State&)
 		void Register_UnityEngine_Random_get_state_Injected();
 		Register_UnityEngine_Random_get_state_Injected();
@@ -3930,6 +3946,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Rigidbody_get_mass_Injected();
 		Register_UnityEngine_Rigidbody_get_mass_Injected();
 
+		//System.Void UnityEngine.Rigidbody::AddForceAtPosition_Injected(System.IntPtr,UnityEngine.Vector3&,UnityEngine.Vector3&,UnityEngine.ForceMode)
+		void Register_UnityEngine_Rigidbody_AddForceAtPosition_Injected();
+		Register_UnityEngine_Rigidbody_AddForceAtPosition_Injected();
+
 		//System.Void UnityEngine.Rigidbody::AddForce_Injected(System.IntPtr,UnityEngine.Vector3&,UnityEngine.ForceMode)
 		void Register_UnityEngine_Rigidbody_AddForce_Injected();
 		Register_UnityEngine_Rigidbody_AddForce_Injected();
@@ -3937,6 +3957,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.Rigidbody::get_linearVelocity_Injected(System.IntPtr,UnityEngine.Vector3&)
 		void Register_UnityEngine_Rigidbody_get_linearVelocity_Injected();
 		Register_UnityEngine_Rigidbody_get_linearVelocity_Injected();
+
+		//System.Void UnityEngine.Rigidbody::get_position_Injected(System.IntPtr,UnityEngine.Vector3&)
+		void Register_UnityEngine_Rigidbody_get_position_Injected();
+		Register_UnityEngine_Rigidbody_get_position_Injected();
 
 		//System.Void UnityEngine.Rigidbody::set_detectCollisions_Injected(System.IntPtr,System.Boolean)
 		void Register_UnityEngine_Rigidbody_set_detectCollisions_Injected();
@@ -4913,6 +4937,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.IntPtr UnityEngine.Transform::GetParent_Injected(System.IntPtr)
 		void Register_UnityEngine_Transform_GetParent_Injected();
 		Register_UnityEngine_Transform_GetParent_Injected();
+
+		//System.Void UnityEngine.Transform::Internal_LookAt_Injected(System.IntPtr,UnityEngine.Vector3&,UnityEngine.Vector3&)
+		void Register_UnityEngine_Transform_Internal_LookAt_Injected();
+		Register_UnityEngine_Transform_Internal_LookAt_Injected();
 
 		//System.Void UnityEngine.Transform::InverseTransformDirection_Injected(System.IntPtr,UnityEngine.Vector3&,UnityEngine.Vector3&)
 		void Register_UnityEngine_Transform_InverseTransformDirection_Injected();
