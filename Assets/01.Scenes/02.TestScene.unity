@@ -2209,6 +2209,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1573754110820652382, guid: e7d231af592d5714c8807b8fad8cdd7d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 724509921}
+    - targetCorrespondingSourceObject: {fileID: 1573754110820652382, guid: e7d231af592d5714c8807b8fad8cdd7d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 724509923}
     - targetCorrespondingSourceObject: {fileID: 4629841170739926846, guid: e7d231af592d5714c8807b8fad8cdd7d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 400910675}
@@ -2411,13 +2414,113 @@ MonoBehaviour:
   speechBubblePrefab: {fileID: 1983853921680386962, guid: fdf014c0c08454fce882e4fd970118b5, type: 3}
   speechBubbleSpawnPoint: {fileID: 587722462}
   tauntPhrases:
-  - Test1
-  - Test2
-  - Test3
+  - phrase: Let`s GO!
+    voiceClip: {fileID: 8300000, guid: a9ec7b86205a2452da463376efdb4a59, type: 3}
+  - phrase: Thank you for your help.
+    voiceClip: {fileID: 8300000, guid: 3874312c40a2e4afb92a2ac733b41f97, type: 3}
+  - phrase: This is a tough opponent...
+    voiceClip: {fileID: 8300000, guid: 0a1d1357234a842329887388a0e3410c, type: 3}
   minDisplayTime: 2
   maxDisplayTime: 5
   displayInterval: 7
   speechBubbleCanvasTransform: {fileID: 1699273547}
+--- !u!82 &724509923
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285504555}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &736555250 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1708046807983816, guid: c1e5af2ff42787c4da9691a81d25269e, type: 3}
