@@ -1,7 +1,12 @@
 using System.Collections;
-using System.Collections.Generic; // HashSetを使用するために追加 (今回は不要だが念のため)
+using System.Collections.Generic; // 今回は不要だが念のため
 using UnityEngine;
 using UnityEngine.UI; // UI.Imageを使用するため追加
+using TMPro; // TextMeshProを使用するため追加 // ★追加: TextMeshProを使うために必要★
+
+// SpeechPhraseDataクラスが独立したファイルに存在する場合、
+// そのファイルが同じネームスペースにあるか、またはusingディレクティブで参照できるようにしておく必要があります。
+// 何もネームスペースを指定していなければ、通常はusingは不要です。
 
 public class PlayerController : MonoBehaviour
 {
@@ -41,11 +46,28 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Image concentrationEffectImage; // 集中線エフェクトのUI Image
     [SerializeField] private float concentrationEffectDuration = 0.1f; // 集中線エフェクトの表示時間
 
+    // ★ここから Player Speech Bubble Settings (変更なし、speechBubbleCanvasTransformは残す) ★
+    [Header("Player Speech Bubble Settings")]
+    [SerializeField] private GameObject playerSpeechBubblePrefab; // プレイヤー用吹き出しプレハブ (Enemyと同じものを流用可)
+    [SerializeField] private Transform playerSpeechBubbleSpawnPoint; // プレイヤー用吹き出し生成位置（プレイヤーの頭上などに空のGameObjectを配置）
+    [SerializeField] private SpeechPhraseData[] playerPhrases; // プレイヤーのセリフとボイスの配列
+    [SerializeField] private float playerMinDisplayTime = 1.5f; // プレイヤー吹き出しの最小表示時間
+    [SerializeField] private float playerMaxDisplayTime = 3f;   // プレイヤー吹き出しの最大表示時間
+    [SerializeField] private float playerDisplayInterval = 10f; // プレイヤー吹き出しの表示間隔
+
+    // このフィールドはInspectorから設定されるもので、Awake()で参照されるためコメントアウトしない
+    [SerializeField] private Transform speechBubbleCanvasTransform; // SpeechBubbleCanvas (World Space Canvas) への参照
+    // ★ここまで Player Speech Bubble Settings ★
+
     // === Private References ===
     private CharacterController characterController; // CharacterControllerへの参照
     private bool isAttacking = false; // 攻撃中かどうかのフラグ
     private bool hasHitTarget = false; // 今回の攻撃で何かにヒットしたかどうかのフラグ
-    private AudioSource playerAudioSource; // 空振りSE再生用のAudioSourceを専用変数に
+    private AudioSource playerAudioSource; // 空振りSE再生用のAudioSourceを専用変数に (今回はプレイヤーボイス再生も兼ねる)
+
+    // ★追加点: プレイヤーの吹き出し表示管理用
+    private GameObject currentPlayerSpeechBubble;
+
 
     // AwakeはStartより前に呼ばれる
     void Awake()
@@ -74,7 +96,7 @@ public class PlayerController : MonoBehaviour
             Debug.LogWarning("Joystick is not assigned in Inspector. Movement will not work.", this);
         }
 
-        // 空振りSE再生用のAudioSourceを専用変数に格納
+        // AudioSourceを専用変数に格納 (空振りSEとプレイヤーボイスの両方で使用)
         playerAudioSource = GetComponent<AudioSource>();
         if (playerAudioSource == null)
         {
@@ -83,13 +105,17 @@ public class PlayerController : MonoBehaviour
         playerAudioSource.loop = false; // ループ再生はしない
         playerAudioSource.playOnAwake = false; // 自動再生しない
 
-        // --- ★ここから修正・確認箇所★ ---
-        // PlayerControllerが自身にアタッチされているパンチ・キックコライダーに
-        // 自身のインスタンスと攻撃力を渡す
+        // SpeechBubbleCanvasが設定されているか確認 (プレイヤーの吹き出し用)
+        // 今回の修正で吹き出しの親としては使用しませんが、Inspectorでの設定確認は残しておきます。
+        if (speechBubbleCanvasTransform == null)
+        {
+            Debug.LogWarning("Speech Bubble Canvas Transform is not assigned for Player! Although no longer directly parenting player speech bubbles, this field might be expected for other UI configurations or for other scripts. Please ensure 'SpeechBubbleCanvas' is assigned if needed elsewhere.", this);
+        }
 
+        // --- AttackColliderHandlerの設定 (変更なし) ---
         SetupAttackColliderHandler(punchColliderObject, punchForce, "Punch");
         SetupAttackColliderHandler(kickColliderObject, kickForce, "Kick");
-        // --- ★ここまで修正・確認箇所★ ---
+        // --- AttackColliderHandlerの設定 (変更なし) ---
 
         // 初期状態で攻撃コライダーを無効にしておく
         if (punchColliderObject != null)
@@ -109,6 +135,14 @@ public class PlayerController : MonoBehaviour
 
         // オリジナルのFixed Delta Timeを保存
         originalFixedDeltaTime = Time.fixedDeltaTime;
+    }
+
+    void Start()
+    {
+        // ★ここから追加する処理 (PlayerSpeechBubbleRoutineの開始) ★
+        // プレイヤーの吹き出しコルーチンを開始
+        StartCoroutine(PlayerSpeechBubbleRoutine());
+        // ★ここまで追加する処理★
     }
 
     void Update()
@@ -336,7 +370,87 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // --- PlayerControllerクラスのどこかに以下のヘルパーメソッドを追加してください（Awake()の後や末尾など） ---
+    // ★ここから修正するコルーチン (PlayerSpeechBubbleRoutine) ★
+    // プレイヤーの吹き出しとボイスを管理するコルーチン
+    private IEnumerator PlayerSpeechBubbleRoutine()
+    {
+        while (true)
+        {
+            // まずは設定された間隔だけ待機
+            yield return new WaitForSeconds(playerDisplayInterval);
+
+            // 必要な設定がInspectorで全て行われているかを確認
+            // speechBubbleCanvasTransform のチェックは引き続き行いますが、
+            // 吹き出しの親としては使用しないため、Debug.LogWarning のメッセージを調整しています。
+            if (playerPhrases != null && playerPhrases.Length > 0 && playerSpeechBubblePrefab != null && playerSpeechBubbleSpawnPoint != null)
+            {
+                // 既に吹き出しが表示中であれば、一度破棄する
+                if (currentPlayerSpeechBubble != null)
+                {
+                    Destroy(currentPlayerSpeechBubble);
+                }
+
+                // ランダムなSpeechPhraseDataを選択
+                SpeechPhraseData selectedPhraseData = playerPhrases[Random.Range(0, playerPhrases.Length)];
+
+                // 【ここを修正】: 吹き出しをplayerSpeechBubbleSpawnPointの子として生成
+                // Instantiateのオーバーロードを使い、第2引数にTransformを指定することで親を設定します
+                currentPlayerSpeechBubble = Instantiate(playerSpeechBubblePrefab, playerSpeechBubbleSpawnPoint);
+
+                // 親のTransformに対してローカル座標、回転、スケールをリセットし、吹き出しが正確な位置に表示されるようにします。
+                currentPlayerSpeechBubble.transform.localPosition = Vector3.zero;
+                currentPlayerSpeechBubble.transform.localRotation = Quaternion.identity;
+                currentPlayerSpeechBubble.transform.localScale = Vector3.one; // プレハブの元のスケールを維持したい場合
+
+                // 吹き出しの裏表を考慮し、カメラの逆方向を向かせる
+                // 親がplayerSpeechBubbleSpawnPointになったので、ワールド座標でのLookAtはそのままでOK
+                if (Camera.main != null)
+                {
+                    currentPlayerSpeechBubble.transform.LookAt(Camera.main.transform.position);
+                    currentPlayerSpeechBubble.transform.forward = -currentPlayerSpeechBubble.transform.forward;
+                }
+
+                // 吹き出し内のTextMeshProUGUIコンポーネントを取得し、テキストを設定
+                TMP_Text textComponent = currentPlayerSpeechBubble.GetComponentInChildren<TMP_Text>();
+                if (textComponent != null)
+                {
+                    textComponent.text = selectedPhraseData.phrase;
+                }
+                else
+                {
+                    Debug.LogWarning("TextMeshProUGUI component not found in Player Speech Bubble Prefab's children of " + playerSpeechBubblePrefab.name);
+                }
+
+                // ボイスの再生
+                if (playerAudioSource != null && selectedPhraseData.voiceClip != null)
+                {
+                    playerAudioSource.PlayOneShot(selectedPhraseData.voiceClip);
+                }
+                else if (selectedPhraseData.voiceClip == null)
+                {
+                    Debug.LogWarning("No Voice Clip assigned for player phrase: " + selectedPhraseData.phrase + " on PlayerController.", this);
+                }
+
+                // 吹き出しのランダムな表示時間待機
+                float displayTime = Random.Range(playerMinDisplayTime, playerMaxDisplayTime);
+                yield return new WaitForSeconds(displayTime);
+
+                // 吹き出しを破棄して非表示にする
+                if (currentPlayerSpeechBubble != null)
+                {
+                    Destroy(currentPlayerSpeechBubble);
+                    currentPlayerSpeechBubble = null;
+                }
+            }
+            else
+            {
+                // 設定が不完全な場合でも無限ループが停止しないように、短い時間待機
+                yield return new WaitForSeconds(1f);
+            }
+        }
+    }
+    // ★ここまで修正するコルーチン★
+
     /// <summary>
     /// 指定されたコライダーオブジェクトのAttackColliderHandlerを初期設定します。
     /// </summary>
@@ -351,7 +465,7 @@ public class PlayerController : MonoBehaviour
             if (handler != null)
             {
                 handler.SetPlayerController(this); // PlayerController自身をセット
-                handler.AttackForce = force;       // 攻撃力をセット
+                handler.AttackForce = force;        // 攻撃力をセット
                 Debug.Log($"{colliderName} Collider Handler setup complete for {colliderObject.name}.");
             }
             else

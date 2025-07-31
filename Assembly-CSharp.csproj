@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/02.Assets/Matthew Guz/Hits Effects FREE/Scene Demo/Script/Prefab Manager.cs" />
+    <Compile Include="Assets/03.Scripts/SpeechPhraseData.cs" />
     <Compile Include="Assets/02.Assets/Enviroment/enviroment/Office building/scripts/Door.cs" />
     <Compile Include="Assets/03.Scripts/PlayerController.cs" />
     <Compile Include="Assets/02.Assets/Enviroment/enviroment/Office building/scripts/pass_on_parent.cs" />
