@@ -19,12 +19,6 @@ public class AttackColliderHandler : MonoBehaviour
 
     void Awake()
     {
-        // ★修正: Awake()でのplayerControllerのnullチェックは削除します。
-        // PlayerController.Awake()がSetPlayerControllerを呼び出す前に
-        // このAttackColliderHandler.Awake()が呼ばれる可能性があるため、
-        // ここでチェックすると誤った警告が出てしまいます。
-        // Start()で改めてnullチェックを行います。
-
         Collider col = GetComponent<Collider>();
         if (col != null && !col.isTrigger)
         {
@@ -32,13 +26,9 @@ public class AttackColliderHandler : MonoBehaviour
         }
     }
 
-    // ★追加: Start()メソッドでplayerControllerが設定されているか最終確認を行う
     void Start()
     {
-        // GameManagerのAwake()はPlayerControllerのAwake()より先に実行されることが保証されないため、
-        // ここでの参照がまだ設定されていない場合がある。
-        // ただし、PlayerControllerから明示的にSetPlayerControllerが呼ばれるため、
-        // 通常はStart()の時点では設定されているはず。
+        // PlayerControllerがSetPlayerControllerを呼び出すため、Startの時点では設定されているはず
         if (playerController == null)
         {
             Debug.LogError("PlayerController is STILL not set for AttackColliderHandler on " + gameObject.name + ". This should not happen if PlayerController's Awake() ran correctly and assigned it.", this);
@@ -48,6 +38,27 @@ public class AttackColliderHandler : MonoBehaviour
     // Trigger設定されたコライダーが他のコライダーと衝突したときに呼び出される
     void OnTriggerEnter(Collider other)
     {
+        ProcessHit(other);
+    }
+
+    // もしOnCollisionEnterを使っている場合はそちらも考慮する
+    void OnCollisionEnter(Collision collision)
+    {
+        ProcessHit(collision.collider);
+    }
+
+    /// <summary>
+    /// 衝突処理を一本化するためのプライベートメソッド
+    /// </summary>
+    /// <param name="other">衝突したコライダー</param>
+    private void ProcessHit(Collider other)
+    {
+        // ゲームが終了していたら何もしない
+        if (GameManager.Instance != null && GameManager.Instance.IsGameEnded()) // isGameEndedのpublicメソッドを追加する必要があります
+        {
+            return;
+        }
+
         if (playerController == null)
         {
             Debug.LogWarning("PlayerController is not assigned to AttackColliderHandler on " + gameObject.name + ". Cannot process hit.", this);
@@ -67,8 +78,7 @@ public class AttackColliderHandler : MonoBehaviour
             // PlayerControllerのOnAttackHitメソッドを呼び出し、力を加える
             playerController.OnAttackHit(other, AttackForce);
 
-            // ★追加: GameManagerのAddScoreメソッドを呼び出してスコアを加算する
-            // Hitしたオブジェクトとそのオブジェクトのタグを渡す
+            // GameManagerにスコア加算を通知
             if (GameManager.Instance != null)
             {
                 GameManager.Instance.AddScore(other.gameObject, other.tag);
@@ -76,36 +86,6 @@ public class AttackColliderHandler : MonoBehaviour
             else
             {
                 Debug.LogWarning("GameManager.Instance is null. Cannot add score.");
-            }
-        }
-    }
-    // もしOnCollisionEnterを使っている場合はそちらも考慮する
-    void OnCollisionEnter(Collision collision)
-    {
-        // OnTriggerEnterと同様のロジックを適用
-        if (playerController == null)
-        {
-            Debug.LogWarning("PlayerController is not assigned to AttackColliderHandler on " + gameObject.name + ". Cannot process hit (OnCollisionEnter).", this);
-            return;
-        }
-
-        if (collision.gameObject.CompareTag("Player") || (playerController != null && collision.transform.IsChildOf(playerController.transform)))
-        {
-            return;
-        }
-
-        Rigidbody otherRigidbody = collision.collider.GetComponent<Rigidbody>();
-        if (otherRigidbody != null)
-        {
-            playerController.OnAttackHit(collision.collider, AttackForce);
-
-            if (GameManager.Instance != null)
-            {
-                GameManager.Instance.AddScore(collision.gameObject, collision.gameObject.tag);
-            }
-            else
-            {
-                Debug.LogWarning("GameManager.Instance is null. Cannot add score (OnCollisionEnter).");
             }
         }
     }
