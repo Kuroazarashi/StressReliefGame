@@ -10,13 +10,13 @@
       <File FileName="Assets/03.Scripts/HitSoundConfig.cs" />
       <File FileName="Assets/03.Scripts/SoundManager.cs" />
       <File FileName="Assets/03.Scripts/EnemyRagdollController.cs" />
-      <File FileName="Assets/03.Scripts/EnemyStressVisuals.cs" Line="174" Column="2" />
-      <File FileName="Assets/03.Scripts/SpeechPhraseData.cs" Line="9" Column="2" />
+      <File FileName="Assets/03.Scripts/EnemyStressVisuals.cs" />
+      <File FileName="Assets/03.Scripts/SpeechPhraseData.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="022f6ecf-c2d7-4631-8fd6-1eefb9306370" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7e999cc7-5e94-43b5-9489-78e1adbaa78a" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
