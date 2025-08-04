@@ -57,8 +57,10 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
   serializedClasses:
     Assembly-CSharp:
+    - EnemyStressVisuals/SpeechPhraseData
     - GameManager/ScoreEntry
     - HitSoundConfig
+    - SpeechPhraseData
     Unity.Cinemachine:
     - Unity.Cinemachine.CameraTarget
     - Unity.Cinemachine.CinemachineBlendDefinition
@@ -146,6 +148,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
     - Class: 89
@@ -161,51 +165,51 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 26832}
+      Script: {instanceID: 26834}
     - Class: 114
-      Script: {instanceID: 27128}
+      Script: {instanceID: 27130}
     - Class: 114
-      Script: {instanceID: 27166}
+      Script: {instanceID: 27168}
     - Class: 114
-      Script: {instanceID: 27466}
+      Script: {instanceID: 27468}
     - Class: 114
-      Script: {instanceID: 27708}
+      Script: {instanceID: 27710}
     - Class: 114
-      Script: {instanceID: 27762}
+      Script: {instanceID: 27764}
     - Class: 114
-      Script: {instanceID: 28576}
+      Script: {instanceID: 28578}
     - Class: 114
-      Script: {instanceID: 29050}
+      Script: {instanceID: 29052}
     - Class: 114
-      Script: {instanceID: 29168}
+      Script: {instanceID: 29170}
     - Class: 114
-      Script: {instanceID: 29608}
+      Script: {instanceID: 29610}
     - Class: 114
-      Script: {instanceID: 29726}
+      Script: {instanceID: 29728}
     - Class: 114
-      Script: {instanceID: 30998}
+      Script: {instanceID: 31000}
     - Class: 114
-      Script: {instanceID: 32174}
+      Script: {instanceID: 32176}
     - Class: 114
-      Script: {instanceID: 32332}
+      Script: {instanceID: 32334}
     - Class: 114
-      Script: {instanceID: 32474}
+      Script: {instanceID: 32476}
     - Class: 114
-      Script: {instanceID: 32618}
+      Script: {instanceID: 32620}
     - Class: 114
-      Script: {instanceID: 32844}
+      Script: {instanceID: 32846}
     - Class: 114
-      Script: {instanceID: 33040}
+      Script: {instanceID: 33042}
     - Class: 114
-      Script: {instanceID: 33120}
+      Script: {instanceID: 33122}
     - Class: 114
-      Script: {instanceID: 33616}
+      Script: {instanceID: 33620}
     - Class: 114
-      Script: {instanceID: 33694}
+      Script: {instanceID: 33698}
     - Class: 114
-      Script: {instanceID: 33748}
+      Script: {instanceID: 33752}
     - Class: 114
-      Script: {instanceID: 34634}
+      Script: {instanceID: 34638}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -319,7 +323,7 @@ ScriptsOnlyBuild:
     className: InputActionImporterEditor
   - hash:
       serializedVersion: 2
-      Hash: 046392a6d52583cddd0fc6e29b949f64
+      Hash: 7b7b3404340f43f43789119b9274de74
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: EnemyStressVisuals
@@ -1465,7 +1469,7 @@ ScriptsOnlyBuild:
     className: RemoteInputPlayerConnection
   - hash:
       serializedVersion: 2
-      Hash: 7849a028add21df6580950a7e3c6ed1f
+      Hash: a7e2d8ab8c64eb597ea95335ac08f730
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerController
