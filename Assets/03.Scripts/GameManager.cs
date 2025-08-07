@@ -275,12 +275,19 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    // ★修正: タイトル画面に戻るためのメソッド
+    // タイトル画面に戻るためのメソッド
     public void ReturnToTitle()
     {
         Debug.Log("Return to Title button clicked!");
-
         Destroy(gameObject);
         SceneManager.LoadScene("00.TitleScene");
+    }
+
+    // ★追加: ステージ選択画面に戻るためのメソッド
+    public void ReturnToStageSelect()
+    {
+        Debug.Log("Return to Stage Select button clicked!");
+        Destroy(gameObject);
+        SceneManager.LoadScene("02.StageSelectScene");
     }
 }
