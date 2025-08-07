@@ -382,7 +382,6 @@ struct PropertyPathPartU5BU5D_t7994D542F14DDDDEABB1792C335C20149399AEBB;
 struct RigidbodyU5BU5D_t052E8AB174C34DFD0EBB5E897554DEBB841CC649;
 struct SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C;
 struct SkeletonBoneU5BU5D_t84722CE071EF9295326D5A84492716DBC7A15A85;
-struct SpeechPhraseDataU5BU5D_t78B8EFD3A7B65F2D0FB63C72BCE29D923B4DA4CC;
 struct SplineU5BU5D_t269793D0AB6970E162127FA63505E9B821B85830;
 struct SplineKnotIndexU5BU5D_t17E465AAE8774D1093C9C413F4CB9D59D50A081E;
 struct StackTraceU5BU5D_t32FBCB20930EAF5BAE3F450FF75228E5450DA0DF;
@@ -450,6 +449,7 @@ struct GUISettings_tF2CA7E8B9F62F1FC013BFF053B5FA2709EBA3847;
 struct GUISkin_t8C65CE1424D4B5D8D73022E266BDAD3BDE8612D9;
 struct GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580;
 struct GUIStyleState_t7A948723D9DCDFD8EE4F418B6EC909C18E023F95;
+struct GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6;
 struct GameObject_t76FEDD663AB33C991A9C9A23129337651094216F;
 struct GenericStack_t1FB49AB7D847C97ABAA97AB232CA416CABD24C49;
 struct Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E;
@@ -1379,6 +1379,17 @@ struct U3CU3Ec__DisplayClass21_0_t9AE48FD34643B3E83D69BD45882795E81C13E0A1  : pu
 {
 	Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* ___callback;
 };
+struct U3CShowResultScreenWithDelayU3Ed__31_t21C4B0BD55227B620D573BA991F24DF935E13A93  : public RuntimeObject
+{
+	int32_t ___U3CU3E1__state;
+	RuntimeObject* ___U3CU3E2__current;
+	GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6* ___U3CU3E4__this;
+	bool ___isClear;
+	float ___U3CdurationU3E5__2;
+	float ___U3CstartU3E5__3;
+	float ___U3CendU3E5__4;
+	float ___U3CelapsedU3E5__5;
+};
 struct ScoreEntry_t0F4A1C143CA73A4FD0809FE055E488E2EE027D5D  : public RuntimeObject
 {
 	String_t* ___objectTag;
@@ -1431,19 +1442,13 @@ struct DataPlayableOutputList_t3996D24C2F8F36EA3325695054C7060BB5CF1D7E  : publi
 	PlayableOutputHandle_tEB217645A8C0356A3AC6F964F283003B9740E883* ___m_Outputs;
 	int32_t ___m_Count;
 };
-struct U3CDoSlowMotionU3Ed__42_tDF68D63ABEFAA58B49C39998903485FD3213B534  : public RuntimeObject
+struct U3CDoSlowMotionU3Ed__34_t7D8DB0390EAD1522129631F70F2BED74B3E22122  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
 	PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95* ___U3CU3E4__this;
 };
-struct U3CPlayerSpeechBubbleRoutineU3Ed__45_t766DA572C39888266ACEC9D321C7B168F3CBDB02  : public RuntimeObject
-{
-	int32_t ___U3CU3E1__state;
-	RuntimeObject* ___U3CU3E2__current;
-	PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95* ___U3CU3E4__this;
-};
-struct U3CShowConcentrationEffectU3Ed__44_t1E4362C15D8E88C0CD9075FDCBA8E39AA19ECCFB  : public RuntimeObject
+struct U3CShowConcentrationEffectU3Ed__36_t4D78E9845D82C485DAFC2E104EEE33E9DB717131  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -8569,6 +8574,13 @@ struct GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6  : public MonoBehav
 	float ___gameDuration;
 	float ___currentTime;
 	bool ___isGameActive;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___resultUI;
+	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___resultScoreText;
+	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___resultMessageText;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___nextStageButton;
+	float ___gameEndDelay;
+	bool ___isGameEnded;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___gameUI;
 	EnemyRagdollController_t162CC808E4E5612C02D59AEF06D0D653C2548E71* ___enemyRagdollController;
 };
 struct GroupTrack_tF8FE0FA9A74536ECFBF0C328194D206A7CAA5A5D  : public TrackAsset_t31E19BE900C90F6616C0D337652C8614CD833B96
@@ -8608,18 +8620,10 @@ struct PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95  : public Mono
 	AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___swingSoundClip;
 	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___concentrationEffectImage;
 	float ___concentrationEffectDuration;
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playerSpeechBubblePrefab;
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___playerSpeechBubbleSpawnPoint;
-	SpeechPhraseDataU5BU5D_t78B8EFD3A7B65F2D0FB63C72BCE29D923B4DA4CC* ___playerPhrases;
-	float ___playerMinDisplayTime;
-	float ___playerMaxDisplayTime;
-	float ___playerDisplayInterval;
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___speechBubbleCanvasTransform;
 	CharacterController_t847C1A2719F60547D7D6077B648D6CE2D1EF3A6A* ___characterController;
 	bool ___isAttacking;
 	bool ___hasHitTarget;
 	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___playerAudioSource;
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___currentPlayerSpeechBubble;
 };
 struct PolygonCollider2D_t7CEFFFEE6522175436B408712B052D236889C89E  : public Collider2D_t6A17BA7734600EF3F26588E9ED903617D5B8EB52
 {
@@ -10686,17 +10690,17 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize5927 = { sizeof(EnemyStressV
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize5928;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize5928 = { sizeof(ScoreEntry_t0F4A1C143CA73A4FD0809FE055E488E2EE027D5D), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize5929;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize5929 = { sizeof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6), -1, sizeof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6_StaticFields), 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize5929 = { sizeof(U3CShowResultScreenWithDelayU3Ed__31_t21C4B0BD55227B620D573BA991F24DF935E13A93), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize5930;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize5930 = { sizeof(HitSoundConfig_t4363514B46B4B58A3D1B722D4DE004619628DF20), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize5930 = { sizeof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6), -1, sizeof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6_StaticFields), 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize5931;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize5931 = { sizeof(Joystick_tE3193C48A43E3F5577CBD4E9A8204BBFF2FEEB7A), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize5931 = { sizeof(HitSoundConfig_t4363514B46B4B58A3D1B722D4DE004619628DF20), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize5932;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize5932 = { sizeof(U3CDoSlowMotionU3Ed__42_tDF68D63ABEFAA58B49C39998903485FD3213B534), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize5932 = { sizeof(Joystick_tE3193C48A43E3F5577CBD4E9A8204BBFF2FEEB7A), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize5933;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize5933 = { sizeof(U3CPlayerSpeechBubbleRoutineU3Ed__45_t766DA572C39888266ACEC9D321C7B168F3CBDB02), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize5933 = { sizeof(U3CDoSlowMotionU3Ed__34_t7D8DB0390EAD1522129631F70F2BED74B3E22122), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize5934;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize5934 = { sizeof(U3CShowConcentrationEffectU3Ed__44_t1E4362C15D8E88C0CD9075FDCBA8E39AA19ECCFB), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize5934 = { sizeof(U3CShowConcentrationEffectU3Ed__36_t4D78E9845D82C485DAFC2E104EEE33E9DB717131), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize5935;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize5935 = { sizeof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize5936;

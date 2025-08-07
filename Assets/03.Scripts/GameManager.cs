@@ -37,11 +37,11 @@ public class GameManager : MonoBehaviour
     public float gameEndDelay = 5.0f;
     private bool isGameEnded = false;
 
-    // ★追加：ゲーム中のUIを格納する変数
+    // ゲーム中のUIを格納する変数
     [Header("Game UI")]
     public GameObject gameUI;
 
-    // ★追加：EnemyRagdollControllerへの参照
+    // EnemyRagdollControllerへの参照
     private EnemyRagdollController enemyRagdollController;
 
     void Awake()
@@ -258,7 +258,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // ★追加: 次のステージに進むためのメソッド
+    // 次のステージに進むためのメソッド
     public void NextStage()
     {
         Debug.Log("Next Stage button clicked!");
@@ -266,22 +266,21 @@ public class GameManager : MonoBehaviour
         // 例：SceneManager.LoadScene("NextStageSceneName");
     }
 
-    // ★修正: ゲームをリトライするためのメソッド
-    // RestartGameは、GameManagerオブジェクトを破棄してからシーンをロードしていたため、
-    // ButtonのOnClickイベントから呼び出すと、オブジェクトが破棄されてしまい、
-    // シーンロードが正しく行われない可能性があります。
-    // そのため、RetryGameとして新しいメソッドを作成し、
-    // RestartGameメソッドを呼び出すように変更しました。
-    public void RestartGame()
-    {
-        Destroy(gameObject);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
     // リトライボタンクリック時に呼び出されるメソッド
     public void RetryGame()
     {
         Debug.Log("Retry button clicked!");
-        RestartGame();
+        // GameManagerを破棄してから現在のシーンを再ロード
+        Destroy(gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    // ★修正: タイトル画面に戻るためのメソッド
+    public void ReturnToTitle()
+    {
+        Debug.Log("Return to Title button clicked!");
+
+        Destroy(gameObject);
+        SceneManager.LoadScene("00.TitleScene");
     }
 }

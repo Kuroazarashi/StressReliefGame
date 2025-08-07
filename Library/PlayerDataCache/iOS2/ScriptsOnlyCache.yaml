@@ -30,8 +30,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
-    Unity.TextMeshPro.Editor.dll:
-    - TMPro.EditorUtilities.TMPro_FontAssetCreatorWindow
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
@@ -60,7 +58,6 @@ ScriptsOnlyBuild:
     - EnemyStressVisuals/SpeechPhraseData
     - GameManager/ScoreEntry
     - HitSoundConfig
-    - SpeechPhraseData
     Unity.Cinemachine:
     - Unity.Cinemachine.CameraTarget
     - Unity.Cinemachine.CinemachineBlendDefinition
@@ -113,6 +110,12 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: PlayerController
     methodName: OnKickButtonClick
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: RetryGame
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: NextStage
   - assembly: Assembly-CSharp
     fullTypeName: PlayerController
     methodName: OnPunchButtonClick
@@ -437,7 +440,7 @@ ScriptsOnlyBuild:
     className: UnityMessageListener
   - hash:
       serializedVersion: 2
-      Hash: a7121ae54cf30cb4bf4ca375e10007ef
+      Hash: f2c06e48555b98f7ed87c8d0f2b343c7
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameManager
@@ -1469,7 +1472,7 @@ ScriptsOnlyBuild:
     className: RemoteInputPlayerConnection
   - hash:
       serializedVersion: 2
-      Hash: a7e2d8ab8c64eb597ea95335ac08f730
+      Hash: 7849a028add21df6580950a7e3c6ed1f
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerController

@@ -3,7 +3,6 @@
 		<type fullname="EnemyStressVisuals/SpeechPhraseData" preserve="nothing" serialized="true"/>
 		<type fullname="GameManager/ScoreEntry" preserve="nothing" serialized="true"/>
 		<type fullname="HitSoundConfig" preserve="nothing" serialized="true"/>
-		<type fullname="SpeechPhraseData" preserve="nothing" serialized="true"/>
 	</assembly>
 	<assembly fullname="Unity.Cinemachine">
 		<type fullname="Unity.Cinemachine.CameraTarget" preserve="nothing" serialized="true"/>

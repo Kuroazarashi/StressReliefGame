@@ -14,7 +14,31 @@
     },
     {
       "Type": 0,
-      "Text": "[Unity.InputSystem] - System.Void UnityEngine.InputSystem.FastTouchscreen::.ctor() - High Variable Count of 315"
+      "Text": "[UnityEngine.TextCoreTextEngineModule] - System.Boolean UnityEngine.TextCore.Text.TextGenerator::ValidateHtmlTag(UnityEngine.TextCore.Text.TextProcessingElement[],System.Int32,System.Int32\u0026,UnityEngine.TextCore.Text.TextGenerationSettings,UnityEngine.TextCore.Text.TextInfo,System.Boolean\u0026) - High Variable Count of 248"
+    },
+    {
+      "Type": 0,
+      "Text": "[UnityEngine.TextCoreTextEngineModule] - System.Boolean UnityEngine.TextCore.Text.TextGenerator::ValidateHtmlTag(UnityEngine.TextCore.Text.TextProcessingElement[],System.Int32,System.Int32\u0026,UnityEngine.TextCore.Text.TextGenerationSettings,UnityEngine.TextCore.Text.TextInfo,System.Boolean\u0026) - High Instruction Count of 6212"
+    },
+    {
+      "Type": 0,
+      "Text": "[UnityEngine.TextCoreTextEngineModule] - System.Boolean UnityEngine.TextCore.Text.TextGenerator::ValidateHtmlTag(UnityEngine.TextCore.Text.TextProcessingElement[],System.Int32,System.Int32\u0026,UnityEngine.TextCore.Text.TextGenerationSettings,UnityEngine.TextCore.Text.TextInfo,System.Boolean\u0026) - High CodeSize of 17548"
+    },
+    {
+      "Type": 0,
+      "Text": "[UnityEngine.TextCoreTextEngineModule] - System.Void UnityEngine.TextCore.Text.TextGenerator::ParsingPhase(UnityEngine.TextCore.Text.TextInfo,UnityEngine.TextCore.Text.TextGenerationSettings,System.UInt32\u0026,System.Single\u0026) - High Variable Count of 301"
+    },
+    {
+      "Type": 0,
+      "Text": "[UnityEngine.TextCoreTextEngineModule] - System.Void UnityEngine.TextCore.Text.TextGenerator::ParsingPhase(UnityEngine.TextCore.Text.TextInfo,UnityEngine.TextCore.Text.TextGenerationSettings,System.UInt32\u0026,System.Single\u0026) - High Instruction Count of 5782"
+    },
+    {
+      "Type": 0,
+      "Text": "[UnityEngine.TextCoreTextEngineModule] - System.Void UnityEngine.TextCore.Text.TextGenerator::ParsingPhase(UnityEngine.TextCore.Text.TextInfo,UnityEngine.TextCore.Text.TextGenerationSettings,System.UInt32\u0026,System.Single\u0026) - High CodeSize of 15064"
+    },
+    {
+      "Type": 0,
+      "Text": "[UnityEngine.TextCoreTextEngineModule] - UnityEngine.Vector2 UnityEngine.TextCore.Text.TextGenerator::CalculatePreferredValues(System.Single\u0026,UnityEngine.Vector2,System.Boolean,UnityEngine.TextCore.Text.TextGenerationSettings,UnityEngine.TextCore.Text.TextInfo) - High Variable Count of 207"
     },
     {
       "Type": 0,
@@ -50,31 +74,7 @@
     },
     {
       "Type": 0,
-      "Text": "[UnityEngine.TextCoreTextEngineModule] - System.Boolean UnityEngine.TextCore.Text.TextGenerator::ValidateHtmlTag(UnityEngine.TextCore.Text.TextProcessingElement[],System.Int32,System.Int32\u0026,UnityEngine.TextCore.Text.TextGenerationSettings,UnityEngine.TextCore.Text.TextInfo,System.Boolean\u0026) - High Variable Count of 248"
-    },
-    {
-      "Type": 0,
-      "Text": "[UnityEngine.TextCoreTextEngineModule] - System.Boolean UnityEngine.TextCore.Text.TextGenerator::ValidateHtmlTag(UnityEngine.TextCore.Text.TextProcessingElement[],System.Int32,System.Int32\u0026,UnityEngine.TextCore.Text.TextGenerationSettings,UnityEngine.TextCore.Text.TextInfo,System.Boolean\u0026) - High Instruction Count of 6212"
-    },
-    {
-      "Type": 0,
-      "Text": "[UnityEngine.TextCoreTextEngineModule] - System.Boolean UnityEngine.TextCore.Text.TextGenerator::ValidateHtmlTag(UnityEngine.TextCore.Text.TextProcessingElement[],System.Int32,System.Int32\u0026,UnityEngine.TextCore.Text.TextGenerationSettings,UnityEngine.TextCore.Text.TextInfo,System.Boolean\u0026) - High CodeSize of 17548"
-    },
-    {
-      "Type": 0,
-      "Text": "[UnityEngine.TextCoreTextEngineModule] - System.Void UnityEngine.TextCore.Text.TextGenerator::ParsingPhase(UnityEngine.TextCore.Text.TextInfo,UnityEngine.TextCore.Text.TextGenerationSettings,System.UInt32\u0026,System.Single\u0026) - High Variable Count of 301"
-    },
-    {
-      "Type": 0,
-      "Text": "[UnityEngine.TextCoreTextEngineModule] - System.Void UnityEngine.TextCore.Text.TextGenerator::ParsingPhase(UnityEngine.TextCore.Text.TextInfo,UnityEngine.TextCore.Text.TextGenerationSettings,System.UInt32\u0026,System.Single\u0026) - High Instruction Count of 5782"
-    },
-    {
-      "Type": 0,
-      "Text": "[UnityEngine.TextCoreTextEngineModule] - System.Void UnityEngine.TextCore.Text.TextGenerator::ParsingPhase(UnityEngine.TextCore.Text.TextInfo,UnityEngine.TextCore.Text.TextGenerationSettings,System.UInt32\u0026,System.Single\u0026) - High CodeSize of 15064"
-    },
-    {
-      "Type": 0,
-      "Text": "[UnityEngine.TextCoreTextEngineModule] - UnityEngine.Vector2 UnityEngine.TextCore.Text.TextGenerator::CalculatePreferredValues(System.Single\u0026,UnityEngine.Vector2,System.Boolean,UnityEngine.TextCore.Text.TextGenerationSettings,UnityEngine.TextCore.Text.TextInfo) - High Variable Count of 207"
+      "Text": "[Unity.InputSystem] - System.Void UnityEngine.InputSystem.FastTouchscreen::.ctor() - High Variable Count of 315"
     }
   ],
   "CommandLine": "--convert-to-cpp --assembly=Library/Bee/artifacts/iOS/ManagedStripped/Assembly-CSharp.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/Mono.Security.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/mscorlib.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/System.Configuration.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/System.Core.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/System.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/System.Xml.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/Unity.Cinemachine.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/Unity.InputSystem.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/Unity.InputSystem.ForUI.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/Unity.Mathematics.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/Unity.Splines.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/Unity.TextMeshPro.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/Unity.Timeline.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.AIModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.AndroidJNIModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.AnimationModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.AudioModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.CoreModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.DirectorModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.GameCenterModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.GridModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.HierarchyCoreModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.IMGUIModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.InputForUIModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.InputLegacyModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.InputModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.JSONSerializeModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.ParticleSystemModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.Physics2DModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.PhysicsModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.PropertiesModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.SharedInternalsModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.SpriteShapeModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.SubsystemsModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.TextCoreFontEngineModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.TextCoreTextEngineModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.TextRenderingModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.TilemapModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.UI.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.UIElementsModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.UIModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.UnityAnalyticsCommonModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.VRModule.dll --assembly=Library/Bee/artifacts/iOS/ManagedStripped/UnityEngine.XRModule.dll --generatedcppdir=/Users/sakashita_kohei/Desktop/start/repos/StressReliefGame/Library/Bee/artifacts/iOS/il2cppOutput/cpp --symbols-folder=/Users/sakashita_kohei/Desktop/start/repos/StressReliefGame/Library/Bee/artifacts/iOS/il2cppOutput/cpp/Symbols --enable-analytics --emit-null-checks --enable-array-bounds-check --dotnetprofile=unityaot-macos --usymtool-path=/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Tools/macosx/usymtool --profiler-report --profiler-output-file=/Users/sakashita_kohei/Desktop/start/repos/StressReliefGame/Library/Bee/artifacts/il2cpp_conv_jtys.traceevents --print-command-line --static-lib-il2-cpp --data-folder=/Users/sakashita_kohei/Desktop/start/repos/StressReliefGame/Library/Bee/artifacts/iOS/il2cppOutput/data"

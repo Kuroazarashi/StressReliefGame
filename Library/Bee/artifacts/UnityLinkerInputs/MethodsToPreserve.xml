@@ -1,5 +1,9 @@
 <linker>
 	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="GameManager">
+			<method name="NextStage"/>
+			<method name="RetryGame"/>
+		</type>
 		<type fullname="PlayerController">
 			<method name="OnKickButtonClick"/>
 			<method name="OnPunchButtonClick"/>
