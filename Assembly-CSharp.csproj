@@ -75,6 +75,7 @@
     <Compile Include="Assets/02.Assets/Human Animations/Scripts/SpineProxy.cs" />
     <Compile Include="Assets/03.Scripts/Joystick.cs" />
     <Compile Include="Assets/03.Scripts/GameManager.cs" />
+    <Compile Include="Assets/03.Scripts/TitleManager.cs" />
     <Compile Include="Assets/02.Assets/Enviroment/enviroment/Office building/scripts/DoorAction.cs" />
     <Compile Include="Assets/03.Scripts/HitSoundConfig.cs" />
     <Compile Include="Assets/03.Scripts/EnemyRagdollController.cs" />

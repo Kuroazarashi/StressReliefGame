@@ -41,11 +41,9 @@ public class GameManager : MonoBehaviour
     public float gameEndDelay = 5.0f;
     private bool isGameEnded = false;
 
-    // ゲーム中のUIを格納する変数
     [Header("Game UI")]
     public GameObject gameUI;
 
-    // EnemyRagdollControllerへの参照
     private EnemyRagdollController enemyRagdollController;
 
     void Awake()
@@ -57,11 +55,21 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    void Start()
+    void OnDestroy()
     {
-        InitializeGame();
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // 01.TestSceneに遷移した時のみInitializeGameを呼び出す
+        if (scene.name == "01.TestScene")
+        {
+            InitializeGame();
+        }
     }
 
     void Update()
@@ -83,16 +91,33 @@ public class GameManager : MonoBehaviour
 
     public void InitializeGame()
     {
-        currentScore = 0;
-        scoredObjects.Clear();
-        UpdateScoreText();
+        // シーン内のCanvasコンポーネントを直接探す
+        Canvas canvas = FindFirstObjectByType<Canvas>();
 
-        currentTime = gameDuration;
-        isGameActive = true;
-        isGameEnded = false;
-        Time.timeScale = 1.0f;
+        if (canvas != null)
+        {
+            // Canvasの子要素からGameUIとResultUIを探す
+            Transform gameUITransform = canvas.transform.Find("GameUI");
+            if (gameUITransform != null)
+            {
+                gameUI = gameUITransform.gameObject;
+                scoreText = gameUI.transform.Find("ScoreText")?.GetComponent<TextMeshProUGUI>();
+                timerText = gameUI.transform.Find("TimerText")?.GetComponent<TextMeshProUGUI>();
+            }
 
-        UpdateTimerUI();
+            Transform resultUITransform = canvas.transform.Find("ResultUI");
+            if (resultUITransform != null)
+            {
+                resultUI = resultUITransform.gameObject;
+                resultScoreText = resultUI.transform.Find("ResultScoreText")?.GetComponent<TextMeshProUGUI>();
+                resultMessageText = resultUI.transform.Find("ResultMessageText")?.GetComponent<TextMeshProUGUI>();
+                nextStageButton = resultUI.transform.Find("NextStageButton")?.gameObject;
+            }
+        }
+        else
+        {
+            Debug.LogError("Canvas object not found in the scene. Please ensure a Canvas exists.");
+        }
 
         GameObject enemyObject = GameObject.FindGameObjectWithTag("Enemy");
         if (enemyObject != null)
@@ -112,13 +137,22 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Enemy object with tag 'Enemy' not found in scene!");
         }
 
-        // ゲーム開始時にゲーム中のUIを表示
+        currentScore = 0;
+        scoredObjects.Clear();
+        UpdateScoreText();
+
+        currentTime = gameDuration;
+        isGameActive = true;
+        isGameEnded = false;
+        Time.timeScale = 1.0f;
+
+        UpdateTimerUI();
+
         if (gameUI != null)
         {
             gameUI.SetActive(true);
         }
 
-        // リザルトUIを非表示にする
         if (resultUI != null)
         {
             resultUI.SetActive(false);
@@ -248,7 +282,6 @@ public class GameManager : MonoBehaviour
 
     private void ShowResultScreen(bool isClear)
     {
-        // リザルト画面が表示されるときにゲーム中のUIを非表示にする
         if (gameUI != null)
         {
             gameUI.SetActive(false);
@@ -258,20 +291,30 @@ public class GameManager : MonoBehaviour
         {
             resultUI.SetActive(true);
 
-            resultScoreText.text = $"SCORE: {currentScore}";
+            if (resultScoreText != null)
+            {
+                resultScoreText.text = $"SCORE: {currentScore}";
+            }
 
             if (isClear)
             {
-                resultMessageText.text = "Game Clear!";
+                if (resultMessageText != null)
+                {
+                    resultMessageText.text = "Game Clear!";
+                }
+
                 if (nextStageButton != null)
                 {
-                    // 次のステージが存在する場合のみボタンを有効にする
                     nextStageButton.SetActive(stageSettings != null && stageSettings.stages.Count > currentStageIndex + 1);
                 }
             }
             else
             {
-                resultMessageText.text = "Game Over!";
+                if (resultMessageText != null)
+                {
+                    resultMessageText.text = "Game Over!";
+                }
+
                 if (nextStageButton != null)
                 {
                     nextStageButton.SetActive(false);
@@ -280,13 +323,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // 次のステージに進むためのメソッド
     public void NextStage()
     {
         Debug.Log("Next Stage button clicked!");
         if (stageSettings != null && stageSettings.stages.Count > currentStageIndex + 1)
         {
-            Destroy(gameObject);
             SceneManager.LoadScene(stageSettings.stages[currentStageIndex + 1].sceneName);
         }
         else
@@ -295,31 +336,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // リトライボタンクリック時に呼び出されるメソッド
     public void RetryGame()
     {
         Debug.Log("Retry button clicked!");
-        Destroy(gameObject);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    // タイトル画面に戻るためのメソッド
     public void ReturnToTitle()
     {
         Debug.Log("Return to Title button clicked!");
-        Destroy(gameObject);
         SceneManager.LoadScene("00.TitleScene");
     }
 
-    // ステージ選択画面に戻るためのメソッド
     public void ReturnToStageSelect()
     {
         Debug.Log("Return to Stage Select button clicked!");
-        Destroy(gameObject);
         SceneManager.LoadScene("02.StageSelectScene");
     }
 
-    // 外部から現在のステージインデックスを設定するメソッド
     public void SetCurrentStage(int stageIndex)
     {
         currentStageIndex = stageIndex;

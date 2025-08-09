@@ -1536,7 +1536,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1661535341}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: ReturnToTitle
         m_Mode: 1
@@ -2042,62 +2042,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539214098}
   m_CullTransparentMesh: 1
---- !u!1 &1661535340
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1661535342}
-  - component: {fileID: 1661535341}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1661535341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1661535340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11a889f5fe3e24e228db738feb5b5b8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stageSettings: {fileID: 0}
-  currentStageIndex: 0
-  scoreText: {fileID: 0}
-  objectScoreValues: []
-  timerText: {fileID: 0}
-  gameDuration: 180
-  resultUI: {fileID: 0}
-  resultScoreText: {fileID: 0}
-  resultMessageText: {fileID: 0}
-  nextStageButton: {fileID: 0}
-  gameEndDelay: 5
-  gameUI: {fileID: 0}
---- !u!4 &1661535342
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1661535340}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 202.4571, y: 306.68344, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1689824646
 GameObject:
   m_ObjectHideFlags: 0
@@ -2575,7 +2519,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1717032681}
   m_HandleRect: {fileID: 1717032680}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3062,4 +3006,3 @@ SceneRoots:
   - {fileID: 1127272642}
   - {fileID: 471523330}
   - {fileID: 1949022155}
-  - {fileID: 1661535342}
