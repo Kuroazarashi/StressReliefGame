@@ -67,6 +67,7 @@
     <Compile Include="Assets/02.Assets/Enviroment/enviroment/Office building/scripts/Door.cs" />
     <Compile Include="Assets/03.Scripts/PlayerController.cs" />
     <Compile Include="Assets/02.Assets/Enviroment/enviroment/Office building/scripts/pass_on_parent.cs" />
+    <Compile Include="Assets/03.Scripts/StageSelectionManager.cs" />
     <Compile Include="Assets/03.Scripts/EnemyStressVisuals.cs" />
     <Compile Include="Assets/02.Assets/Enviroment/enviroment/Office building/scripts/evelator_controll.cs" />
     <Compile Include="Assets/03.Scripts/AttackColliderHandler.cs" />
