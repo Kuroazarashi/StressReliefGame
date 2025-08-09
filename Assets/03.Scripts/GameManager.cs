@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    [Header("Stage Settings")]
+    public StageSettings stageSettings;
+    [SerializeField] private int currentStageIndex;
+
     [Header("Score Settings")]
     [SerializeField] private TextMeshProUGUI scoreText;
     private int currentScore = 0;
@@ -200,6 +204,23 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         isGameEnded = true;
 
+        if (isClear)
+        {
+            if (stageSettings != null && stageSettings.stages.Count > currentStageIndex)
+            {
+                int scoreToClear = stageSettings.stages[currentStageIndex].scoreToClear;
+                if (currentScore >= scoreToClear)
+                {
+                    int nextStageToUnlock = currentStageIndex + 1;
+                    if (PlayerPrefs.GetInt("ClearedStage", 0) < nextStageToUnlock)
+                    {
+                        PlayerPrefs.SetInt("ClearedStage", nextStageToUnlock);
+                        Debug.Log($"Stage {nextStageToUnlock} unlocked!");
+                    }
+                }
+            }
+        }
+
         Debug.Log($"Game Ended! IsClear: {isClear}, Final Score: {currentScore}");
 
         StartCoroutine(ShowResultScreenWithDelay(isClear));
@@ -244,7 +265,8 @@ public class GameManager : MonoBehaviour
                 resultMessageText.text = "Game Clear!";
                 if (nextStageButton != null)
                 {
-                    nextStageButton.SetActive(true);
+                    // 次のステージが存在する場合のみボタンを有効にする
+                    nextStageButton.SetActive(stageSettings != null && stageSettings.stages.Count > currentStageIndex + 1);
                 }
             }
             else
@@ -262,15 +284,21 @@ public class GameManager : MonoBehaviour
     public void NextStage()
     {
         Debug.Log("Next Stage button clicked!");
-        // ここに次のシーンをロードする処理を実装します。
-        // 例：SceneManager.LoadScene("NextStageSceneName");
+        if (stageSettings != null && stageSettings.stages.Count > currentStageIndex + 1)
+        {
+            Destroy(gameObject);
+            SceneManager.LoadScene(stageSettings.stages[currentStageIndex + 1].sceneName);
+        }
+        else
+        {
+            Debug.LogWarning("Next stage not found or not configured!");
+        }
     }
 
     // リトライボタンクリック時に呼び出されるメソッド
     public void RetryGame()
     {
         Debug.Log("Retry button clicked!");
-        // GameManagerを破棄してから現在のシーンを再ロード
         Destroy(gameObject);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -283,11 +311,17 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("00.TitleScene");
     }
 
-    // ★追加: ステージ選択画面に戻るためのメソッド
+    // ステージ選択画面に戻るためのメソッド
     public void ReturnToStageSelect()
     {
         Debug.Log("Return to Stage Select button clicked!");
         Destroy(gameObject);
         SceneManager.LoadScene("02.StageSelectScene");
+    }
+
+    // 外部から現在のステージインデックスを設定するメソッド
+    public void SetCurrentStage(int stageIndex)
+    {
+        currentStageIndex = stageIndex;
     }
 }

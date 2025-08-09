@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea021eea7baa444dac3966ca0014ebd, type: 3}
+  m_Name: StageSettings
+  m_EditorClassIdentifier: 
+  stages:
+  - stageName: 'Stage 1  '
+    sceneName: 01.TestScene
+    scoreToClear: 500
+  - stageName: Stage 2
+    sceneName: 02.StageSelectScene
+    scoreToClear: 1000
+  - stageName: Stage 3
+    sceneName: 00.TitleScene
+    scoreToClear: 1500

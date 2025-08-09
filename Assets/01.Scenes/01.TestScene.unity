@@ -5411,6 +5411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a889f5fe3e24e228db738feb5b5b8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageSettings: {fileID: 11400000, guid: ac3fdfd341a8c4acf96d182483728f7c, type: 2}
+  currentStageIndex: 0
   scoreText: {fileID: 911790583}
   objectScoreValues:
   - objectTag: Smole
