@@ -856,3 +856,11 @@ Memory consumption went from 100.1 MB to 99.3 MB.
 Total: 4.860500 ms (FindLiveObjects: 0.233125 ms CreateObjectMapping: 0.170542 ms MarkObjects: 3.700375 ms  DeleteObjects: 0.756042 ms)
 
 Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 1541.683151 seconds.
+  path: Assets/02.Assets/UI pack/Button/Blue outline gradient.png
+  artifactKey: Guid(7179ab86b28b8184e8b74e3a0b7fa821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/UI pack/Button/Blue outline gradient.png using Guid(7179ab86b28b8184e8b74e3a0b7fa821) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7e9ae2fc7b4454c6fa0db73cc4aa8ad4') in 0.11977 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
