@@ -1,12 +1,18 @@
 <linker>
 	<assembly fullname="Assembly-CSharp">
 		<type fullname="AttackColliderHandler" preserve="nothing"/>
+		<type fullname="Destructible" preserve="nothing"/>
 		<type fullname="EnemyRagdollController" preserve="nothing"/>
 		<type fullname="EnemyStressVisuals" preserve="nothing"/>
 		<type fullname="GameManager" preserve="nothing"/>
 		<type fullname="Joystick" preserve="nothing"/>
 		<type fullname="PlayerController" preserve="nothing"/>
+		<type fullname="ResultScreenController" preserve="nothing"/>
+		<type fullname="SceneReferences" preserve="nothing"/>
 		<type fullname="SoundManager" preserve="nothing"/>
+		<type fullname="StageSelectionManager" preserve="nothing"/>
+		<type fullname="StageSettings" preserve="nothing"/>
+		<type fullname="TitleManager" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.Cinemachine">
 		<type fullname="Unity.Cinemachine.CinemachineBrain" preserve="nothing"/>
@@ -95,7 +101,13 @@
 		<type fullname="UnityEngine.EventSystems.EventSystem" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Button" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.CanvasScaler" preserve="nothing"/>
+		<type fullname="UnityEngine.UI.ContentSizeFitter" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.GraphicRaycaster" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Image" preserve="nothing"/>
+		<type fullname="UnityEngine.UI.LayoutElement" preserve="nothing"/>
+		<type fullname="UnityEngine.UI.Mask" preserve="nothing"/>
+		<type fullname="UnityEngine.UI.Scrollbar" preserve="nothing"/>
+		<type fullname="UnityEngine.UI.ScrollRect" preserve="nothing"/>
+		<type fullname="UnityEngine.UI.VerticalLayoutGroup" preserve="nothing"/>
 	</assembly>
 </linker>

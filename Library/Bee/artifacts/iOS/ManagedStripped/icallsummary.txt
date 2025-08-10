@@ -150,7 +150,9 @@ UnityEngine.AudioClip::get_samples_Injected
 UnityEngine.AudioClip::get_length_Injected
 UnityEngine.AudioSettings::StartAudioOutput
 UnityEngine.AudioSettings::StopAudioOutput
+UnityEngine.AudioSource::get_isPlaying_Injected
 UnityEngine.AudioSource::PlayOneShotHelper_Injected
+UnityEngine.AudioSource::Stop_Injected
 UnityEngine.AudioSource::set_loop_Injected
 UnityEngine.AudioSource::set_playOnAwake_Injected
 UnityEngine.Avatar::get_humanDescription_Injected
@@ -765,6 +767,8 @@ UnityEngine.PlayerConnectionInternal::PollInternal
 UnityEngine.PlayerConnectionInternal::RegisterInternal_Injected
 UnityEngine.PlayerConnectionInternal::SendMessage_Injected
 UnityEngine.PlayerConnectionInternal::UnregisterInternal_Injected
+UnityEngine.PlayerPrefs::TrySetInt_Injected
+UnityEngine.PlayerPrefs::GetInt_Injected
 UnityEngine.PolygonCollider2D::GetTotalPointCount_Injected
 UnityEngine.PolygonCollider2D::get_pathCount_Injected
 UnityEngine.PolygonCollider2D::GetPath_Internal_Injected

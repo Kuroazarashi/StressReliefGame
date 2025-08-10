@@ -1,12 +1,23 @@
 <linker>
 	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
-		<type fullname="GameManager">
-			<method name="NextStage"/>
-			<method name="RetryGame"/>
-		</type>
 		<type fullname="PlayerController">
 			<method name="OnKickButtonClick"/>
 			<method name="OnPunchButtonClick"/>
+		</type>
+		<type fullname="ResultScreenController">
+			<method name="OnClick_NextStage"/>
+			<method name="OnClick_RetryGame"/>
+			<method name="OnClick_ReturnToStageSelect"/>
+			<method name="OnClick_ReturnToTitle"/>
+		</type>
+		<type fullname="StageSelectionManager">
+			<method name="OnStageSelected"/>
+			<method name="OnStageSelected"/>
+			<method name="OnStageSelected"/>
+			<method name="ReturnToTitle"/>
+		</type>
+		<type fullname="TitleManager">
+			<method name="StartGame"/>
 		</type>
 	</assembly>
 </linker>

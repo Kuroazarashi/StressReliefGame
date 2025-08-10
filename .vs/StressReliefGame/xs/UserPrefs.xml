@@ -1,27 +1,27 @@
 ﻿<Properties StartupConfiguration="{A79F4D05-8018-189D-1E2B-66AE9AB7AA56}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/03.Scripts/ResultScreenController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/03.Scripts/StageSelectionManager.cs">
     <Files>
       <File FileName="Assets/07_InputActions/PlayerInputActions.cs" Line="1" Column="1" />
-      <File FileName="Assets/03.Scripts/GameManager.cs" Line="234" Column="1" />
+      <File FileName="Assets/03.Scripts/GameManager.cs" />
       <File FileName="Assets/02.Assets/Enviroment/enviroment/Office building/Read me.txt" />
-      <File FileName="Assets/03.Scripts/Joystick.cs" Line="1" Column="1" />
-      <File FileName="Assets/03.Scripts/AttackColliderHandler.cs" Line="19" Column="1" />
-      <File FileName="Assets/03.Scripts/PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets/03.Scripts/SoundManager.cs" Line="78" Column="1" />
-      <File FileName="Assets/03.Scripts/EnemyRagdollController.cs" Line="1" Column="1" />
-      <File FileName="Assets/03.Scripts/EnemyStressVisuals.cs" Line="137" Column="6" />
-      <File FileName="Assets/03.Scripts/SpeechPhraseData.cs" Line="1" Column="1" />
-      <File FileName="Assets/03.Scripts/StageSettings.cs" Line="16" Column="2" />
-      <File FileName="Assets/03.Scripts/StageSelectionManager.cs" Line="70" Column="2" />
-      <File FileName="Assets/03.Scripts/TitleManager.cs" Line="11" Column="2" />
-      <File FileName="Assets/03.Scripts/SceneReferences.cs" Line="23" Column="1" />
-      <File FileName="Assets/03.Scripts/Destructible.cs" Line="15" Column="1" />
-      <File FileName="Assets/03.Scripts/ResultScreenController.cs" Line="1" Column="1" />
+      <File FileName="Assets/03.Scripts/Joystick.cs" />
+      <File FileName="Assets/03.Scripts/AttackColliderHandler.cs" />
+      <File FileName="Assets/03.Scripts/PlayerController.cs" />
+      <File FileName="Assets/03.Scripts/SoundManager.cs" />
+      <File FileName="Assets/03.Scripts/EnemyRagdollController.cs" />
+      <File FileName="Assets/03.Scripts/EnemyStressVisuals.cs" />
+      <File FileName="Assets/03.Scripts/SpeechPhraseData.cs" />
+      <File FileName="Assets/03.Scripts/StageSettings.cs" />
+      <File FileName="Assets/03.Scripts/StageSelectionManager.cs" Line="69" Column="1" />
+      <File FileName="Assets/03.Scripts/TitleManager.cs" />
+      <File FileName="Assets/03.Scripts/SceneReferences.cs" />
+      <File FileName="Assets/03.Scripts/Destructible.cs" />
+      <File FileName="Assets/03.Scripts/ResultScreenController.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0e875fa6-f683-4df0-a445-ae1f9f0fdd6f" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7e64abab-01d1-4cc3-8e18-1b84d5ca9af1" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
