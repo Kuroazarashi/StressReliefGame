@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using TMPro; // TextMeshProを使用しているため
+using TMPro;
 
 public class EnemyStressVisuals : MonoBehaviour
 {
@@ -23,9 +23,8 @@ public class EnemyStressVisuals : MonoBehaviour
     [SerializeField] private Transform speechBubbleCanvasTransform;
 
     private GameObject currentSpeechBubble;
-    private bool isDisplayingSpeechBubble = false;
-
     private AudioSource enemyAudioSource;
+    private Coroutine speechBubbleCoroutine; // 実行中のコルーチンを保持するための変数
 
     void Awake()
     {
@@ -63,7 +62,8 @@ public class EnemyStressVisuals : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpeechBubbleRoutine());
+        // 開始したコルーチンを保持しておく
+        speechBubbleCoroutine = StartCoroutine(SpeechBubbleRoutine());
     }
 
     void Update()
@@ -81,6 +81,7 @@ public class EnemyStressVisuals : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
+    // ▼▼▼▼▼ エラーの原因箇所。正しい内容に復元しました ▼▼▼▼▼
     private IEnumerator SpeechBubbleRoutine()
     {
         while (true)
@@ -135,6 +136,34 @@ public class EnemyStressVisuals : MonoBehaviour
             }
         }
     }
+    // ▲▲▲▲▲ ここまで ▲▲▲▲▲
+
+    /// <summary>
+    /// 全てのストレス演出（吹き出し、ボイス）を停止させる公開メソッド
+    /// </summary>
+    public void StopAllVisuals()
+    {
+        // 実行中のコルーチンがあれば停止させる
+        if (speechBubbleCoroutine != null)
+        {
+            StopCoroutine(speechBubbleCoroutine);
+            speechBubbleCoroutine = null; // 保持していたコルーチンをクリア
+        }
+
+        // 表示中の吹き出しがあれば破棄する
+        if (currentSpeechBubble != null)
+        {
+            Destroy(currentSpeechBubble);
+        }
+
+        // ボイスが再生中であれば停止させる
+        if (enemyAudioSource != null && enemyAudioSource.isPlaying)
+        {
+            enemyAudioSource.Stop();
+        }
+
+        // このコンポーネント自体を無効にして、以降のUpdate呼び出しなどを停止する
+        this.enabled = false;
+        Debug.Log("EnemyStressVisuals stopped.");
+    }
 }
-// ▼▼▼▼▼ このファイルにあったSpeechPhraseDataクラスの定義を削除しました ▼▼▼▼▼
-// (SpeechPhraseData.csという専用ファイルで定義されているため、ここでは不要です)

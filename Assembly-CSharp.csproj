@@ -65,6 +65,7 @@
     <Compile Include="Assets/03.Scripts/SpeechPhraseData.cs" />
     <Compile Include="Assets/03.Scripts/StageSettings.cs" />
     <Compile Include="Assets/02.Assets/Enviroment/enviroment/Office building/scripts/Door.cs" />
+    <Compile Include="Assets/02.Assets/UI pack/Scripts/FillValueNumber.cs" />
     <Compile Include="Assets/03.Scripts/PlayerController.cs" />
     <Compile Include="Assets/02.Assets/Enviroment/enviroment/Office building/scripts/pass_on_parent.cs" />
     <Compile Include="Assets/03.Scripts/StageSelectionManager.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Assets/03.Scripts/TitleManager.cs" />
     <Compile Include="Assets/02.Assets/Enviroment/enviroment/Office building/scripts/DoorAction.cs" />
     <Compile Include="Assets/03.Scripts/EnemyRagdollController.cs" />
+    <Compile Include="Assets/03.Scripts/ResultScreenController.cs" />
     <Compile Include="Assets/03.Scripts/SceneReferences.cs" />
     <Compile Include="Assets/07_InputActions/PlayerInputActions.cs" />
     <Compile Include="Assets/03.Scripts/SoundManager.cs" />
@@ -102,6 +104,7 @@
     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
+    <None Include="Assets/02.Assets/UI pack/Documentation.txt" />
     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />

@@ -1536,8 +1536,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 471523331}
+        m_TargetAssemblyTypeName: StageSelectionManager, Assembly-CSharp
         m_MethodName: ReturnToTitle
         m_Mode: 1
         m_Arguments:
@@ -2519,7 +2519,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1717032681}
   m_HandleRect: {fileID: 1717032680}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2875,7 +2875,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1539214099}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

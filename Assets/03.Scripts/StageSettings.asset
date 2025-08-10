@@ -16,9 +16,3 @@ MonoBehaviour:
   - stageName: 'Stage 1  '
     sceneName: 01.TestScene
     scoreToClear: 500
-  - stageName: Stage 2
-    sceneName: 02.StageSelectScene
-    scoreToClear: 1000
-  - stageName: Stage 3
-    sceneName: 00.TitleScene
-    scoreToClear: 1500
