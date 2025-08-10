@@ -1768,9 +1768,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dec403598bf04ac88515b3b5467d563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitSoundConfigs:
-  - targetObject: {fileID: 1040843150}
-    hitSoundClip: {fileID: 8300000, guid: 4580959d9e9844c199c8429112cc418c, type: 3}
+  soundMappings:
+  - soundType: Metal
+    soundClip: {fileID: 8300000, guid: 4580959d9e9844c199c8429112cc418c, type: 3}
   defaultHitSound: {fileID: 8300000, guid: e9c73f84fe27b4e39b890a9e9c86d9fa, type: 3}
 --- !u!1 &419961760
 GameObject:
@@ -4198,6 +4198,10 @@ PrefabInstance:
       value: Locker Prefab
       objectReference: {fileID: 0}
     - target: {fileID: 1048841485201202, guid: 389090492d551b942b78aac876151bf4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1048841485201202, guid: 389090492d551b942b78aac876151bf4, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -4256,6 +4260,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1572946042654244, guid: 389090492d551b942b78aac876151bf4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1040843155}
+    - targetCorrespondingSourceObject: {fileID: 1572946042654244, guid: 389090492d551b942b78aac876151bf4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1040843157}
   m_SourcePrefab: {fileID: 100100000, guid: 389090492d551b942b78aac876151bf4, type: 3}
 --- !u!1 &829299557
 GameObject:
@@ -4806,6 +4813,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4732176876777362, guid: c1e5af2ff42787c4da9691a81d25269e, type: 3}
   m_PrefabInstance: {fileID: 1510611248}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &903893871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 903893873}
+  - component: {fileID: 903893872}
+  m_Layer: 0
+  m_Name: SceneReferences
+  m_TagString: Metal
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &903893872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903893871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20f18898b46bb4b2883f525ccf421956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameUI: {fileID: 1808260109}
+  scoreText: {fileID: 911790583}
+  timerText: {fileID: 880992357}
+  resultUI: {fileID: 1680322099}
+  resultScoreText: {fileID: 1963351710}
+  resultMessageText: {fileID: 829299559}
+  nextStageButton: {fileID: 1794733865}
+  enemyRagdollController: {fileID: 724509919}
+--- !u!4 &903893873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903893871}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 202.4571, y: 306.68344, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &911790582
 GameObject:
   m_ObjectHideFlags: 0
@@ -5413,7 +5472,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageSettings: {fileID: 11400000, guid: ac3fdfd341a8c4acf96d182483728f7c, type: 2}
   currentStageIndex: 0
-  scoreText: {fileID: 911790583}
   objectScoreValues:
   - objectTag: Smole
     scoreValue: 10
@@ -5423,14 +5481,8 @@ MonoBehaviour:
     scoreValue: 50
   - objectTag: Enemy
     scoreValue: 100
-  timerText: {fileID: 880992357}
   gameDuration: 180
-  resultUI: {fileID: 1680322099}
-  resultScoreText: {fileID: 1963351710}
-  resultMessageText: {fileID: 829299559}
-  nextStageButton: {fileID: 1794733865}
   gameEndDelay: 1
-  gameUI: {fileID: 1808260109}
 --- !u!4 &999502037
 Transform:
   m_ObjectHideFlags: 0
@@ -5559,6 +5611,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1040843157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040843150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a67f3f77856c49e290377d7aada77d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 50
+  soundType: Metal
 --- !u!1 &1098679812
 GameObject:
   m_ObjectHideFlags: 0
@@ -11255,3 +11321,4 @@ SceneRoots:
   - {fileID: 569469854}
   - {fileID: 999502037}
   - {fileID: 403586392}
+  - {fileID: 903893873}

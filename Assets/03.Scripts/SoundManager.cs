@@ -1,80 +1,77 @@
-// SoundManager.cs
-using System.Collections.Generic; // List<T>のために必要
+using System.Collections.Generic;
 using UnityEngine;
+
+// SoundManagerがサウンドの種類とクリップを紐づけるための設定クラス
+[System.Serializable]
+public class SoundTypeMapping
+{
+    public string soundType; // "Metal", "Wood"などのサウンドの種類名
+    public AudioClip soundClip;
+}
 
 public class SoundManager : MonoBehaviour
 {
-    public static SoundManager Instance { get; private set; } // シングルトンインスタンス
+    public static SoundManager Instance { get; private set; }
 
-    [Header("Hit Sounds Configuration")]
-    [SerializeField] private List<HitSoundConfig> hitSoundConfigs = new List<HitSoundConfig>(); // オブジェクトとサウンドの紐付けリスト
+    [Header("Sound Library")]
+    [Tooltip("サウンドの種類とオーディオクリップを紐づけるリスト")]
+    [SerializeField] private List<SoundTypeMapping> soundMappings;
+    private Dictionary<string, AudioClip> soundDictionary;
 
-    [Header("Default Sound Settings")]
-    [SerializeField] private AudioClip defaultHitSound; // 紐付けがない場合のデフォルトサウンド
+    [Header("Default Sound Settings")]
+    [SerializeField] private AudioClip defaultHitSound;
 
-    private AudioSource audioSource; // サウンド再生用のAudioSource
+    private AudioSource audioSource;
 
-    private void Awake()
+    private void Awake()
     {
-        // シングルトンパターンの実装
-        if (Instance == null)
+        if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // シーンをまたいで存在させる
-        }
+            DontDestroyOnLoad(gameObject);
+        }
         else
         {
-            Destroy(gameObject); // 既にインスタンスがあれば自身を破棄
-            return;
+            Destroy(gameObject);
+            return;
         }
 
-        // AudioSourceコンポーネントを取得。なければ追加
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
         }
-        audioSource.loop = false; // エフェクト音のためループ再生はしない設定に
-        audioSource.playOnAwake = false; // シーン開始時に自動再生しない
-    }
 
-    // オブジェクトのタグに基づいてヒットサウンドを取得して再生するメソッド
-    public void PlayHitSound(GameObject hitObject)
-    {
-        AudioClip clipToPlay = null;
-
-        // ヒットしたオブジェクトのタグと一致する設定を探す
-        // より厳密にするなら、tagではなくGameObjectそのものや特定のコンポーネントで判断することも可能
-        foreach (var config in hitSoundConfigs)
+        // リストを辞書に変換して、高速にアクセスできるようにする
+        soundDictionary = new Dictionary<string, AudioClip>();
+        foreach (var mapping in soundMappings)
         {
-            // ここではGameObjectのReferenceEqualityComparer（インスタンスの一致）を使用
-            // または、タグで比較する (config.targetObject.CompareTag(hitObject.tag))
-            // もしくは、config.targetObject.name == hitObject.name とか
-            // ヒットしたオブジェクトが設定リストのGameObjectそのもの、またはそのプレハブインスタンスであるかをチェック
-            // ただし、シーン内に配置されているオブジェクト（インスタンス）とInspectorで設定したプレハブを
-            // 正しく比較するには、それぞれの名前やタグを使用する方が確実なことが多い。
-            // ここでは簡易的にNameで比較してみます。より厳密にはTagの利用を推奨。
-            if (config.targetObject != null && hitObject.name.Contains(config.targetObject.name)) // 名前に含まれるかで簡易比較
-            {
-                clipToPlay = config.hitSoundClip;
-                break;
+            if (!soundDictionary.ContainsKey(mapping.soundType))
+            {
+                soundDictionary.Add(mapping.soundType, mapping.soundClip);
+            }
+        }
+    }
+
+    public void PlayHitSound(GameObject hitObject)
+    {
+        AudioClip clipToPlay = defaultHitSound; // デフォルトの音を初期値に
+
+        // ヒットしたオブジェクトがDestructibleコンポーネントを持っているか確認
+        Destructible destructible = hitObject.GetComponent<Destructible>();
+        if (destructible != null)
+        {
+            // soundTypeをキーにして、辞書から対応するサウンドを探す
+            if (soundDictionary.ContainsKey(destructible.soundType))
+            {
+                clipToPlay = soundDictionary[destructible.soundType];
             }
         }
 
-        // 設定が見つからない場合、またはサウンドが設定されていない場合
-        if (clipToPlay == null)
-        {
-            clipToPlay = defaultHitSound; // デフォルトサウンドを再生
-        }
-
-        // サウンドを再生
-        if (clipToPlay != null && audioSource != null)
+        // 見つかったサウンドを再生
+        if (clipToPlay != null)
         {
             audioSource.PlayOneShot(clipToPlay);
-        }
-        else
-        {
-            Debug.LogWarning("No hit sound clip found for " + hitObject.name + " and no default hit sound is set.", this);
         }
     }
 }
