@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour
     public StageSettings stageSettings;
     [SerializeField] private int currentStageIndex;
 
-    [Header("Score Settings")]
-    private int currentScore = 0;
+    [Header("発狂スコア Settings")]
+    private int currentHakkyouScore = 0;
     private HashSet<GameObject> scoredObjects = new HashSet<GameObject>();
 
     [System.Serializable]
@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
 
         enemyRagdollController.SetRagdollState(false);
 
-        currentScore = 0;
+        currentHakkyouScore = 0;
         scoredObjects.Clear();
         UpdateScoreText();
 
@@ -161,7 +161,7 @@ public class GameManager : MonoBehaviour
 
         if (scoreToAdd > 0)
         {
-            currentScore += scoreToAdd;
+            currentHakkyouScore += scoreToAdd;
             scoredObjects.Add(obj);
             UpdateScoreText();
         }
@@ -196,7 +196,8 @@ public class GameManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = "Score: " + currentScore.ToString();
+            // ★変更点：表示文字列を「発狂スコア:」に変更し、数字部分を大きくする
+            scoreText.text = "発狂スコア: <size=200%>" + currentHakkyouScore.ToString() + "</size>";
         }
     }
 
@@ -206,7 +207,8 @@ public class GameManager : MonoBehaviour
         if (resultUI != null)
         {
             resultUI.SetActive(true);
-            if (resultScoreText != null) resultScoreText.text = $"SCORE: {currentScore}";
+            // ★変更点：リザルト画面のスコア表示を「発狂スコア:」に変更し、数字部分を大きくする
+            if (resultScoreText != null) resultScoreText.text = $"発狂スコア: <size=200%>{currentHakkyouScore}</size>";
 
             if (isClear)
             {
@@ -221,9 +223,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public int GetCurrentScore() { return currentScore; }
+    public int GetCurrentScore() { return currentHakkyouScore; }
     public bool IsGameEnded() { return isGameEnded; }
-    public void EndGame(bool isClear) { if (isGameEnded) return; isGameActive = false; isGameEnded = true; if (isClear) { if (stageSettings != null && stageSettings.stages.Count > currentStageIndex) { int scoreToClear = stageSettings.stages[currentStageIndex].scoreToClear; if (currentScore >= scoreToClear) { int nextStageToUnlock = currentStageIndex + 1; if (PlayerPrefs.GetInt("ClearedStage", 0) < nextStageToUnlock) { PlayerPrefs.SetInt("ClearedStage", nextStageToUnlock); Debug.Log($"Stage {nextStageToUnlock} unlocked!"); } } } } Debug.Log($"Game Ended! IsClear: {isClear}, Final Score: {currentScore}"); StartCoroutine(ShowResultScreenWithDelay(isClear)); }
+    public void EndGame(bool isClear) { if (isGameEnded) return; isGameActive = false; isGameEnded = true; if (isClear) { if (stageSettings != null && stageSettings.stages.Count > currentStageIndex) { int scoreToClear = stageSettings.stages[currentStageIndex].scoreToClear; if (currentHakkyouScore >= scoreToClear) { int nextStageToUnlock = currentStageIndex + 1; if (PlayerPrefs.GetInt("ClearedStage", 0) < nextStageToUnlock) { PlayerPrefs.SetInt("ClearedStage", nextStageToUnlock); Debug.Log($"Stage {nextStageToUnlock} unlocked!"); } } } } Debug.Log($"Game Ended! IsClear: {isClear}, Final 発狂スコア: {currentHakkyouScore}"); StartCoroutine(ShowResultScreenWithDelay(isClear)); }
     private IEnumerator ShowResultScreenWithDelay(bool isClear) { float duration = 1.0f; float start = Time.timeScale; float end = 1.0f; float elapsed = 0f; while (elapsed < duration) { elapsed += Time.unscaledDeltaTime; Time.timeScale = Mathf.Lerp(start, end, elapsed / duration); yield return null; } Time.timeScale = 1.0f; yield return new WaitForSecondsRealtime(gameEndDelay); ShowResultScreen(isClear); }
     public void NextStage() { Debug.Log("Next Stage button clicked!"); if (stageSettings != null && stageSettings.stages.Count > currentStageIndex + 1) { SceneManager.LoadScene(stageSettings.stages[currentStageIndex + 1].sceneName); } else { Debug.LogWarning("Next stage not found or not configured!"); } }
     public void RetryGame() { Debug.Log("Retry button clicked!"); SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
