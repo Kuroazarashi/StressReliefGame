@@ -212,7 +212,7 @@ public class GameManager : MonoBehaviour
 
             if (isClear)
             {
-                if (resultMessageText != null) resultMessageText.text = "Game Clear!";
+                if (resultMessageText != null) resultMessageText.text = "スッキリしたか!?";
                 if (nextStageButton != null) nextStageButton.SetActive(stageSettings != null && stageSettings.stages.Count > currentStageIndex + 1);
             }
             else
