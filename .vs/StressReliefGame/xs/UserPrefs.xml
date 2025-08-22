@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{A79F4D05-8018-189D-1E2B-66AE9AB7AA56}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/03.Scripts/GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/03.Scripts/ObjectTransparencer.cs">
     <Files>
       <File FileName="Assets/07_InputActions/PlayerInputActions.cs" Line="1" Column="1" />
       <File FileName="Assets/03.Scripts/GameManager.cs" Line="215" Column="83" />
@@ -17,11 +17,13 @@
       <File FileName="Assets/03.Scripts/SceneReferences.cs" />
       <File FileName="Assets/03.Scripts/Destructible.cs" />
       <File FileName="Assets/03.Scripts/ResultScreenController.cs" />
+      <File FileName="Assets/03.Scripts/CameraObstacleHider.cs" Line="8" Column="28" />
+      <File FileName="Assets/03.Scripts/ObjectTransparencer.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="046b90e8-3414-4104-b25c-3700196b49d3" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4410488f-4e72-47cc-98cf-072943165f75" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
