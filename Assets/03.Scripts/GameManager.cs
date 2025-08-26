@@ -63,7 +63,8 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name.StartsWith("01."))
+        // 01.で始まるシーンだけでなく、010.で始まるシーンでもInitializeGameを呼び出す
+        if (scene.name.StartsWith("01.") || scene.name.StartsWith("010."))
         {
             InitializeGame();
         }
@@ -71,6 +72,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        // GameManagerのUpdateが正常に動いているか確認するためのログ
+        Debug.Log("GameManager Update is running");
+
         if (isGameActive && !isGameEnded)
         {
             currentTime -= Time.deltaTime;

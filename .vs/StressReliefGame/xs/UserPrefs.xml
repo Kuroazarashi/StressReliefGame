@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{A79F4D05-8018-189D-1E2B-66AE9AB7AA56}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/03.Scripts/ObjectTransparencer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/03.Scripts/GameManager.cs">
     <Files>
       <File FileName="Assets/07_InputActions/PlayerInputActions.cs" Line="1" Column="1" />
-      <File FileName="Assets/03.Scripts/GameManager.cs" Line="215" Column="83" />
+      <File FileName="Assets/03.Scripts/GameManager.cs" Line="203" Column="1" />
       <File FileName="Assets/02.Assets/Enviroment/enviroment/Office building/Read me.txt" />
       <File FileName="Assets/03.Scripts/Joystick.cs" />
       <File FileName="Assets/03.Scripts/AttackColliderHandler.cs" />
@@ -17,13 +17,12 @@
       <File FileName="Assets/03.Scripts/SceneReferences.cs" />
       <File FileName="Assets/03.Scripts/Destructible.cs" />
       <File FileName="Assets/03.Scripts/ResultScreenController.cs" />
-      <File FileName="Assets/03.Scripts/CameraObstacleHider.cs" Line="8" Column="28" />
       <File FileName="Assets/03.Scripts/ObjectTransparencer.cs" Line="75" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4410488f-4e72-47cc-98cf-072943165f75" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7dd96539-bab4-4d45-ae7d-e581ef581506" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
