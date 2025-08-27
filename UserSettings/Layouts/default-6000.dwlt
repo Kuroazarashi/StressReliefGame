@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 18
+  controlID: 200
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 19
+  controlID: 201
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 50}
   m_MaxSize: {x: 32384, y: 8096}
   vertical: 0
-  controlID: 20
+  controlID: 121
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 142
+  controlID: 202
   draggingID: 0
 --- !u!114 &13
 MonoBehaviour:
@@ -887,9 +887,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 2.4225059, y: 1.7312018, z: 0.736898}
+    m_Target: {x: 5.33, y: 1.7658925, z: -3.0960615}
     speed: 2
-    m_Value: {x: 2.4225059, y: 1.7312018, z: 0.736898}
+    m_Value: {x: 0.7124202, y: 0.5028378, z: 4.8241267}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -935,13 +935,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.3506434, y: -0.07294464, z: 0.027401755, w: 0.9332658}
+    m_Target: {x: 0.18509543, y: 0.2660068, z: -0.052124497, w: 0.94459665}
     speed: 2
-    m_Value: {x: -0.3506434, y: 0.07294464, z: -0.027401755, w: -0.9332658}
+    m_Value: {x: -0.26784757, y: 0.4622046, z: -0.14876974, w: -0.8321611}
   m_Size:
-    m_Target: 7.9317064
+    m_Target: 2.860116
     speed: 2
-    m_Value: 7.9317064
+    m_Value: 1.4158992
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1016,7 +1016,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 48f5feffc2a2ffff1aa4ffff24a4ffff62a4ffff08a8ffff68a8ffffbaafffff0cb0ffff72b7ffff24bdffff84bdffff2cc0ffff7ec0ffffd0c7fffface3ffff06e4ffff10e4ffff48e4ffff4ee4ffff84e5ffffdeecffff22fbfffff4ffffffb00a0200ee0a0200fa0a02001a11070032110700701107007a11070098110700ee11070070c807007cc8070096c80700aec80700bac8070096730800b2740800167608006e7708008077080058780800
+      m_ExpandedIDs: 70b8ffff72b8ffffc8b8ffffdec4ffff30cdffff34d3ffff1ed8fffff4dffffff6dfffff06fbffff22fbffffaa900000da9100000ec7000026c7000092c900009ac90000b8c9000010ca0000d8cd000086f400009ef40000a8130100b4130100d2130100101401001214010014140100161401001814010020140100281401003c140100ea17010004180100141801001c180100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1440,7 +1440,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/02.Assets/Enviroment/enviroment/Office building/Prefabs
+    - Assets/10.Prefub/02.Items/010.Stage1
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1450,16 +1450,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/02.Assets/Enviroment/enviroment/Office building/Prefabs
+  - Assets/10.Prefub/02.Items/010.Stage1
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/sakashita_kohei/Desktop/start/repos/StressReliefGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 127}
-    m_SelectedIDs: 08230e00
-    m_LastClickedID: 926472
-    m_ExpandedIDs: 0000000022a4000024a4000026a4000028a400002aa400002ca400002ea4000030a4000032a4000034a4000036a4000038a40000
+    scrollPos: {x: 0, y: 559}
+    m_SelectedIDs: d2c00300
+    m_LastClickedID: 245970
+    m_ExpandedIDs: 0000000038a100003aa100003ca100003ea1000040a1000042a1000044a1000046a1000048a100004aa100004ca100004ea10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1488,7 +1488,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000022a4000024a4000026a4000028a400002aa400002ca400002ea4000030a4000032a4000034a4000036a4000038a40000
+    m_ExpandedIDs: 0000000038a100003aa100003ca100003ea1000040a1000042a1000044a1000046a1000048a100004aa100004ca100004ea10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1534,7 +1534,7 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
-      m_ClientGUIView: {fileID: 13}
+      m_ClientGUIView: {fileID: 0}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1542,7 +1542,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 275}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
