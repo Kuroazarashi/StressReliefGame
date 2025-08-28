@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6541064802912130121}
   m_Layer: 0
   m_Name: shelving A prefab
-  m_TagString: Untagged
+  m_TagString: Big
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 7716136124619063327}
   m_Layer: 0
   m_Name: shelving A
-  m_TagString: Untagged
+  m_TagString: Big
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

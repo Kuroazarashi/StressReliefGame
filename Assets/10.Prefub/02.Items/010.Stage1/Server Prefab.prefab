@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 4625502332361885826}
   m_Layer: 0
   m_Name: Server
-  m_TagString: Untagged
+  m_TagString: Big
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -611,7 +611,7 @@ GameObject:
   - component: {fileID: 2861684159649818469}
   m_Layer: 0
   m_Name: Server Prefab
-  m_TagString: Untagged
+  m_TagString: Big
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

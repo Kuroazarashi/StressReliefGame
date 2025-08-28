@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7578714235504841741}
   m_Layer: 0
   m_Name: Couch office 1 Prefab
-  m_TagString: Untagged
+  m_TagString: Middle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 5223943794846478221}
   m_Layer: 0
   m_Name: Couch office 1
-  m_TagString: Untagged
+  m_TagString: Middle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
