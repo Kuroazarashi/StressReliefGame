@@ -1,17 +1,12 @@
 using UnityEngine;
 
 // このスクリプトは、プレイヤーのパンチ/キックコライダーにアタッチされます。
-// コライダーが他のオブジェクト（Rigidbodyを持つ）に衝突した際に、
-// プレイヤーコントローラーのOnAttackHitメソッドを呼び出します。
 public class AttackColliderHandler : MonoBehaviour
 {
-    // プレイヤーのPlayerControllerスクリプトへの参照
     private PlayerController playerController;
+    public float AttackForce { get; set; }
+    private Rigidbody rb;
 
-    // この攻撃コライダーが与える力の種類 (例: PunchForce or KickForce)
-    public float AttackForce { get; set; } // PlayerControllerから設定される攻撃力
-
-    // PlayerControllerからこのコライダーを制御するための参照を設定するメソッド
     public void SetPlayerController(PlayerController controller)
     {
         playerController = controller;
@@ -24,24 +19,31 @@ public class AttackColliderHandler : MonoBehaviour
         {
             Debug.LogWarning(gameObject.name + " collider is not set to Is Trigger. Please enable Is Trigger for attack colliders.");
         }
+
+        rb = GetComponent<Rigidbody>();
+        if (rb == null)
+        {
+            rb = gameObject.AddComponent<Rigidbody>();
+        }
+
+        rb.isKinematic = true;
+        rb.useGravity = false;
+        rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
     }
 
     void Start()
     {
-        // PlayerControllerがSetPlayerControllerを呼び出すため、Startの時点では設定されているはず
         if (playerController == null)
         {
-            Debug.LogError("PlayerController is STILL not set for AttackColliderHandler on " + gameObject.name + ". This should not happen if PlayerController's Awake() ran correctly and assigned it.", this);
+            Debug.LogError("PlayerController is STILL not set for AttackColliderHandler on " + gameObject.name, this);
         }
     }
 
-    // Trigger設定されたコライダーが他のコライダーと衝突したときに呼び出される
     void OnTriggerEnter(Collider other)
     {
         ProcessHit(other);
     }
 
-    // もしOnCollisionEnterを使っている場合はそちらも考慮する
     void OnCollisionEnter(Collision collision)
     {
         ProcessHit(collision.collider);
@@ -50,35 +52,38 @@ public class AttackColliderHandler : MonoBehaviour
     /// <summary>
     /// 衝突処理を一本化するためのプライベートメソッド
     /// </summary>
-    /// <param name="other">衝突したコライダー</param>
     private void ProcessHit(Collider other)
     {
-        // ゲームが終了していたら何もしない
-        if (GameManager.Instance != null && GameManager.Instance.IsGameEnded()) // isGameEndedのpublicメソッドを追加する必要があります
+        if (GameManager.Instance != null && GameManager.Instance.IsGameEnded()) return;
+        if (playerController == null) return;
+        if (other.gameObject.CompareTag("Player") || other.transform.IsChildOf(playerController.transform)) return;
+
+        // ▼▼▼▼▼ ここから下がRaycastによる遮蔽チェック ▼▼▼▼▼
+
+        // Wallsレイヤーを取得 (文字列ではなくLayerMaskで指定するのが確実)
+        int wallLayerMask = LayerMask.GetMask("Walls");
+
+        // プレイヤーの中心あたりから、ヒットしたオブジェクトの中心への方向と距離を計算
+        Vector3 playerCenter = playerController.transform.position + Vector3.up * 1.0f; // 少し高さを調整
+        Vector3 direction = other.transform.position - playerCenter;
+        float distance = direction.magnitude;
+
+        // Raycastを実行
+        if (Physics.Raycast(playerCenter, direction.normalized, out RaycastHit hit, distance, wallLayerMask))
         {
-            return;
+            // RaycastがWallsレイヤーにヒットした場合、それは壁越しの攻撃と判断
+            Debug.Log("Attack blocked by wall: " + hit.collider.name);
+            return; // ヒット処理を中断
         }
 
-        if (playerController == null)
-        {
-            Debug.LogWarning("PlayerController is not assigned to AttackColliderHandler on " + gameObject.name + ". Cannot process hit.", this);
-            return;
-        }
+        // ▲▲▲▲▲ ここまでがRaycastによる遮蔽チェック ▲▲▲▲▲
 
-        // 自分自身（プレイヤーの一部）には反応しないようにする
-        if (other.gameObject.CompareTag("Player") || (playerController != null && other.transform.IsChildOf(playerController.transform)))
-        {
-            return;
-        }
 
-        // 相手がRigidbodyを持っているか確認
         Rigidbody otherRigidbody = other.GetComponent<Rigidbody>();
         if (otherRigidbody != null)
         {
-            // PlayerControllerのOnAttackHitメソッドを呼び出し、力を加える
             playerController.OnAttackHit(other, AttackForce);
 
-            // GameManagerにスコア加算を通知
             if (GameManager.Instance != null)
             {
                 GameManager.Instance.AddScore(other.gameObject, other.tag);
@@ -90,3 +95,4 @@ public class AttackColliderHandler : MonoBehaviour
         }
     }
 }
+
