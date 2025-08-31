@@ -961,3 +961,227 @@ Memory consumption went from 103.8 MB to 102.7 MB.
 Total: 4.395458 ms (FindLiveObjects: 0.223375 ms CreateObjectMapping: 0.151083 ms MarkObjects: 3.403542 ms  DeleteObjects: 0.617000 ms)
 
 Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 376.124229 seconds.
+  path: Assets/02.Assets/WhiteCity
+  artifactKey: Guid(15e1b9b195d0765408618c4755b46069) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity using Guid(15e1b9b195d0765408618c4755b46069) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0827585fa0c361230ab600335b597c08') in 0.000921833 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.455608 seconds.
+  path: Assets/02.Assets/WhiteCity/Prefabs
+  artifactKey: Guid(8db2e67966e6ffe4ab303900b15f86a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Prefabs using Guid(8db2e67966e6ffe4ab303900b15f86a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5562d4d20096ef386adbdfbd70730336') in 0.000270917 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.599643 seconds.
+  path: Assets/02.Assets/WhiteCity/Prefabs/Buildings
+  artifactKey: Guid(2682b994974452d4394e541983fa7e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Prefabs/Buildings using Guid(2682b994974452d4394e541983fa7e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e46c55fa09b028bb04fbedc7063a41da') in 0.000282167 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.084949 seconds.
+  path: Assets/02.Assets/WhiteCity/Prefabs/Buildings/1.prefab
+  artifactKey: Guid(2567255f9a679cd429a31eb02ba54ac1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Prefabs/Buildings/1.prefab using Guid(2567255f9a679cd429a31eb02ba54ac1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6f644868c06f9a30fbe2de9e2f4a341f') in 0.10788725 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/02.Assets/WhiteCity/Prefabs/Buildings/13.prefab
+  artifactKey: Guid(3e758f09cb4d777459433143fc3c7892) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Prefabs/Buildings/13.prefab using Guid(3e758f09cb4d777459433143fc3c7892) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '382a074ba3a2909ea7c1b874abab8c93') in 0.00473425 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.686374 seconds.
+  path: Assets/02.Assets/WhiteCity/Prefabs/Roof
+  artifactKey: Guid(b180644ac1c561f4b971da984a557792) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Prefabs/Roof using Guid(b180644ac1c561f4b971da984a557792) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '98bd75601aeef35686fbfe40c85deda8') in 0.000363542 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.080641 seconds.
+  path: Assets/02.Assets/WhiteCity/Prefabs/Roof/1.prefab
+  artifactKey: Guid(1fdb54cae2e5c4d4aa7e696be731acdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Prefabs/Roof/1.prefab using Guid(1fdb54cae2e5c4d4aa7e696be731acdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b18e97f42c4e481a276004bbd72f42e9') in 0.004938167 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/02.Assets/WhiteCity/Prefabs/Roof/3.prefab
+  artifactKey: Guid(57b98f44a00fbce429284c88b6179917) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Prefabs/Roof/3.prefab using Guid(57b98f44a00fbce429284c88b6179917) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6f04555a847c39a952dae371edb8cee3') in 0.003659625 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/02.Assets/WhiteCity/Prefabs/Roof/16.prefab
+  artifactKey: Guid(20af60c63fe2b9840975f2a12385d126) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Prefabs/Roof/16.prefab using Guid(20af60c63fe2b9840975f2a12385d126) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ed7ca7e6de386668099a45fd03e79e2f') in 0.004151542 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000095 seconds.
+  path: Assets/02.Assets/WhiteCity/Prefabs/Roof/15.prefab
+  artifactKey: Guid(8bca44552c6bbd3419a536afac67d5d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Prefabs/Roof/15.prefab using Guid(8bca44552c6bbd3419a536afac67d5d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6207939448accf9c9d38d7fa08252159') in 0.003845959 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000151 seconds.
+  path: Assets/02.Assets/WhiteCity/Prefabs/Roof/13.prefab
+  artifactKey: Guid(f969ce493f8b49442baa03271e7f6cd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Prefabs/Roof/13.prefab using Guid(f969ce493f8b49442baa03271e7f6cd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9907cc9236ebda399176d36363eee10f') in 0.0035595 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000073 seconds.
+  path: Assets/02.Assets/WhiteCity/Prefabs/Roof/10.prefab
+  artifactKey: Guid(21cb504748591f445bfe40ac674be242) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Prefabs/Roof/10.prefab using Guid(21cb504748591f445bfe40ac674be242) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bc62e7e3eefba0952806ebabbec23669') in 0.005296458 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/02.Assets/WhiteCity/Prefabs/Roof/12.prefab
+  artifactKey: Guid(bf6998b76a98a58449dac0b8b56d447c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Prefabs/Roof/12.prefab using Guid(bf6998b76a98a58449dac0b8b56d447c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '49d5bb2a8db0c90ea277aaeabe451142') in 0.004466709 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/02.Assets/WhiteCity/Prefabs/Roof/7.prefab
+  artifactKey: Guid(68dacdb7a3a2cb6408c14f026bd9084f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Prefabs/Roof/7.prefab using Guid(68dacdb7a3a2cb6408c14f026bd9084f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd73a5bc5166fdde7f8a26839cc643143') in 0.0038405 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000071 seconds.
+  path: Assets/02.Assets/WhiteCity/Prefabs/Roof/5.prefab
+  artifactKey: Guid(85200b019237e4d438a2ec33d1ab7041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Prefabs/Roof/5.prefab using Guid(85200b019237e4d438a2ec33d1ab7041) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '77e6a3b6f5751de3fd3557d4982a4eae') in 0.006944625 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.638197 seconds.
+  path: Assets/02.Assets/WhiteCity/Models
+  artifactKey: Guid(316ec03175cd0624888999c9e15e0657) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models using Guid(316ec03175cd0624888999c9e15e0657) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5975c6421356ad76dfdfe5cb731e1a46') in 0.000363334 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.448995 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Buildings
+  artifactKey: Guid(a744737932857204a9704b146dba42ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Buildings using Guid(a744737932857204a9704b146dba42ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e17183428e7389247aeb8310a0f1cb26') in 0.000343833 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.100781 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Buildings/1.fbx
+  artifactKey: Guid(6eda8701cab57474bb48b82c4d94944d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Buildings/1.fbx using Guid(6eda8701cab57474bb48b82c4d94944d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5807c1e3a3c6bc8184e7236efdc1a837') in 0.014281166 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Buildings/3-1.fbx
+  artifactKey: Guid(016d566e117d8fd43be08461a2df3027) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Buildings/3-1.fbx using Guid(016d566e117d8fd43be08461a2df3027) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9f49c6eaf91a18474ea68906c5ef9f43') in 0.005747583 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000120 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Buildings/2-1.fbx
+  artifactKey: Guid(3745c28ede9bdf541bc2f0c5a7b3bfd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Buildings/2-1.fbx using Guid(3745c28ede9bdf541bc2f0c5a7b3bfd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0f53335effe8dd5fdf106026b242bef3') in 0.004852334 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000074 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Buildings/5.fbx
+  artifactKey: Guid(d0f4f4a6ea280eb49a9e01e9ab72fa18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Buildings/5.fbx using Guid(d0f4f4a6ea280eb49a9e01e9ab72fa18) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ff69afd71b3d5c5bef67c902318b2b8e') in 0.00688075 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000081 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Buildings/7.fbx
+  artifactKey: Guid(6379b00f66e16cd49b9df04eece629a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Buildings/7.fbx using Guid(6379b00f66e16cd49b9df04eece629a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7ed713ceac7d3dc601a94e68581482b4') in 0.007886291 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Buildings/3.fbx
+  artifactKey: Guid(1c9654e604a39b44b8293f6a34f7b66c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Buildings/3.fbx using Guid(1c9654e604a39b44b8293f6a34f7b66c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '650c84114c809126ed5a30f6e3be1a4c') in 0.004912791 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Buildings/8.fbx
+  artifactKey: Guid(45414ae893ef0d24aaa8d91a7d834868) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Buildings/8.fbx using Guid(45414ae893ef0d24aaa8d91a7d834868) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6c2d6e0cbc94cdc4be5e50e4249f77aa') in 0.005617875 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Buildings/4.fbx
+  artifactKey: Guid(6bf94840710cc534ca5c718dd3733c51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Buildings/4.fbx using Guid(6bf94840710cc534ca5c718dd3733c51) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e42c9975379d8033b000acb7fbea6669') in 0.007206833 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Buildings/9.fbx
+  artifactKey: Guid(f637800949c72bf4c838823bdf15e754) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Buildings/9.fbx using Guid(f637800949c72bf4c838823bdf15e754) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '59b501537c66f3df14bd0022c1603126') in 0.007355625 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.498921 seconds.
+  path: Assets/02.Assets/WhiteCity/Scenes
+  artifactKey: Guid(e62473e778be21c4ab078a36a3feb410) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Scenes using Guid(e62473e778be21c4ab078a36a3feb410) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c03e59ca129aff3c4b01fe099c01c15b') in 0.000273417 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.112061 seconds.
+  path: Assets/02.Assets/WhiteCity/Scenes/Sample.unity
+  artifactKey: Guid(1a4e37fe1d5bcef448eaacca8ef81fad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Scenes/Sample.unity using Guid(1a4e37fe1d5bcef448eaacca8ef81fad) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e48f7b26af8899d5e83f4f50c7669862') in 0.00029525 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
