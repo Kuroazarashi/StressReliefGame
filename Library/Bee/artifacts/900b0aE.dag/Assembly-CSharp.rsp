@@ -455,6 +455,13 @@
 "Assets/03.Scripts/StageSettings.cs"
 "Assets/03.Scripts/TitleManager.cs"
 "Assets/07_InputActions/PlayerInputActions.cs"
+"Assets/OneToonBuilding/Scripts/BlinkingLights.cs"
+"Assets/OneToonBuilding/Scripts/Building.cs"
+"Assets/OneToonBuilding/Scripts/Game.cs"
+"Assets/OneToonBuilding/Scripts/MasterClock.cs"
+"Assets/OneToonBuilding/Scripts/Propsbyhour.cs"
+"Assets/OneToonBuilding/Scripts/RandomAddOns.cs"
+"Assets/OneToonBuilding/Scripts/StreetLights.cs"
 -langversion:9.0
 /deterministic
 /optimize+
