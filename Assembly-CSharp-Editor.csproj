@@ -61,9 +61,9 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/OneToonBuilding/Scripts/Editor/BuildingEditor.cs" />
-    <Compile Include="Assets/OneToonBuilding/Scripts/Editor/RandomAddOnsEditor.cs" />
-    <Compile Include="Assets/OneToonBuilding/Scripts/Editor/MasterClockEditor.cs" />
+    <Compile Include="Assets/02.Assets/OneToonBuilding/Scripts/Editor/MasterClockEditor.cs" />
+    <Compile Include="Assets/02.Assets/OneToonBuilding/Scripts/Editor/BuildingEditor.cs" />
+    <Compile Include="Assets/02.Assets/OneToonBuilding/Scripts/Editor/RandomAddOnsEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

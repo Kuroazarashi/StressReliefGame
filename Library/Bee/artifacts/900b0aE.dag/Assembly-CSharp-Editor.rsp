@@ -432,9 +432,9 @@
 -analyzer:"/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
-"Assets/OneToonBuilding/Scripts/Editor/BuildingEditor.cs"
-"Assets/OneToonBuilding/Scripts/Editor/MasterClockEditor.cs"
-"Assets/OneToonBuilding/Scripts/Editor/RandomAddOnsEditor.cs"
+"Assets/02.Assets/OneToonBuilding/Scripts/Editor/BuildingEditor.cs"
+"Assets/02.Assets/OneToonBuilding/Scripts/Editor/MasterClockEditor.cs"
+"Assets/02.Assets/OneToonBuilding/Scripts/Editor/RandomAddOnsEditor.cs"
 -langversion:9.0
 /deterministic
 /optimize+

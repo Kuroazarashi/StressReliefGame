@@ -61,24 +61,23 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/OneToonBuilding/Scripts/Propsbyhour.cs" />
     <Compile Include="Assets/02.Assets/SU3DJPFont/Demo/Scripts/SampleScene.cs" />
+    <Compile Include="Assets/02.Assets/OneToonBuilding/Scripts/BlinkingLights.cs" />
     <Compile Include="Assets/02.Assets/Matthew Guz/Hits Effects FREE/Scene Demo/Script/Prefab Manager.cs" />
-    <Compile Include="Assets/OneToonBuilding/Scripts/Building.cs" />
     <Compile Include="Assets/03.Scripts/SpeechPhraseData.cs" />
     <Compile Include="Assets/02.Assets/Brick Project Studio/Apartment Kit/Common/Scripts &amp; Animation/Closet/ClosetopencloseDoor.cs" />
-    <Compile Include="Assets/OneToonBuilding/Scripts/MasterClock.cs" />
     <Compile Include="Assets/02.Assets/Brick Project Studio/_BPS Basic Assets/Common/Scripts and Animations/Doors/opencloseStallDoor.cs" />
     <Compile Include="Assets/02.Assets/Brick Project Studio/Apartment Kit/Common/Scripts &amp; Animation/Slide/opencloseSlide.cs" />
-    <Compile Include="Assets/OneToonBuilding/Scripts/BlinkingLights.cs" />
+    <Compile Include="Assets/02.Assets/OneToonBuilding/Scripts/Game.cs" />
     <Compile Include="Assets/02.Assets/Brick Project Studio/_BPS Basic Assets/Common/Scripts and Animations/Drawer/X Axis/Drawer_Pull_X.cs" />
+    <Compile Include="Assets/02.Assets/OneToonBuilding/Scripts/Propsbyhour.cs" />
     <Compile Include="Assets/03.Scripts/StageSettings.cs" />
     <Compile Include="Assets/02.Assets/Enviroment/enviroment/Office building/scripts/Door.cs" />
     <Compile Include="Assets/02.Assets/UI pack/Scripts/FillValueNumber.cs" />
     <Compile Include="Assets/02.Assets/Brick Project Studio/_BPS Basic Assets/Common/Scripts and Animations/First Person Player/SceneSwitchGen.cs" />
     <Compile Include="Assets/03.Scripts/PlayerController.cs" />
     <Compile Include="Assets/02.Assets/Brick Project Studio/Apartment Kit/Common/Scripts &amp; Animation/Slide/BRGlassDoor.cs" />
-    <Compile Include="Assets/OneToonBuilding/Scripts/RandomAddOns.cs" />
+    <Compile Include="Assets/02.Assets/OneToonBuilding/Scripts/MasterClock.cs" />
     <Compile Include="Assets/02.Assets/Brick Project Studio/Apartment Kit/Common/Scripts &amp; Animation/OvenOpen/OvenFlip.cs" />
     <Compile Include="Assets/02.Assets/Enviroment/enviroment/Office building/scripts/pass_on_parent.cs" />
     <Compile Include="Assets/02.Assets/Brick Project Studio/_BPS Basic Assets/Common/Scripts and Animations/Drawer/Z Axis/Drawer_Pull_Z.cs" />
@@ -86,12 +85,13 @@
     <Compile Include="Assets/03.Scripts/StageSelectionManager.cs" />
     <Compile Include="Assets/03.Scripts/EnemyStressVisuals.cs" />
     <Compile Include="Assets/02.Assets/Enviroment/enviroment/Office building/scripts/evelator_controll.cs" />
+    <Compile Include="Assets/02.Assets/WhiteCity/Settings/WhiteCity_2.cs" />
     <Compile Include="Assets/03.Scripts/AttackColliderHandler.cs" />
     <Compile Include="Assets/02.Assets/Enviroment/enviroment/Office building/scripts/Fix_elevator_fall.cs" />
     <Compile Include="Assets/02.Assets/Human Animations/Scripts/SpineProxy.cs" />
-    <Compile Include="Assets/OneToonBuilding/Scripts/StreetLights.cs" />
     <Compile Include="Assets/02.Assets/Brick Project Studio/_BPS Basic Assets/Common/Scripts and Animations/First Person Player/MouseLook.cs" />
     <Compile Include="Assets/03.Scripts/Joystick.cs" />
+    <Compile Include="Assets/02.Assets/OneToonBuilding/Scripts/StreetLights.cs" />
     <Compile Include="Assets/02.Assets/Brick Project Studio/_BPS Basic Assets/Common/Scripts and Animations/Windows/opencloseWindow.cs" />
     <Compile Include="Assets/02.Assets/Brick Project Studio/Apartment Kit/Common/Scripts &amp; Animation/Z Axis -1/Drawer_Pull_Zopp.cs" />
     <Compile Include="Assets/03.Scripts/Destructible.cs" />
@@ -99,11 +99,12 @@
     <Compile Include="Assets/03.Scripts/GameManager.cs" />
     <Compile Include="Assets/03.Scripts/TitleManager.cs" />
     <Compile Include="Assets/02.Assets/Enviroment/enviroment/Office building/scripts/DoorAction.cs" />
+    <Compile Include="Assets/02.Assets/OneToonBuilding/Scripts/Building.cs" />
     <Compile Include="Assets/03.Scripts/EnemyRagdollController.cs" />
     <Compile Include="Assets/03.Scripts/ResultScreenController.cs" />
     <Compile Include="Assets/02.Assets/Brick Project Studio/_BPS Basic Assets/Common/Scripts and Animations/Windows/opencloseWindow1.cs" />
-    <Compile Include="Assets/OneToonBuilding/Scripts/Game.cs" />
     <Compile Include="Assets/02.Assets/Brick Project Studio/_BPS Basic Assets/Common/Scripts and Animations/Doors/opencloseDoor.cs" />
+    <Compile Include="Assets/02.Assets/OneToonBuilding/Scripts/RandomAddOns.cs" />
     <Compile Include="Assets/03.Scripts/SceneReferences.cs" />
     <Compile Include="Assets/07_InputActions/PlayerInputActions.cs" />
     <Compile Include="Assets/02.Assets/Brick Project Studio/_BPS Basic Assets/Common/Scripts and Animations/Doors/opencloseDoor1.cs" />
