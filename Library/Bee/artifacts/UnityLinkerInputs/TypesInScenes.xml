@@ -1,14 +1,15 @@
 <linker>
 	<assembly fullname="Assembly-CSharp">
 		<type fullname="AttackColliderHandler" preserve="nothing"/>
-		<type fullname="Destructible" preserve="nothing"/>
 		<type fullname="EnemyRagdollController" preserve="nothing"/>
 		<type fullname="EnemyStressVisuals" preserve="nothing"/>
 		<type fullname="GameManager" preserve="nothing"/>
 		<type fullname="Joystick" preserve="nothing"/>
+		<type fullname="ObjectTransparencer" preserve="nothing"/>
 		<type fullname="PlayerController" preserve="nothing"/>
 		<type fullname="ResultScreenController" preserve="nothing"/>
 		<type fullname="SceneReferences" preserve="nothing"/>
+		<type fullname="SojaExiles.opencloseWindowApt" preserve="nothing"/>
 		<type fullname="SoundManager" preserve="nothing"/>
 		<type fullname="StageSelectionManager" preserve="nothing"/>
 		<type fullname="StageSettings" preserve="nothing"/>

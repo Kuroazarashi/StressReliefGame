@@ -594,6 +594,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Animator_GetAnimatorStateInfo_Injected();
 		Register_UnityEngine_Animator_GetAnimatorStateInfo_Injected();
 
+		//System.Void UnityEngine.Animator::Play_Injected(System.IntPtr,System.Int32,System.Int32,System.Single)
+		void Register_UnityEngine_Animator_Play_Injected();
+		Register_UnityEngine_Animator_Play_Injected();
+
 		//System.Void UnityEngine.Animator::ResetTriggerString_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&)
 		void Register_UnityEngine_Animator_ResetTriggerString_Injected();
 		Register_UnityEngine_Animator_ResetTriggerString_Injected();
@@ -637,6 +641,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.Application::OpenURL_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
 		void Register_UnityEngine_Application_OpenURL_Injected();
 		Register_UnityEngine_Application_OpenURL_Injected();
+
+		//System.Void UnityEngine.Application::Quit(System.Int32)
+		void Register_UnityEngine_Application_Quit();
+		Register_UnityEngine_Application_Quit();
 
 		//UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
 		void Register_UnityEngine_Application_get_platform();
@@ -1534,6 +1542,14 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Cursor_SetCursor_Injected();
 		Register_UnityEngine_Cursor_SetCursor_Injected();
 
+		//System.Void UnityEngine.Cursor::set_lockState(UnityEngine.CursorLockMode)
+		void Register_UnityEngine_Cursor_set_lockState();
+		Register_UnityEngine_Cursor_set_lockState();
+
+		//System.Void UnityEngine.Cursor::set_visible(System.Boolean)
+		void Register_UnityEngine_Cursor_set_visible();
+		Register_UnityEngine_Cursor_set_visible();
+
 		//UnityEngine.CursorLockMode UnityEngine.Cursor::get_lockState()
 		void Register_UnityEngine_Cursor_get_lockState();
 		Register_UnityEngine_Cursor_get_lockState();
@@ -1579,6 +1595,14 @@ void RegisterAllStrippedInternalCalls()
 		Register_UnityEngine_Display_GetSystemExtImpl();
 
 	//End Registrations for type : UnityEngine.Display
+
+	//Start Registrations for type : UnityEngine.DynamicGI
+
+		//System.Void UnityEngine.DynamicGI::UpdateEnvironment()
+		void Register_UnityEngine_DynamicGI_UpdateEnvironment();
+		Register_UnityEngine_DynamicGI_UpdateEnvironment();
+
+	//End Registrations for type : UnityEngine.DynamicGI
 
 	//Start Registrations for type : UnityEngine.Event
 
@@ -2484,6 +2508,14 @@ void RegisterAllStrippedInternalCalls()
 
 	//End Registrations for type : UnityEngine.JsonUtility
 
+	//Start Registrations for type : UnityEngine.LayerMask
+
+		//System.Int32 UnityEngine.LayerMask::NameToLayer_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
+		void Register_UnityEngine_LayerMask_NameToLayer_Injected();
+		Register_UnityEngine_LayerMask_NameToLayer_Injected();
+
+	//End Registrations for type : UnityEngine.LayerMask
+
 	//Start Registrations for type : UnityEngine.Light
 
 		//System.Boolean UnityEngine.Light::get_useColorTemperature_Injected(System.IntPtr)
@@ -2530,6 +2562,14 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Light_get_color_Injected();
 		Register_UnityEngine_Light_get_color_Injected();
 
+		//System.Void UnityEngine.Light::set_color_Injected(System.IntPtr,UnityEngine.Color&)
+		void Register_UnityEngine_Light_set_color_Injected();
+		Register_UnityEngine_Light_set_color_Injected();
+
+		//System.Void UnityEngine.Light::set_intensity_Injected(System.IntPtr,System.Single)
+		void Register_UnityEngine_Light_set_intensity_Injected();
+		Register_UnityEngine_Light_set_intensity_Injected();
+
 		//UnityEngine.LightShadows UnityEngine.Light::get_shadows_Injected(System.IntPtr)
 		void Register_UnityEngine_Light_get_shadows_Injected();
 		Register_UnityEngine_Light_get_shadows_Injected();
@@ -2539,6 +2579,14 @@ void RegisterAllStrippedInternalCalls()
 		Register_UnityEngine_Light_get_type_Injected();
 
 	//End Registrations for type : UnityEngine.Light
+
+	//Start Registrations for type : UnityEngine.LODGroup
+
+		//System.Boolean UnityEngine.LODGroup::get_enabled_Injected(System.IntPtr)
+		void Register_UnityEngine_LODGroup_get_enabled_Injected();
+		Register_UnityEngine_LODGroup_get_enabled_Injected();
+
+	//End Registrations for type : UnityEngine.LODGroup
 
 	//Start Registrations for type : UnityEngine.Material
 
@@ -2625,6 +2673,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.Material::SetTextureImpl_Injected(System.IntPtr,System.Int32,System.IntPtr)
 		void Register_UnityEngine_Material_SetTextureImpl_Injected();
 		Register_UnityEngine_Material_SetTextureImpl_Injected();
+
+		//System.Void UnityEngine.Material::SetTextureOffsetImpl_Injected(System.IntPtr,System.Int32,UnityEngine.Vector2&)
+		void Register_UnityEngine_Material_SetTextureOffsetImpl_Injected();
+		Register_UnityEngine_Material_SetTextureOffsetImpl_Injected();
 
 		//System.Void UnityEngine.Material::set_shader_Injected(System.IntPtr,System.IntPtr)
 		void Register_UnityEngine_Material_set_shader_Injected();
@@ -3602,6 +3654,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Quaternion_Inverse_Injected();
 		Register_UnityEngine_Quaternion_Inverse_Injected();
 
+		//System.Void UnityEngine.Quaternion::Lerp_Injected(UnityEngine.Quaternion&,UnityEngine.Quaternion&,System.Single,UnityEngine.Quaternion&)
+		void Register_UnityEngine_Quaternion_Lerp_Injected();
+		Register_UnityEngine_Quaternion_Lerp_Injected();
+
 		//System.Void UnityEngine.Quaternion::LookRotation_Injected(UnityEngine.Vector3&,UnityEngine.Vector3&,UnityEngine.Quaternion&)
 		void Register_UnityEngine_Quaternion_LookRotation_Injected();
 		Register_UnityEngine_Quaternion_LookRotation_Injected();
@@ -3782,6 +3838,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Renderer_GetSharedMaterial_Injected();
 		Register_UnityEngine_Renderer_GetSharedMaterial_Injected();
 
+		//System.Void UnityEngine.Renderer::SetMaterialArray_Injected(System.IntPtr,UnityEngine.Material[],System.Int32)
+		void Register_UnityEngine_Renderer_SetMaterialArray_Injected();
+		Register_UnityEngine_Renderer_SetMaterialArray_Injected();
+
 		//System.Void UnityEngine.Renderer::SetMaterial_Injected(System.IntPtr,System.IntPtr)
 		void Register_UnityEngine_Renderer_SetMaterial_Injected();
 		Register_UnityEngine_Renderer_SetMaterial_Injected();
@@ -3809,6 +3869,14 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.Renderer::set_sortingOrder_Injected(System.IntPtr,System.Int32)
 		void Register_UnityEngine_Renderer_set_sortingOrder_Injected();
 		Register_UnityEngine_Renderer_set_sortingOrder_Injected();
+
+		//UnityEngine.Material[] UnityEngine.Renderer::GetMaterialArray_Injected(System.IntPtr)
+		void Register_UnityEngine_Renderer_GetMaterialArray_Injected();
+		Register_UnityEngine_Renderer_GetMaterialArray_Injected();
+
+		//UnityEngine.Material[] UnityEngine.Renderer::GetSharedMaterialArray_Injected(System.IntPtr)
+		void Register_UnityEngine_Renderer_GetSharedMaterialArray_Injected();
+		Register_UnityEngine_Renderer_GetSharedMaterialArray_Injected();
 
 	//End Registrations for type : UnityEngine.Renderer
 
@@ -3855,6 +3923,42 @@ void RegisterAllStrippedInternalCalls()
 		Register_UnityEngine_Rendering_SortingGroup_GetSortingGroupByIndex_Injected();
 
 	//End Registrations for type : UnityEngine.Rendering.SortingGroup
+
+	//Start Registrations for type : UnityEngine.RenderSettings
+
+		//System.Void UnityEngine.RenderSettings::set_ambientIntensity(System.Single)
+		void Register_UnityEngine_RenderSettings_set_ambientIntensity();
+		Register_UnityEngine_RenderSettings_set_ambientIntensity();
+
+		//System.Void UnityEngine.RenderSettings::set_ambientLight_Injected(UnityEngine.Color&)
+		void Register_UnityEngine_RenderSettings_set_ambientLight_Injected();
+		Register_UnityEngine_RenderSettings_set_ambientLight_Injected();
+
+		//System.Void UnityEngine.RenderSettings::set_ambientMode(UnityEngine.Rendering.AmbientMode)
+		void Register_UnityEngine_RenderSettings_set_ambientMode();
+		Register_UnityEngine_RenderSettings_set_ambientMode();
+
+		//System.Void UnityEngine.RenderSettings::set_fog(System.Boolean)
+		void Register_UnityEngine_RenderSettings_set_fog();
+		Register_UnityEngine_RenderSettings_set_fog();
+
+		//System.Void UnityEngine.RenderSettings::set_fogColor_Injected(UnityEngine.Color&)
+		void Register_UnityEngine_RenderSettings_set_fogColor_Injected();
+		Register_UnityEngine_RenderSettings_set_fogColor_Injected();
+
+		//System.Void UnityEngine.RenderSettings::set_fogEndDistance(System.Single)
+		void Register_UnityEngine_RenderSettings_set_fogEndDistance();
+		Register_UnityEngine_RenderSettings_set_fogEndDistance();
+
+		//System.Void UnityEngine.RenderSettings::set_fogStartDistance(System.Single)
+		void Register_UnityEngine_RenderSettings_set_fogStartDistance();
+		Register_UnityEngine_RenderSettings_set_fogStartDistance();
+
+		//System.Void UnityEngine.RenderSettings::set_skybox_Injected(System.IntPtr)
+		void Register_UnityEngine_RenderSettings_set_skybox_Injected();
+		Register_UnityEngine_RenderSettings_set_skybox_Injected();
+
+	//End Registrations for type : UnityEngine.RenderSettings
 
 	//Start Registrations for type : UnityEngine.RenderTexture
 
@@ -3982,6 +4086,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Rigidbody_get_position_Injected();
 		Register_UnityEngine_Rigidbody_get_position_Injected();
 
+		//System.Void UnityEngine.Rigidbody::set_collisionDetectionMode_Injected(System.IntPtr,UnityEngine.CollisionDetectionMode)
+		void Register_UnityEngine_Rigidbody_set_collisionDetectionMode_Injected();
+		Register_UnityEngine_Rigidbody_set_collisionDetectionMode_Injected();
+
 		//System.Void UnityEngine.Rigidbody::set_detectCollisions_Injected(System.IntPtr,System.Boolean)
 		void Register_UnityEngine_Rigidbody_set_detectCollisions_Injected();
 		Register_UnityEngine_Rigidbody_set_detectCollisions_Injected();
@@ -3989,6 +4097,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.Rigidbody::set_isKinematic_Injected(System.IntPtr,System.Boolean)
 		void Register_UnityEngine_Rigidbody_set_isKinematic_Injected();
 		Register_UnityEngine_Rigidbody_set_isKinematic_Injected();
+
+		//System.Void UnityEngine.Rigidbody::set_useGravity_Injected(System.IntPtr,System.Boolean)
+		void Register_UnityEngine_Rigidbody_set_useGravity_Injected();
+		Register_UnityEngine_Rigidbody_set_useGravity_Injected();
 
 	//End Registrations for type : UnityEngine.Rigidbody
 

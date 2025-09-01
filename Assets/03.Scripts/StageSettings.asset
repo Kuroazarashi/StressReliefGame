@@ -13,9 +13,6 @@ MonoBehaviour:
   m_Name: StageSettings
   m_EditorClassIdentifier: 
   stages:
-  - stageName: Stage 0
-    sceneName: 01.TestScene
-    scoreToClear: 500
   - stageName: Stage 1
     sceneName: 010.Stage1
-    scoreToClear: 500
+    scoreToClear: 800

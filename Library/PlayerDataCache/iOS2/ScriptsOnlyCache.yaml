@@ -2,14 +2,15 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AttackColliderHandler
-    - Destructible
     - EnemyRagdollController
     - EnemyStressVisuals
     - GameManager
     - Joystick
+    - ObjectTransparencer
     - PlayerController
     - ResultScreenController
     - SceneReferences
+    - SojaExiles.opencloseWindowApt
     - SoundManager
     - StageSelectionManager
     - StageSettings
@@ -92,6 +93,7 @@ ScriptsOnlyBuild:
     - TMPro.FaceInfo_Legacy
     - TMPro.FontAssetCreationSettings
     - TMPro.KerningTable
+    - TMPro.LigatureSubstitutionRecord
     - TMPro.TMP_Character
     - TMPro.TMP_FontFeatureTable
     - TMPro.TMP_FontWeightPair
@@ -127,24 +129,6 @@ ScriptsOnlyBuild:
     fullTypeName: TitleManager
     methodName: StartGame
   - assembly: Assembly-CSharp
-    fullTypeName: ResultScreenController
-    methodName: OnClick_ReturnToStageSelect
-  - assembly: Assembly-CSharp
-    fullTypeName: ResultScreenController
-    methodName: OnClick_ReturnToTitle
-  - assembly: Assembly-CSharp
-    fullTypeName: PlayerController
-    methodName: OnKickButtonClick
-  - assembly: Assembly-CSharp
-    fullTypeName: ResultScreenController
-    methodName: OnClick_RetryGame
-  - assembly: Assembly-CSharp
-    fullTypeName: ResultScreenController
-    methodName: OnClick_NextStage
-  - assembly: Assembly-CSharp
-    fullTypeName: PlayerController
-    methodName: OnPunchButtonClick
-  - assembly: Assembly-CSharp
     fullTypeName: StageSelectionManager
     methodName: OnStageSelected
   - assembly: Assembly-CSharp
@@ -156,6 +140,24 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: StageSelectionManager
     methodName: OnStageSelected
+  - assembly: Assembly-CSharp
+    fullTypeName: ResultScreenController
+    methodName: OnClick_NextStage
+  - assembly: Assembly-CSharp
+    fullTypeName: ResultScreenController
+    methodName: OnClick_RetryGame
+  - assembly: Assembly-CSharp
+    fullTypeName: ResultScreenController
+    methodName: OnClick_ReturnToStageSelect
+  - assembly: Assembly-CSharp
+    fullTypeName: ResultScreenController
+    methodName: OnClick_ReturnToTitle
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: OnKickButtonClick
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerController
+    methodName: OnPunchButtonClick
   sceneClasses:
     Assets/01.Scenes/00.TitleScene.unity:
     - Class: 1
@@ -181,33 +183,33 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 26844}
+      Script: {instanceID: 26912}
     - Class: 114
-      Script: {instanceID: 27140}
+      Script: {instanceID: 27210}
     - Class: 114
-      Script: {instanceID: 27476}
+      Script: {instanceID: 27548}
     - Class: 114
-      Script: {instanceID: 27772}
+      Script: {instanceID: 27844}
     - Class: 114
-      Script: {instanceID: 28588}
+      Script: {instanceID: 28664}
     - Class: 114
-      Script: {instanceID: 29180}
+      Script: {instanceID: 29264}
     - Class: 114
-      Script: {instanceID: 29740}
+      Script: {instanceID: 29830}
     - Class: 114
-      Script: {instanceID: 29804}
+      Script: {instanceID: 29894}
     - Class: 114
-      Script: {instanceID: 32192}
+      Script: {instanceID: 32304}
     - Class: 114
-      Script: {instanceID: 32350}
+      Script: {instanceID: 32462}
     - Class: 114
-      Script: {instanceID: 32492}
+      Script: {instanceID: 32606}
     - Class: 114
-      Script: {instanceID: 32636}
+      Script: {instanceID: 32750}
     - Class: 114
-      Script: {instanceID: 33638}
+      Script: {instanceID: 33758}
     - Class: 114
-      Script: {instanceID: 33716}
+      Script: {instanceID: 33836}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -224,7 +226,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    Assets/01.Scenes/01.TestScene.unity:
+    Assets/01.Scenes/010.Stage1.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -270,53 +272,55 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 26844}
+      Script: {instanceID: 26912}
     - Class: 114
-      Script: {instanceID: 27140}
+      Script: {instanceID: 27210}
     - Class: 114
-      Script: {instanceID: 27176}
+      Script: {instanceID: 27246}
     - Class: 114
-      Script: {instanceID: 27476}
+      Script: {instanceID: 27548}
     - Class: 114
-      Script: {instanceID: 27718}
+      Script: {instanceID: 27790}
     - Class: 114
-      Script: {instanceID: 28588}
+      Script: {instanceID: 28664}
     - Class: 114
-      Script: {instanceID: 29062}
+      Script: {instanceID: 29122}
     - Class: 114
-      Script: {instanceID: 29180}
+      Script: {instanceID: 29144}
     - Class: 114
-      Script: {instanceID: 29194}
+      Script: {instanceID: 29264}
     - Class: 114
-      Script: {instanceID: 29622}
+      Script: {instanceID: 29710}
     - Class: 114
-      Script: {instanceID: 29740}
+      Script: {instanceID: 29830}
     - Class: 114
-      Script: {instanceID: 31014}
+      Script: {instanceID: 31114}
     - Class: 114
-      Script: {instanceID: 31628}
+      Script: {instanceID: 31626}
     - Class: 114
-      Script: {instanceID: 32192}
+      Script: {instanceID: 31734}
     - Class: 114
-      Script: {instanceID: 32492}
+      Script: {instanceID: 32304}
     - Class: 114
-      Script: {instanceID: 32636}
+      Script: {instanceID: 32606}
     - Class: 114
-      Script: {instanceID: 32862}
+      Script: {instanceID: 32750}
     - Class: 114
-      Script: {instanceID: 33058}
+      Script: {instanceID: 32978}
     - Class: 114
-      Script: {instanceID: 33114}
+      Script: {instanceID: 33174}
     - Class: 114
-      Script: {instanceID: 33140}
+      Script: {instanceID: 33230}
     - Class: 114
-      Script: {instanceID: 33716}
+      Script: {instanceID: 33256}
     - Class: 114
-      Script: {instanceID: 33770}
+      Script: {instanceID: 33836}
     - Class: 114
-      Script: {instanceID: 34362}
+      Script: {instanceID: 33890}
     - Class: 114
-      Script: {instanceID: 34658}
+      Script: {instanceID: 34484}
+    - Class: 114
+      Script: {instanceID: 34784}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -371,41 +375,41 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 26844}
+      Script: {instanceID: 26912}
     - Class: 114
-      Script: {instanceID: 27140}
+      Script: {instanceID: 27210}
     - Class: 114
-      Script: {instanceID: 27476}
+      Script: {instanceID: 27548}
     - Class: 114
-      Script: {instanceID: 28306}
+      Script: {instanceID: 28378}
     - Class: 114
-      Script: {instanceID: 28588}
+      Script: {instanceID: 28664}
     - Class: 114
-      Script: {instanceID: 29180}
+      Script: {instanceID: 29264}
     - Class: 114
-      Script: {instanceID: 29740}
+      Script: {instanceID: 29830}
     - Class: 114
-      Script: {instanceID: 30288}
+      Script: {instanceID: 30386}
     - Class: 114
-      Script: {instanceID: 31694}
+      Script: {instanceID: 31802}
     - Class: 114
-      Script: {instanceID: 31780}
+      Script: {instanceID: 31888}
     - Class: 114
-      Script: {instanceID: 32192}
+      Script: {instanceID: 32304}
     - Class: 114
-      Script: {instanceID: 32204}
+      Script: {instanceID: 32316}
     - Class: 114
-      Script: {instanceID: 32492}
+      Script: {instanceID: 32606}
     - Class: 114
-      Script: {instanceID: 32636}
+      Script: {instanceID: 32750}
     - Class: 114
-      Script: {instanceID: 33588}
+      Script: {instanceID: 33708}
     - Class: 114
-      Script: {instanceID: 33716}
+      Script: {instanceID: 33836}
     - Class: 114
-      Script: {instanceID: 34362}
+      Script: {instanceID: 34484}
     - Class: 114
-      Script: {instanceID: 34994}
+      Script: {instanceID: 35122}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -453,6 +457,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.InputSystem
     namespaceName: UnityEngine.InputSystem.OnScreen
     className: OnScreenStick
+  - hash:
+      serializedVersion: 2
+      Hash: c8c79263cd23806322e7836a81c31bb5
+    assemblyName: Assembly-CSharp
+    namespaceName: SojaExiles
+    className: Quitgame
   - hash:
       serializedVersion: 2
       Hash: c09a59d12f535f2a4c806801f2de230e
@@ -567,6 +577,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.InputSystem
     namespaceName: UnityEngine.InputSystem.Editor
     className: PlayerInputEditor
+  - hash:
+      serializedVersion: 2
+      Hash: df10a1944994830420f35d639e1830b0
+    assemblyName: Assembly-CSharp
+    namespaceName: SojaExiles
+    className: opencloseDoor
   - hash:
       serializedVersion: 2
       Hash: daeac1347f8039f61cd4017ff33bd3c6
@@ -779,6 +795,12 @@ ScriptsOnlyBuild:
     className: StageSelectionManager
   - hash:
       serializedVersion: 2
+      Hash: a81a0031c167e0b84f859eac6fab9ff4
+    assemblyName: Assembly-CSharp
+    namespaceName: ToonTown
+    className: RandomAddOns
+  - hash:
+      serializedVersion: 2
       Hash: e6ee7dccba41ae87d10e3d922c6cb71c
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
@@ -801,6 +823,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnScrollRectValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 62f989901668a958ef4abecb426ef105
+    assemblyName: Assembly-CSharp
+    namespaceName: SojaExiles
+    className: opencloseWindow1
   - hash:
       serializedVersion: 2
       Hash: dd9dda1dfd39e605c49e72003342ef5d
@@ -881,6 +909,18 @@ ScriptsOnlyBuild:
     className: CinemachineConfiner3D
   - hash:
       serializedVersion: 2
+      Hash: 046932adc0de143c5ddaaa4a1e293f6d
+    assemblyName: Assembly-CSharp
+    namespaceName: SojaExiles
+    className: Drawer_Pull_Z
+  - hash:
+      serializedVersion: 2
+      Hash: 64276ca61a0b8fe33fc5e747daa57e9a
+    assemblyName: Assembly-CSharp
+    namespaceName: SojaExiles
+    className: opencloseWindowApt
+  - hash:
+      serializedVersion: 2
       Hash: 948f742c14cf06ad1505535fa059fff9
     assemblyName: Unity.Cinemachine
     namespaceName: Unity.Cinemachine
@@ -903,6 +943,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.InputSystem
     namespaceName: UnityEngine.InputSystem
     className: PlayerInput
+  - hash:
+      serializedVersion: 2
+      Hash: d9645fa26aa13aa688456533b7517e27
+    assemblyName: Assembly-CSharp
+    namespaceName: SojaExiles
+    className: PlayerMovement
   - hash:
       serializedVersion: 2
       Hash: c00826b2379e4bc3f3b4fb846b0a162d
@@ -933,6 +979,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnScrollMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 0449101d771888692f2993bd3e389f33
+    assemblyName: Assembly-CSharp
+    namespaceName: SojaExiles
+    className: opencloseStallDoor
   - hash:
       serializedVersion: 2
       Hash: 0bc7ef1b7516f21320ec49bfd31eef2e
@@ -983,6 +1035,12 @@ ScriptsOnlyBuild:
     className: InputSystemUIInputModuleEditor
   - hash:
       serializedVersion: 2
+      Hash: 505d965474035e3a2e4c4ba620b70af9
+    assemblyName: Assembly-CSharp
+    namespaceName: SojaExiles
+    className: MouseLook
+  - hash:
+      serializedVersion: 2
       Hash: b14e186823458f549289789cccbb77ce
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1031,6 +1089,12 @@ ScriptsOnlyBuild:
     className: AdvancedDropdownWindow
   - hash:
       serializedVersion: 2
+      Hash: 4b672682c5b72372d84a4db1f78a98b6
+    assemblyName: Assembly-CSharp
+    namespaceName: ToonTown
+    className: BlinkingLights
+  - hash:
+      serializedVersion: 2
       Hash: 8a53344512f969f0b1cfc2880b67cd59
     assemblyName: Unity.Cinemachine
     namespaceName: Unity.Cinemachine
@@ -1073,10 +1137,22 @@ ScriptsOnlyBuild:
     className: CinemachineImpulseListener
   - hash:
       serializedVersion: 2
+      Hash: 31b5c495b01a96373a6d4a269cfce269
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TableFlipR
+  - hash:
+      serializedVersion: 2
       Hash: e63fe08659e7e4647a51098c666f8845
     assemblyName: Unity.InputSystem
     namespaceName: 
     className: DownloadableSample
+  - hash:
+      serializedVersion: 2
+      Hash: 5150e3d1546ba0756d7d9407adf965bf
+    assemblyName: Assembly-CSharp
+    namespaceName: FutureCartographer.U3DJapaneseFont.Demo
+    className: SampleScene
   - hash:
       serializedVersion: 2
       Hash: aeabf1b9984c63aa96281fb83b3bdfbd
@@ -1109,6 +1185,12 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
+      Hash: d407e506880bc6e8c68f0500aad53d51
+    assemblyName: Assembly-CSharp
+    namespaceName: SojaExiles
+    className: opencloseDoor1
+  - hash:
+      serializedVersion: 2
       Hash: b30c8635462e66ac20f4241106119f77
     assemblyName: Unity.VisualScripting.State
     namespaceName: Unity.VisualScripting
@@ -1125,6 +1207,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: KevinIglesias
     className: SpineProxy
+  - hash:
+      serializedVersion: 2
+      Hash: 4d316ce55ea05ff8f78d0f090b9f3ea7
+    assemblyName: Assembly-CSharp
+    namespaceName: SojaExiles
+    className: Drawer_Pull_X
   - hash:
       serializedVersion: 2
       Hash: 3b5263a98bcc71d9a9d1d78a31b34ced
@@ -1185,6 +1273,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Cinemachine
     namespaceName: Unity.Cinemachine
     className: CinemachineGroupFraming
+  - hash:
+      serializedVersion: 2
+      Hash: 5adc536fbaa35630af474ffb6ea8f13d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TableFlipL
   - hash:
       serializedVersion: 2
       Hash: ad49e20f31ed572e586aa8bbaafb591b
@@ -1253,10 +1347,22 @@ ScriptsOnlyBuild:
     className: CinemachinePositionComposer
   - hash:
       serializedVersion: 2
+      Hash: ca3032cf4ebe95d9bb6bf2e5e6806e45
+    assemblyName: Assembly-CSharp
+    namespaceName: SojaExiles
+    className: SceneSwitchGen
+  - hash:
+      serializedVersion: 2
       Hash: 4f353524ce6564e40764f1ea080b2d85
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnTriggerStay2DMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 789ab1a4967cad31b918021334c0e5f1
+    assemblyName: Assembly-CSharp
+    namespaceName: SojaExiles
+    className: ClosetopencloseDoor
   - hash:
       serializedVersion: 2
       Hash: db31777c0e4b26078ac4a6b66af35a4f
@@ -1355,6 +1461,12 @@ ScriptsOnlyBuild:
     className: InputSystemObject
   - hash:
       serializedVersion: 2
+      Hash: 838393c415c829b6f3fb7b6482d9f1cf
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ObjectTransparencer
+  - hash:
+      serializedVersion: 2
       Hash: 95cec85248d20787021305cfe145ab16
     assemblyName: Unity.Splines
     namespaceName: UnityEngine.Splines
@@ -1371,6 +1483,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ResultScreenController
+  - hash:
+      serializedVersion: 2
+      Hash: 9ef7aad1757e6dfd0893ca4ece9085da
+    assemblyName: Assembly-CSharp
+    namespaceName: ToonTown
+    className: Building
   - hash:
       serializedVersion: 2
       Hash: d5cd7f207e91ca8336c65a577a6fb2a0
@@ -1475,6 +1593,18 @@ ScriptsOnlyBuild:
     className: UnityOnPointerExitMessageListener
   - hash:
       serializedVersion: 2
+      Hash: da33403b786b6dfc59070a9a909a30a2
+    assemblyName: Assembly-CSharp
+    namespaceName: ToonTown
+    className: StreetLights
+  - hash:
+      serializedVersion: 2
+      Hash: b6324267ddc06a80fe950f8c34b4a5e6
+    assemblyName: Assembly-CSharp
+    namespaceName: ToonTown
+    className: MasterClock
+  - hash:
+      serializedVersion: 2
       Hash: 8dc40a01667ca02b3354a4e7a61be082
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -1547,6 +1677,12 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionEnterMessageListener
   - hash:
       serializedVersion: 2
+      Hash: afa478bf69a61bc695f73b011cdc17ad
+    assemblyName: Assembly-CSharp
+    namespaceName: ToonTown
+    className: Propsbyhour
+  - hash:
+      serializedVersion: 2
       Hash: 715f7928b39881049ce8c46350cb8681
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1581,6 +1717,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: bf58e1532a52079bec0fc65a748b615f
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: FillValueNumber
   - hash:
       serializedVersion: 2
       Hash: 3074afe1b03a0fb081e176a4ef1b9d09
@@ -1715,6 +1857,12 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: 29e6c51cc02aea23210cbc108a252e54
+    assemblyName: Assembly-CSharp
+    namespaceName: SojaExiles
+    className: OvenFlip
+  - hash:
+      serializedVersion: 2
       Hash: b747f5d40674055dd70e18552f1b0447
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -1793,6 +1941,12 @@ ScriptsOnlyBuild:
     className: CinemachineSplineSmoother
   - hash:
       serializedVersion: 2
+      Hash: e8e67531b7c9f524b48ba24e6716e080
+    assemblyName: Assembly-CSharp
+    namespaceName: SojaExiles
+    className: Drawer_Pull_Zopp
+  - hash:
+      serializedVersion: 2
       Hash: 43ebd945b04bced376c791411cf5a289
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1865,6 +2019,12 @@ ScriptsOnlyBuild:
     className: UnityOnParticleCollisionMessageListener
   - hash:
       serializedVersion: 2
+      Hash: a2a80ec228d2096f870d06e10f0bf08b
+    assemblyName: Assembly-CSharp
+    namespaceName: SojaExiles
+    className: BRGlassDoor
+  - hash:
+      serializedVersion: 2
       Hash: 0f5a086d4d028363983ba6ca30a01397
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1919,6 +2079,12 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
+      Hash: 5602f7f825e69dc9f8b1f0746d2d0c34
+    assemblyName: Assembly-CSharp
+    namespaceName: SojaExiles
+    className: opencloseSlide
+  - hash:
+      serializedVersion: 2
       Hash: 4718916586b3818eb69bf65df61f0f3a
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1967,19 +2133,25 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
+      Hash: e8df140ae2e0915eaa0f9ddc350d2d30
+    assemblyName: Assembly-CSharp
+    namespaceName: SojaExiles
+    className: opencloseWindow
+  - hash:
+      serializedVersion: 2
+      Hash: df9c1f858d6e84c43f6f3097effad85e
+    assemblyName: Assembly-CSharp
+    namespaceName: ToonTown
+    className: Game
+  - hash:
+      serializedVersion: 2
       Hash: 3a921d05d3dbc720e2fdad8ffdcfbfd7
     assemblyName: Unity.Splines
     namespaceName: UnityEngine.Splines
     className: SplineExtrude
-  - hash:
-      serializedVersion: 2
-      Hash: bf58e1532a52079bec0fc65a748b615f
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: FillValueNumber
   platform: 9
   scenePathNames:
   - Assets/01.Scenes/00.TitleScene.unity
-  - Assets/01.Scenes/01.TestScene.unity
   - Assets/01.Scenes/02.StageSelectScene.unity
+  - Assets/01.Scenes/010.Stage1.unity
   playerPath: /Users/sakashita_kohei/Desktop/start/repos/01.Build
