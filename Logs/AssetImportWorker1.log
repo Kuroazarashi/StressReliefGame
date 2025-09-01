@@ -333,3 +333,263 @@ Total: 5.384250 ms (FindLiveObjects: 0.275209 ms CreateObjectMapping: 0.220084 m
 Prepare: number of updated asset objects reloaded= 0
 [usbmuxd] Attached: 6 00008130-001415A20A09001C
 [usbmuxd] Detached: 6 00008130-001415A20A09001C
+========================================================================
+Received Import Request.
+  Time since last request: 160953.745670 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Buildings/Materials/v4.mat
+  artifactKey: Guid(6d6f4c86b9b796f4f852501e0877173f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Buildings/Materials/v4.mat using Guid(6d6f4c86b9b796f4f852501e0877173f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd5fa9ea1b91c830d05043ce1ed18500b') in 0.18560475 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000520 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Buildings/Materials/Wall.mat
+  artifactKey: Guid(710e4b660b5be7243a65dcba43c58953) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Buildings/Materials/Wall.mat using Guid(710e4b660b5be7243a65dcba43c58953) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '30059f95e87b779c69cbfa878357c1a4') in 0.004622292 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Buildings/Materials/z2.mat
+  artifactKey: Guid(7861e55d3907eda4eae7b602d48fa18a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Buildings/Materials/z2.mat using Guid(7861e55d3907eda4eae7b602d48fa18a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '908f45efebdb5c4e97956b27e67fbf59') in 0.005505875 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000123 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Buildings/Materials/x2.mat
+  artifactKey: Guid(e2cd3d0b427e8e045bcea6c1754c51ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Buildings/Materials/x2.mat using Guid(e2cd3d0b427e8e045bcea6c1754c51ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c5ce7b2befaf4b54a894085d51686105') in 0.003788916 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.495894 seconds.
+  path: Assets/02.Assets/OneToonBuilding/Models/Shops/Materials/shop10.mat
+  artifactKey: Guid(465e4a2a38f1b4353809b22b920d7f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/OneToonBuilding/Models/Shops/Materials/shop10.mat using Guid(465e4a2a38f1b4353809b22b920d7f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'af61dcad92f65dad859d85797a7e465f') in 0.004242625 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.805467 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Roof/Materials/red.mat
+  artifactKey: Guid(48f1d9b5217e87f449d373fd731d794a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Roof/Materials/red.mat using Guid(48f1d9b5217e87f449d373fd731d794a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ba6d340d5bdc3e5082d6de5f8c134e1c') in 0.003617041 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.483442 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Roof/Materials/photo_2016-05-15_10-21-39.mat
+  artifactKey: Guid(f4e9d74837b031d4abd69606865e06ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Roof/Materials/photo_2016-05-15_10-21-39.mat using Guid(f4e9d74837b031d4abd69606865e06ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e7ca410618407742bedaac8e9abcaa6d') in 0.003614584 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.049136 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Roof/Materials/p5-11.mat
+  artifactKey: Guid(e44aca311f6aafa47a9367a0b39c956d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Roof/Materials/p5-11.mat using Guid(e44aca311f6aafa47a9367a0b39c956d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b3d5b397fa2b9ad4608e2608ceb7c832') in 0.0066175 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000095 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Roof/Materials/p5-13.mat
+  artifactKey: Guid(57e23a00bfd1fa44a9917a33042650be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Roof/Materials/p5-13.mat using Guid(57e23a00bfd1fa44a9917a33042650be) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '412f76c4b3644cf72353068d59801866') in 0.004611417 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.058022 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Roof/Materials/p5-3.mat
+  artifactKey: Guid(67a869affe614cf458c166289ec5c0cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Roof/Materials/p5-3.mat using Guid(67a869affe614cf458c166289ec5c0cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7a9c4ef16f67688e951da154f23d9ded') in 0.004167041 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Roof/Materials/p5-4.mat
+  artifactKey: Guid(847a09f7e0fc78f498a9096ddf09cec5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Roof/Materials/p5-4.mat using Guid(847a09f7e0fc78f498a9096ddf09cec5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '85905cd516714d0c30b40f20d44b6394') in 0.003500542 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000076 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Roof/Materials/p5-6.mat
+  artifactKey: Guid(925de37b1535eb64eaf1db52d6a7e925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Roof/Materials/p5-6.mat using Guid(925de37b1535eb64eaf1db52d6a7e925) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b18cf60e0fbe28ef6f6d30054b525d07') in 0.003351166 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000132 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Roof/Materials/p5-9.mat
+  artifactKey: Guid(f50a3f765c712d244a86a6e1991d3097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Roof/Materials/p5-9.mat using Guid(f50a3f765c712d244a86a6e1991d3097) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'acd6b816b52bb1ef6b13a0709d2fe0e4') in 0.003543917 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.048351 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Roof/Materials/p1-1.mat
+  artifactKey: Guid(f76498cabe605b748892b96f1753f810) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Roof/Materials/p1-1.mat using Guid(f76498cabe605b748892b96f1753f810) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a0d66f178219f526c72b83501b97254a') in 0.00431225 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Roof/Materials/p4.mat
+  artifactKey: Guid(f70fda4d49f6329429e34d60dc5012ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Roof/Materials/p4.mat using Guid(f70fda4d49f6329429e34d60dc5012ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd644bc92835c84da4d18d47938d26365') in 0.003372041 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Roof/Materials/p1-2.mat
+  artifactKey: Guid(c68a9e0db1f90234e967880f9b0ad825) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Roof/Materials/p1-2.mat using Guid(c68a9e0db1f90234e967880f9b0ad825) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9ee92632de45002a38667b6b37179fc3') in 0.003507709 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000111 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Roof/Materials/p3.mat
+  artifactKey: Guid(f423eed10fed2a74ca2db25968c54bc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Roof/Materials/p3.mat using Guid(f423eed10fed2a74ca2db25968c54bc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e71995b999835613c345fa25d2026964') in 0.005241959 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.446729 seconds.
+  path: Assets/02.Assets/OneToonBuilding/Models/Materials/Skies/Night.mat
+  artifactKey: Guid(556e203ffad23794ca388bf6ef587682) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/OneToonBuilding/Models/Materials/Skies/Night.mat using Guid(556e203ffad23794ca388bf6ef587682) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '98c5ea34c794167d20ade665a1f06fed') in 0.052321584 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.774437 seconds.
+  path: Assets/02.Assets/OneToonBuilding/Models/Materials/metalbigdoor.mat
+  artifactKey: Guid(a465fd6e095e0144b99867882ee41983) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/OneToonBuilding/Models/Materials/metalbigdoor.mat using Guid(a465fd6e095e0144b99867882ee41983) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'eed916a5ba37fcdb034b90021171602c') in 0.10051075 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.185731 seconds.
+  path: Assets/02.Assets/OneToonBuilding/Models/Materials/lightsoff.mat
+  artifactKey: Guid(1a1c2f850c1198a40a5fbc5cf3f7adbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/OneToonBuilding/Models/Materials/lightsoff.mat using Guid(1a1c2f850c1198a40a5fbc5cf3f7adbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fa80cd590181a64d1a5b8036e6659379') in 0.063066042 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.554865 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Buildings/Materials/lambert1.mat
+  artifactKey: Guid(d09b485b81c6a014c81b8ea275d46ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Buildings/Materials/lambert1.mat using Guid(d09b485b81c6a014c81b8ea275d46ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '366a9e844348cdab013b7af0a3184c1a') in 0.003494125 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000076 seconds.
+  path: Assets/02.Assets/WhiteCity/Models/Roof/Materials/lambert1.mat
+  artifactKey: Guid(0db88e3e8f89826478e9c49a4fe01ed5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/WhiteCity/Models/Roof/Materials/lambert1.mat using Guid(0db88e3e8f89826478e9c49a4fe01ed5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b0063b79280b76b79e4f1921ebe2cf6b') in 0.003233875 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.037430 seconds.
+  path: Assets/02.Assets/OneToonBuilding/Models/Materials/IndustrialRoofA02.mat
+  artifactKey: Guid(da1ad6c034e07514da73150e5569478e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/OneToonBuilding/Models/Materials/IndustrialRoofA02.mat using Guid(da1ad6c034e07514da73150e5569478e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '60a5a5f427ebd56ef49135555aacf1da') in 0.038209458 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/02.Assets/OneToonBuilding/Models/Materials/Lights/GlassDark2.mat
+  artifactKey: Guid(81669acc3c5dd3d438ea6da2019dd7f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/OneToonBuilding/Models/Materials/Lights/GlassDark2.mat using Guid(81669acc3c5dd3d438ea6da2019dd7f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '77d87b010bc5df74815cf1e2d019ed19') in 0.018449583 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.395571 seconds.
+  path: Assets/02.Assets/OneToonBuilding/Models/Materials/Skies/Dawn.mat
+  artifactKey: Guid(fb2c8b39e9f3f674a8d32611de81e324) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/OneToonBuilding/Models/Materials/Skies/Dawn.mat using Guid(fb2c8b39e9f3f674a8d32611de81e324) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '22a50ebcad8243f12a0f5aad965215aa') in 0.038622916 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Prepare
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Begin MonoManager ReloadAssembly
+Thread 0x16fa57000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.441 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 0.25 ms, found 2 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.458 seconds
+Domain Reload Profiling: 901ms
+	BeginReloadAssembly (126ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (49ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (18ms)
+	LoadAllAssembliesAndSetupDomain (262ms)
+		LoadAssemblies (188ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (113ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (98ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (458ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (375ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (16ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (74ms)
+			ProcessInitializeOnLoadAttributes (265ms)
+			ProcessInitializeOnLoadMethodAttributes (17ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (3ms)
+Refreshing native plugins compatible for Editor in 0.30 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 4354 unused Assets / (0.6 MB). Loaded Objects now: 4911.
+Memory consumption went from 103.6 MB to 103.0 MB.
+Total: 6.036458 ms (FindLiveObjects: 0.276667 ms CreateObjectMapping: 0.269750 ms MarkObjects: 4.563458 ms  DeleteObjects: 0.926125 ms)
+
+Prepare: number of updated asset objects reloaded= 0
