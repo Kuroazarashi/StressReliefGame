@@ -605,3 +605,115 @@ Memory consumption went from 103.1 MB to 102.2 MB.
 Total: 4.528209 ms (FindLiveObjects: 0.248875 ms CreateObjectMapping: 0.197333 ms MarkObjects: 3.451958 ms  DeleteObjects: 0.629875 ms)
 
 Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 1882.887573 seconds.
+  path: Assets/TWD
+  artifactKey: Guid(a0a5e391cc6ca4e20947434f8ca32456) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TWD using Guid(a0a5e391cc6ca4e20947434f8ca32456) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f2425da85af96a95c1f37a319d54e790') in 0.012737709 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.721424 seconds.
+  path: Assets/TWD/background.png
+  artifactKey: Guid(a093780a76b8e8c4c8b121e123d21a82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TWD/background.png using Guid(a093780a76b8e8c4c8b121e123d21a82) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'daee3a9f93feac910fe5fec0142e0864') in 0.081550583 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.071092 seconds.
+  path: Assets/TWD/FreeButtonSet
+  artifactKey: Guid(3cb77df91ed7c5a49a6308febca90db2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TWD/FreeButtonSet using Guid(3cb77df91ed7c5a49a6308febca90db2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '96d4556d0e2c7e2a37de0ad0532311a7') in 0.000564208 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.049491 seconds.
+  path: Assets/10.Prefub/04.UI/UI (Canvas).prefab
+  artifactKey: Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/10.Prefub/04.UI/UI (Canvas).prefab using Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4e88fc153f75ac056e17688efdb7ad44') in 0.031246125 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 122
+
+========================================================================
+Received Import Request.
+  Time since last request: 181.676548 seconds.
+  path: Assets/10.Prefub/04.UI/UI (Canvas).prefab
+  artifactKey: Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/10.Prefub/04.UI/UI (Canvas).prefab using Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '92bd89fa304dc100fa230e8207f299b9') in 0.032995167 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 122
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.218606 seconds.
+  path: Assets/10.Prefub/04.UI/UI (Canvas).prefab
+  artifactKey: Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/10.Prefub/04.UI/UI (Canvas).prefab using Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e20bcd85e7f57762eab84cbcd8071573') in 0.017466792 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 122
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.279311 seconds.
+  path: Assets/10.Prefub/04.UI/UI (Canvas).prefab
+  artifactKey: Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/10.Prefub/04.UI/UI (Canvas).prefab using Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '462921dd5786dc7daabb5326ddf5bee7') in 0.013397958 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 122
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.588210 seconds.
+  path: Assets/10.Prefub/04.UI/UI (Canvas).prefab
+  artifactKey: Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/10.Prefub/04.UI/UI (Canvas).prefab using Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '516280a62dd462d5e29dbde1abca02d6') in 0.011485208 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 122
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.806376 seconds.
+  path: Assets/10.Prefub/04.UI/UI (Canvas).prefab
+  artifactKey: Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/10.Prefub/04.UI/UI (Canvas).prefab using Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7760eace9903372c554095d6b2dc8ffd') in 0.011491417 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 122
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.677956 seconds.
+  path: Assets/10.Prefub/04.UI/UI (Canvas).prefab
+  artifactKey: Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/10.Prefub/04.UI/UI (Canvas).prefab using Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '24b4942a14381ee787118a4bdc7ca5f7') in 0.011656625 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 122
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.252104 seconds.
+  path: Assets/10.Prefub/04.UI/UI (Canvas).prefab
+  artifactKey: Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/10.Prefub/04.UI/UI (Canvas).prefab using Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f59817e2b56bb2e1a3d5c8474520908f') in 0.010657917 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 122
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.689921 seconds.
+  path: Assets/10.Prefub/04.UI/UI (Canvas).prefab
+  artifactKey: Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/10.Prefub/04.UI/UI (Canvas).prefab using Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '53e690fa14f097b0b6b1f6250ff43742') in 0.012255084 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 122
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.675690 seconds.
+  path: Assets/10.Prefub/04.UI/UI (Canvas).prefab
+  artifactKey: Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/10.Prefub/04.UI/UI (Canvas).prefab using Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3f819abe006448b023b81688c7106012') in 0.010530291 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 122
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.128692 seconds.
+  path: Assets/10.Prefub/04.UI/UI (Canvas).prefab
+  artifactKey: Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/10.Prefub/04.UI/UI (Canvas).prefab using Guid(ce921009bf852485590ce1ebb206ade1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5670f60e05ec0af26bc129de75bd350d') in 0.016863125 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 122
+
