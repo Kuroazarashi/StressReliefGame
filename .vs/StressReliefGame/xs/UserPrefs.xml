@@ -1,29 +1,28 @@
 ﻿<Properties StartupConfiguration="{A79F4D05-8018-189D-1E2B-66AE9AB7AA56}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/03.Scripts/StageSelectionManager.cs">
     <Files>
       <File FileName="Assets/07_InputActions/PlayerInputActions.cs" Line="1" Column="1" />
       <File FileName="Assets/03.Scripts/GameManager.cs" />
       <File FileName="Assets/02.Assets/Enviroment/enviroment/Office building/Read me.txt" />
       <File FileName="Assets/03.Scripts/Joystick.cs" />
-      <File FileName="Assets/03.Scripts/AttackColliderHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets/03.Scripts/AttackColliderHandler.cs" />
       <File FileName="Assets/03.Scripts/PlayerController.cs" />
       <File FileName="Assets/03.Scripts/SoundManager.cs" />
       <File FileName="Assets/03.Scripts/EnemyRagdollController.cs" />
       <File FileName="Assets/03.Scripts/EnemyStressVisuals.cs" />
       <File FileName="Assets/03.Scripts/SpeechPhraseData.cs" />
       <File FileName="Assets/03.Scripts/StageSettings.cs" />
-      <File FileName="Assets/03.Scripts/StageSelectionManager.cs" />
+      <File FileName="Assets/03.Scripts/StageSelectionManager.cs" Line="1" Column="1" />
       <File FileName="Assets/03.Scripts/TitleManager.cs" />
       <File FileName="Assets/03.Scripts/SceneReferences.cs" />
       <File FileName="Assets/03.Scripts/Destructible.cs" />
       <File FileName="Assets/03.Scripts/ResultScreenController.cs" />
       <File FileName="Assets/03.Scripts/ObjectTransparencer.cs" />
-      <File FileName="Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs" Line="14" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="17f2bff3-d2d0-45fb-ad70-e04f44bfe184" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="30caf98f-a058-46b2-aaac-80e1b6d90306" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -15,4 +15,7 @@ MonoBehaviour:
   stages:
   - stageName: Stage 1
     sceneName: 010.Stage1
-    scoreToClear: 800
+    scoreToClear: 200
+  - stageName: Stage 2
+    sceneName: 011.Stage2
+    scoreToClear: 1000

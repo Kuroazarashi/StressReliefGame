@@ -72,9 +72,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        // GameManagerのUpdateが正常に動いているか確認するためのログ
-        Debug.Log("GameManager Update is running");
-
         if (isGameActive && !isGameEnded)
         {
             currentTime -= Time.deltaTime;
@@ -229,7 +226,31 @@ public class GameManager : MonoBehaviour
 
     public int GetCurrentScore() { return currentHakkyouScore; }
     public bool IsGameEnded() { return isGameEnded; }
-    public void EndGame(bool isClear) { if (isGameEnded) return; isGameActive = false; isGameEnded = true; if (isClear) { if (stageSettings != null && stageSettings.stages.Count > currentStageIndex) { int scoreToClear = stageSettings.stages[currentStageIndex].scoreToClear; if (currentHakkyouScore >= scoreToClear) { int nextStageToUnlock = currentStageIndex + 1; if (PlayerPrefs.GetInt("ClearedStage", 0) < nextStageToUnlock) { PlayerPrefs.SetInt("ClearedStage", nextStageToUnlock); Debug.Log($"Stage {nextStageToUnlock} unlocked!"); } } } } Debug.Log($"Game Ended! IsClear: {isClear}, Final 発狂スコア  {currentHakkyouScore}"); StartCoroutine(ShowResultScreenWithDelay(isClear)); }
+
+    public void EndGame(bool isClear)
+    {
+        if (isGameEnded) return;
+        isGameActive = false;
+        isGameEnded = true;
+        if (isClear)
+        {
+            if (stageSettings != null && stageSettings.stages.Count > currentStageIndex)
+            {
+                int scoreToClear = stageSettings.stages[currentStageIndex].scoreToClear;
+                if (currentHakkyouScore >= scoreToClear)
+                {
+                    int nextStageToUnlock = currentStageIndex + 1;
+                    if (PlayerPrefs.GetInt("ClearedStage", 0) < nextStageToUnlock)
+                    {
+                        PlayerPrefs.SetInt("ClearedStage", nextStageToUnlock);
+                        Debug.Log($"Stage {nextStageToUnlock} unlocked!");
+                    }
+                }
+            }
+        }
+        Debug.Log($"Game Ended! IsClear: {isClear}, Final 発狂スコア  {currentHakkyouScore}");
+        StartCoroutine(ShowResultScreenWithDelay(isClear));
+    }
     private IEnumerator ShowResultScreenWithDelay(bool isClear) { float duration = 1.0f; float start = Time.timeScale; float end = 1.0f; float elapsed = 0f; while (elapsed < duration) { elapsed += Time.unscaledDeltaTime; Time.timeScale = Mathf.Lerp(start, end, elapsed / duration); yield return null; } Time.timeScale = 1.0f; yield return new WaitForSecondsRealtime(gameEndDelay); ShowResultScreen(isClear); }
     public void NextStage() { Debug.Log("Next Stage button clicked!"); if (stageSettings != null && stageSettings.stages.Count > currentStageIndex + 1) { SceneManager.LoadScene(stageSettings.stages[currentStageIndex + 1].sceneName); } else { Debug.LogWarning("Next stage not found or not configured!"); } }
     public void RetryGame() { Debug.Log("Retry button clicked!"); SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
