@@ -24,14 +24,24 @@ public class StageSelectionManager : MonoBehaviour
     {
         for (int i = 0; i < stageButtons.Length; i++)
         {
+            // ステージが解放されているかどうかの判定
             bool isUnlocked = (i <= lastClearedStageIndex);
-            stageButtons[i].interactable = isUnlocked;
+
+            // ボタンのインタラクティブな状態を設定
+            if (stageButtons[i] != null)
+            {
+                stageButtons[i].interactable = isUnlocked;
+            }
+
+            // ロックアイコンとステージアイコンの表示・非表示を切り替える
             if (lockIcons.Length > i && lockIcons[i] != null)
             {
                 lockIcons[i].SetActive(!isUnlocked);
             }
+
             if (stageIcons.Length > i && stageIcons[i] != null)
             {
+                // ロックされたステージではアイコンを非表示にする
                 stageIcons[i].gameObject.SetActive(isUnlocked);
             }
         }
@@ -39,6 +49,7 @@ public class StageSelectionManager : MonoBehaviour
 
     public void OnStageSelected(int stageIndex)
     {
+        // ステージが解放されている場合のみシーン遷移
         if (stageIndex <= lastClearedStageIndex)
         {
             if (stageSettings != null && stageSettings.stages.Count > stageIndex)
@@ -56,13 +67,8 @@ public class StageSelectionManager : MonoBehaviour
         }
     }
 
-    // ▼▼▼▼▼ このメソッドを追加 ▼▼▼▼▼
-    /// <summary>
-    /// タイトル画面(00.TitleScene)に遷移するメソッド
-    /// </summary>
     public void ReturnToTitle()
     {
         SceneManager.LoadScene("00.TitleScene");
     }
-    // ▲▲▲▲▲ このメソッドを追加 ▲▲▲▲▲
 }

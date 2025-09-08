@@ -833,10 +833,13 @@ MonoBehaviour:
   - {fileID: 10880060}
   - {fileID: 1104918666}
   lockIcons:
-  - {fileID: 2031376271}
+  - {fileID: 0}
   - {fileID: 2073630094}
   - {fileID: 384090399}
-  stageIcons: []
+  stageIcons:
+  - {fileID: 2031376273}
+  - {fileID: 131945176}
+  - {fileID: 1027632249}
 --- !u!1 &506589579
 GameObject:
   m_ObjectHideFlags: 0

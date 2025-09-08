@@ -12,7 +12,7 @@
       <File FileName="Assets/03.Scripts/EnemyStressVisuals.cs" />
       <File FileName="Assets/03.Scripts/SpeechPhraseData.cs" />
       <File FileName="Assets/03.Scripts/StageSettings.cs" />
-      <File FileName="Assets/03.Scripts/StageSelectionManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/03.Scripts/StageSelectionManager.cs" Line="7" Column="35" />
       <File FileName="Assets/03.Scripts/TitleManager.cs" />
       <File FileName="Assets/03.Scripts/SceneReferences.cs" />
       <File FileName="Assets/03.Scripts/Destructible.cs" />
@@ -22,7 +22,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="30caf98f-a058-46b2-aaac-80e1b6d90306" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2809f2a6-0297-4a35-afc2-6e6c526954df" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
