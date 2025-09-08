@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
     private GameObject gameUI;
     private EnemyRagdollController enemyRagdollController;
 
+    private int lastClearedStageIndex;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -67,6 +69,10 @@ public class GameManager : MonoBehaviour
         if (scene.name.StartsWith("01.") || scene.name.StartsWith("010."))
         {
             InitializeGame();
+        }
+        else if (scene.name == "02.StageSelectScene")
+        {
+            lastClearedStageIndex = PlayerPrefs.GetInt("ClearedStage", 0);
         }
     }
 
@@ -132,7 +138,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Initialized with SceneReferences!");
     }
 
-    // ▼▼▼▼▼ ここが新しいAddScoreメソッドです ▼▼▼▼▼
     public void AddScore(GameObject obj, string objTag)
     {
         if (isGameEnded) return;
@@ -140,16 +145,13 @@ public class GameManager : MonoBehaviour
 
         int scoreToAdd = 0;
 
-        // ★変更点：まずDestructibleコンポーネントを探す
         Destructible destructible = obj.GetComponent<Destructible>();
         if (destructible != null)
         {
-            // コンポーネントがあれば、そこからスコアを取得
             scoreToAdd = destructible.scoreValue;
         }
         else
         {
-            // なければ、従来のタグを使った方法でスコアを探す（敵キャラクターなどのため）
             foreach (ScoreEntry entry in objectScoreValues)
             {
                 if (entry.objectTag == objTag)
@@ -167,7 +169,6 @@ public class GameManager : MonoBehaviour
             UpdateScoreText();
         }
 
-        // 敵を倒した際の処理はそのまま
         if (objTag == "Enemy")
         {
             if (enemyRagdollController != null)
@@ -181,7 +182,6 @@ public class GameManager : MonoBehaviour
             EndGame(true);
         }
     }
-    // ▲▲▲▲▲ ここまでが新しいAddScoreメソッドです ▲▲▲▲▲
 
     private void UpdateTimerUI()
     {
@@ -197,8 +197,7 @@ public class GameManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            // ★変更点：表示文字列を「発狂スコア:」に変更し、数字部分を大きくする
-            scoreText.text = "発狂スコア  <size=200%>" + currentHakkyouScore.ToString() + "</size>";
+            scoreText.text = "発狂スコア <size=200%>" + currentHakkyouScore.ToString() + "</size>";
         }
     }
 
@@ -208,13 +207,23 @@ public class GameManager : MonoBehaviour
         if (resultUI != null)
         {
             resultUI.SetActive(true);
-            // ★変更点：リザルト画面のスコア表示を「発狂スコア:」に変更し、数字部分を大きくする
-            if (resultScoreText != null) resultScoreText.text = $"発狂スコア  <size=200%>{currentHakkyouScore}</size>";
+            if (resultScoreText != null) resultScoreText.text = $"発狂スコア <size=200%>{currentHakkyouScore}</size>";
 
             if (isClear)
             {
                 if (resultMessageText != null) resultMessageText.text = "スッキリしたか!?";
-                if (nextStageButton != null) nextStageButton.SetActive(stageSettings != null && stageSettings.stages.Count > currentStageIndex + 1);
+
+                // ネクストボタンの表示条件を明確にする
+                // 最後にクリアしたステージが現在のステージより後の場合に、ネクストボタンを表示する
+                int lastCleared = PlayerPrefs.GetInt("ClearedStage", 0);
+                if (currentStageIndex < lastCleared)
+                {
+                    if (nextStageButton != null) nextStageButton.SetActive(true);
+                }
+                else
+                {
+                    if (nextStageButton != null) nextStageButton.SetActive(false);
+                }
             }
             else
             {
@@ -232,6 +241,7 @@ public class GameManager : MonoBehaviour
         if (isGameEnded) return;
         isGameActive = false;
         isGameEnded = true;
+
         if (isClear)
         {
             if (stageSettings != null && stageSettings.stages.Count > currentStageIndex)
@@ -240,17 +250,21 @@ public class GameManager : MonoBehaviour
                 if (currentHakkyouScore >= scoreToClear)
                 {
                     int nextStageToUnlock = currentStageIndex + 1;
-                    if (PlayerPrefs.GetInt("ClearedStage", 0) < nextStageToUnlock)
+                    int lastCleared = PlayerPrefs.GetInt("ClearedStage", 0);
+                    if (lastCleared < nextStageToUnlock)
                     {
                         PlayerPrefs.SetInt("ClearedStage", nextStageToUnlock);
+                        PlayerPrefs.Save(); // 追加：確実に保存する
                         Debug.Log($"Stage {nextStageToUnlock} unlocked!");
                     }
                 }
             }
         }
-        Debug.Log($"Game Ended! IsClear: {isClear}, Final 発狂スコア  {currentHakkyouScore}");
+
+        Debug.Log($"Game Ended! IsClear: {isClear}, Final 発狂スコア: {currentHakkyouScore}");
         StartCoroutine(ShowResultScreenWithDelay(isClear));
     }
+
     private IEnumerator ShowResultScreenWithDelay(bool isClear) { float duration = 1.0f; float start = Time.timeScale; float end = 1.0f; float elapsed = 0f; while (elapsed < duration) { elapsed += Time.unscaledDeltaTime; Time.timeScale = Mathf.Lerp(start, end, elapsed / duration); yield return null; } Time.timeScale = 1.0f; yield return new WaitForSecondsRealtime(gameEndDelay); ShowResultScreen(isClear); }
     public void NextStage() { Debug.Log("Next Stage button clicked!"); if (stageSettings != null && stageSettings.stages.Count > currentStageIndex + 1) { SceneManager.LoadScene(stageSettings.stages[currentStageIndex + 1].sceneName); } else { Debug.LogWarning("Next stage not found or not configured!"); } }
     public void RetryGame() { Debug.Log("Retry button clicked!"); SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
