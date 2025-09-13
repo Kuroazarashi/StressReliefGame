@@ -136,6 +136,7 @@ public class GameManager : MonoBehaviour
         if (resultUI != null) resultUI.SetActive(false);
 
         Debug.Log("Game Initialized with SceneReferences!");
+        Debug.Log($"[GameManager] InitializeGame - currentStageIndex: {currentStageIndex}, PlayerPrefs ClearedStage: {PlayerPrefs.GetInt("ClearedStage", 0)}");
     }
 
     public void AddScore(GameObject obj, string objTag)
@@ -209,20 +210,34 @@ public class GameManager : MonoBehaviour
             resultUI.SetActive(true);
             if (resultScoreText != null) resultScoreText.text = $"発狂スコア <size=200%>{currentHakkyouScore}</size>";
 
+            Debug.Log($"[GameManager] ShowResultScreen - currentStageIndex: {currentStageIndex}, PlayerPrefs ClearedStage: {PlayerPrefs.GetInt("ClearedStage", 0)}");
+
             if (isClear)
             {
                 if (resultMessageText != null) resultMessageText.text = "スッキリしたか!?";
 
-                // ネクストボタンの表示条件を明確にする
-                // 最後にクリアしたステージが現在のステージより後の場合に、ネクストボタンを表示する
-                int lastCleared = PlayerPrefs.GetInt("ClearedStage", 0);
-                if (currentStageIndex < lastCleared)
+                bool canShowNextStageButton = false;
+                if (stageSettings != null && stageSettings.stages.Count > currentStageIndex)
                 {
-                    if (nextStageButton != null) nextStageButton.SetActive(true);
+                    int scoreToClear = stageSettings.stages[currentStageIndex].scoreToClear;
+                    if (currentHakkyouScore >= scoreToClear)
+                    {
+                        // 現在のステージを規定スコア以上でクリアしている
+                        // さらに、次のステージが存在するかどうか
+                        if (stageSettings.stages.Count > currentStageIndex + 1)
+                        {
+                            // PlayerPrefsのClearedStageが更新されたかどうかは、
+                            // ステージ選択画面で反映されるべき情報なので、
+                            // ここでは単に次のステージがあるかどうかでボタン表示を判断
+                            canShowNextStageButton = true;
+                        }
+                    }
                 }
-                else
+
+                if (nextStageButton != null)
                 {
-                    if (nextStageButton != null) nextStageButton.SetActive(false);
+                    nextStageButton.SetActive(canShowNextStageButton);
+                    Debug.Log($"[GameManager] ShowResultScreen - NextStageButton Active: {canShowNextStageButton}");
                 }
             }
             else
@@ -249,19 +264,32 @@ public class GameManager : MonoBehaviour
                 int scoreToClear = stageSettings.stages[currentStageIndex].scoreToClear;
                 if (currentHakkyouScore >= scoreToClear)
                 {
-                    int nextStageToUnlock = currentStageIndex + 1;
-                    int lastCleared = PlayerPrefs.GetInt("ClearedStage", 0);
-                    if (lastCleared < nextStageToUnlock)
+                    int currentMaxClearedStageIndex = PlayerPrefs.GetInt("ClearedStage", 0);
+                    if (currentStageIndex + 1 > currentMaxClearedStageIndex)
                     {
-                        PlayerPrefs.SetInt("ClearedStage", nextStageToUnlock);
-                        PlayerPrefs.Save(); // 追加：確実に保存する
-                        Debug.Log($"Stage {nextStageToUnlock} unlocked!");
+                        PlayerPrefs.SetInt("ClearedStage", currentStageIndex + 1);
+                        PlayerPrefs.Save();
+                        Debug.Log($"[GameManager] PlayerPrefs: ClearedStage updated to {currentStageIndex + 1}.");
+                    }
+                    else
+                    {
+                        Debug.Log($"[GameManager] PlayerPrefs: ClearedStage not updated. Current max cleared: {currentMaxClearedStageIndex}. New clear index: {currentStageIndex + 1}.");
                     }
                 }
+                else
+                {
+                    Debug.Log($"[GameManager] Not enough score to clear stage. Required: {scoreToClear}, Actual: {currentHakkyouScore}");
+                }
+            }
+            else
+            {
+                Debug.Log($"[GameManager] StageSettings or currentStageIndex out of bounds for EndGame. currentStageIndex: {currentStageIndex}, stages.Count: {stageSettings?.stages.Count}");
             }
         }
 
         Debug.Log($"Game Ended! IsClear: {isClear}, Final 発狂スコア: {currentHakkyouScore}");
+        Debug.Log($"[GameManager] EndGame - currentStageIndex: {currentStageIndex}, PlayerPrefs ClearedStage (after save): {PlayerPrefs.GetInt("ClearedStage", 0)}");
+
         StartCoroutine(ShowResultScreenWithDelay(isClear));
     }
 
