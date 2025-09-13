@@ -207,7 +207,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 471523331}
         m_TargetAssemblyTypeName: StageSelectionManager, Assembly-CSharp
-        m_MethodName: OnStageSelected
+        m_MethodName: SelectStage
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -827,19 +827,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7f4a2440144a4bc5ba8a6d46e0a29d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageSettings: {fileID: 11400000, guid: ac3fdfd341a8c4acf96d182483728f7c, type: 2}
   stageButtons:
   - {fileID: 1464355042}
   - {fileID: 10880060}
   - {fileID: 1104918666}
-  lockIcons:
-  - {fileID: 0}
-  - {fileID: 2073630094}
-  - {fileID: 384090399}
-  stageIcons:
-  - {fileID: 2031376273}
-  - {fileID: 131945176}
-  - {fileID: 1027632249}
 --- !u!1 &506589579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,7 +1358,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 471523331}
         m_TargetAssemblyTypeName: StageSelectionManager, Assembly-CSharp
-        m_MethodName: OnStageSelected
+        m_MethodName: SelectStage
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1842,7 +1833,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 471523331}
         m_TargetAssemblyTypeName: StageSelectionManager, Assembly-CSharp
-        m_MethodName: OnStageSelected
+        m_MethodName: SelectStage
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

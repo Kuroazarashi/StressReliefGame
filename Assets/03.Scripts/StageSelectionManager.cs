@@ -37,19 +37,24 @@ public class StageSelectionManager : MonoBehaviour
         }
     }
 
-    public void SelectStage(int stageNumber)
+    // ▼▼▼ ここを修正しました ▼▼▼
+    /// <summary>
+    /// ステージ選択ボタンから呼び出されるメソッド。
+    /// 引数にはステージのインデックス（Stage1なら0, Stage2なら1...）を渡してください。
+    /// </summary>
+    /// <param name="stageIndex">選択されたステージのインデックス（0始まり）</param>
+    public void SelectStage(int stageIndex)
     {
-        int stageIndex = stageNumber - 1;
-
+        // GameManagerには、受け取ったインデックスをそのまま渡します。
         if (GameManager.Instance != null)
         {
             GameManager.Instance.SetCurrentStage(stageIndex);
         }
 
-        // ▼▼▼ ここを修正しました ▼▼▼
-        // シーン名を実際のファイル名 "010.Stage" + 番号 に合わせます
+        // シーン名はインデックスに1を足して生成します (index 0 -> Stage1)
+        int stageNumber = stageIndex + 1;
         SceneManager.LoadScene("010.Stage" + stageNumber);
-        // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲
     }
+    // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 }
 
