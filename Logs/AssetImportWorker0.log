@@ -217,3 +217,11 @@ Received Import Request.
 Start importing Assets/EnvironmentPack/Supermarket using Guid(13dd3a8daea0e471eb071d0d99c70a5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2ec8c47fa29cf54cbeb86b3fb221257e') in 0.003223083 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
+========================================================================
+Received Import Request.
+  Time since last request: 1318.458642 seconds.
+  path: Assets/Japanese Train Station Pack
+  artifactKey: Guid(fe70b5fc83333674e86c78fa5c961bde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Japanese Train Station Pack using Guid(fe70b5fc83333674e86c78fa5c961bde) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '819bb0296b9a27a093153d0bd4c4f147') in 0.001321125 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
