@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Stage Settings")]
     public StageSettings stageSettings;
-    [SerializeField] private int currentStageIndex;
+    private int currentStageIndex;
 
     [Header("発狂スコア Settings")]
     private int currentHakkyouScore = 0;
