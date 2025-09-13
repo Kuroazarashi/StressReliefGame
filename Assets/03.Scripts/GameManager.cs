@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Stage Settings")]
     public StageSettings stageSettings;
-    private int currentStageIndex;
+    private int currentStageIndex = -1;
 
     [Header("発狂スコア Settings")]
     private int currentHakkyouScore = 0;
@@ -65,11 +65,33 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // 01.で始まるシーンだけでなく、010.で始まるシーンでもInitializeGameを呼び出す
-        if (scene.name.StartsWith("01.") || scene.name.StartsWith("010."))
+        // ▼▼▼ ここから修正 ▼▼▼
+        // "01"で始まるステージシーンがロードされた時の処理
+        if (scene.name.StartsWith("01"))
         {
+            bool stageFound = false;
+            // StageSettingsに登録されている情報から、現在のシーン名と一致するものを探す
+            for (int i = 0; i < stageSettings.stages.Count; i++)
+            {
+                if (stageSettings.stages[i].sceneName == scene.name)
+                {
+                    // 一致するものが見つかったら、そのインデックスをcurrentStageIndexに設定
+                    currentStageIndex = i;
+                    stageFound = true;
+                    Debug.Log($"[GameManager] Scene loaded. Stage index automatically set to {currentStageIndex} from scene name.");
+                    break;
+                }
+            }
+
+            // もしStageSettingsにシーンが登録されていなかったら警告を出す
+            if (!stageFound)
+            {
+                Debug.LogWarning($"[GameManager] The loaded scene '{scene.name}' was not found in StageSettings. Stage index remains at its default. This may cause errors.");
+            }
+
             InitializeGame();
         }
+        // ▲▲▲ ここまで修正 ▲▲▲
         else if (scene.name == "02.StageSelectScene")
         {
             lastClearedStageIndex = PlayerPrefs.GetInt("ClearedStage", 0);
@@ -217,18 +239,14 @@ public class GameManager : MonoBehaviour
                 if (resultMessageText != null) resultMessageText.text = "スッキリしたか!?";
 
                 bool canShowNextStageButton = false;
-                if (stageSettings != null && stageSettings.stages.Count > currentStageIndex)
+                // 安全装置：currentStageIndexが不正な値でないかチェック
+                if (stageSettings != null && currentStageIndex >= 0 && stageSettings.stages.Count > currentStageIndex)
                 {
                     int scoreToClear = stageSettings.stages[currentStageIndex].scoreToClear;
                     if (currentHakkyouScore >= scoreToClear)
                     {
-                        // 現在のステージを規定スコア以上でクリアしている
-                        // さらに、次のステージが存在するかどうか
                         if (stageSettings.stages.Count > currentStageIndex + 1)
                         {
-                            // PlayerPrefsのClearedStageが更新されたかどうかは、
-                            // ステージ選択画面で反映されるべき情報なので、
-                            // ここでは単に次のステージがあるかどうかでボタン表示を判断
                             canShowNextStageButton = true;
                         }
                     }
@@ -259,8 +277,11 @@ public class GameManager : MonoBehaviour
 
         if (isClear)
         {
-            if (stageSettings != null && stageSettings.stages.Count > currentStageIndex)
+            // ▼▼▼ ここから修正 ▼▼▼
+            // 安全装置：currentStageIndexが不正な値(-1など)でないことを確認する条件を追加
+            if (stageSettings != null && currentStageIndex >= 0 && stageSettings.stages.Count > currentStageIndex)
             {
+                // ▲▲▲ ここまで修正 ▲▲▲
                 int scoreToClear = stageSettings.stages[currentStageIndex].scoreToClear;
                 if (currentHakkyouScore >= scoreToClear)
                 {
@@ -293,10 +314,65 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ShowResultScreenWithDelay(isClear));
     }
 
-    private IEnumerator ShowResultScreenWithDelay(bool isClear) { float duration = 1.0f; float start = Time.timeScale; float end = 1.0f; float elapsed = 0f; while (elapsed < duration) { elapsed += Time.unscaledDeltaTime; Time.timeScale = Mathf.Lerp(start, end, elapsed / duration); yield return null; } Time.timeScale = 1.0f; yield return new WaitForSecondsRealtime(gameEndDelay); ShowResultScreen(isClear); }
-    public void NextStage() { Debug.Log("Next Stage button clicked!"); if (stageSettings != null && stageSettings.stages.Count > currentStageIndex + 1) { SceneManager.LoadScene(stageSettings.stages[currentStageIndex + 1].sceneName); } else { Debug.LogWarning("Next stage not found or not configured!"); } }
-    public void RetryGame() { Debug.Log("Retry button clicked!"); SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
-    public void ReturnToTitle() { Debug.Log("Return to Title button clicked!"); SceneManager.LoadScene("00.TitleScene"); }
-    public void ReturnToStageSelect() { Debug.Log("Return to Stage Select button clicked!"); SceneManager.LoadScene("02.StageSelectScene"); }
-    public void SetCurrentStage(int stageIndex) { currentStageIndex = stageIndex; }
+    private IEnumerator ShowResultScreenWithDelay(bool isClear)
+    {
+        float duration = 1.0f;
+        float start = Time.timeScale;
+        float end = 1.0f;
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.unscaledDeltaTime;
+            Time.timeScale = Mathf.Lerp(start, end, elapsed / duration);
+            yield return null;
+        }
+        Time.timeScale = 1.0f;
+        yield return new WaitForSecondsRealtime(gameEndDelay);
+        ShowResultScreen(isClear);
+    }
+
+    public void NextStage()
+    {
+        Debug.Log("Next Stage button clicked!");
+        if (stageSettings != null && stageSettings.stages.Count > currentStageIndex + 1)
+        {
+            SceneManager.LoadScene(stageSettings.stages[currentStageIndex + 1].sceneName);
+        }
+        else
+        {
+            Debug.LogWarning("Next stage not found or not configured!");
+        }
+    }
+
+    public void RetryGame()
+    {
+        Debug.Log("Retry button clicked!");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ReturnToTitle()
+    {
+        Debug.Log("Return to Title button clicked!");
+        SceneManager.LoadScene("00.TitleScene");
+    }
+
+    public void ReturnToStageSelect()
+    {
+        Debug.Log("Return to Stage Select button clicked!");
+        SceneManager.LoadScene("02.StageSelectScene");
+    }
+
+    public void SetCurrentStage(int stageIndex)
+    {
+        if (stageIndex < 0 || stageIndex >= stageSettings.stages.Count)
+        {
+            Debug.LogWarning($"[GameManager] Invalid stage index ({stageIndex}) was set. It might cause issues.");
+        }
+        else
+        {
+            Debug.Log($"[GameManager] SetCurrentStage called with index: {stageIndex}");
+        }
+        currentStageIndex = stageIndex;
+    }
 }
+

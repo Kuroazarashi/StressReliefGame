@@ -13,48 +13,66 @@ public class StageSelectionManager : MonoBehaviour
 
     void UpdateStageButtons()
     {
-        int lastClearedStagePlusOne = PlayerPrefs.GetInt("ClearedStage", 0);
+        int clearedStageIndex = PlayerPrefs.GetInt("ClearedStage", 0);
+
         for (int i = 0; i < stageButtons.Length; i++)
         {
-            if (i <= lastClearedStagePlusOne)
+            // i はボタンのインデックス (0=Stage1, 1=Stage2...)
+            // clearedStageIndex はクリア済みの最大インデックス+1 (Stage1クリア後は1になる)
+            if (i <= clearedStageIndex)
             {
+                // ▼▼▼ アンロック時の処理 ▼▼▼
                 stageButtons[i].interactable = true;
-                Transform lockedImage = stageButtons[i].transform.Find("Locked");
-                if (lockedImage != null)
+
+                // Lockオブジェクトを非表示にする
+                Transform lockImage = stageButtons[i].transform.Find("Lock");
+                if (lockImage != null)
                 {
-                    lockedImage.gameObject.SetActive(false);
+                    lockImage.gameObject.SetActive(false);
+                }
+
+                // 【修正点】Iconオブジェクトを表示する処理を追加
+                Transform iconImage = stageButtons[i].transform.Find("Icon");
+                if (iconImage != null)
+                {
+                    iconImage.gameObject.SetActive(true);
                 }
             }
             else
             {
+                // ▼▼▼ ロック時の処理 ▼▼▼
                 stageButtons[i].interactable = false;
-                Transform lockedImage = stageButtons[i].transform.Find("Locked");
-                if (lockedImage != null)
+
+                // Lockオブジェクトを表示する
+                Transform lockImage = stageButtons[i].transform.Find("Lock");
+                if (lockImage != null)
                 {
-                    lockedImage.gameObject.SetActive(true);
+                    lockImage.gameObject.SetActive(true);
+                }
+
+                // Iconオブジェクトを非表示にする
+                Transform iconImage = stageButtons[i].transform.Find("Icon");
+                if (iconImage != null)
+                {
+                    iconImage.gameObject.SetActive(false);
                 }
             }
         }
     }
 
-    // ▼▼▼ ここを修正しました ▼▼▼
-    /// <summary>
-    /// ステージ選択ボタンから呼び出されるメソッド。
-    /// 引数にはステージのインデックス（Stage1なら0, Stage2なら1...）を渡してください。
-    /// </summary>
-    /// <param name="stageIndex">選択されたステージのインデックス（0始まり）</param>
     public void SelectStage(int stageIndex)
     {
-        // GameManagerには、受け取ったインデックスをそのまま渡します。
         if (GameManager.Instance != null)
         {
             GameManager.Instance.SetCurrentStage(stageIndex);
         }
 
-        // シーン名はインデックスに1を足して生成します (index 0 -> Stage1)
-        int stageNumber = stageIndex + 1;
-        SceneManager.LoadScene("010.Stage" + stageNumber);
-    }
-    // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲
-}
+        // 【修正点】新しいシーン命名規則に対応したシーン名を生成
+        // Stage1 (index 0) -> "010.Stage1"
+        // Stage2 (index 1) -> "011.Stage2"
+        string sceneToLoad = "01" + stageIndex + ".Stage" + (stageIndex + 1);
 
+        Debug.Log("Attempting to load scene: " + sceneToLoad);
+        SceneManager.LoadScene(sceneToLoad);
+    }
+}
