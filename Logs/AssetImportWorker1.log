@@ -217,3 +217,123 @@ Received Import Request.
 Start importing Assets/10.Prefub/01.Characters/Enemy.prefab using Guid(beb75cc5063ed4aeeaec2ff8a2efdd58) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '74813e1c1e142a7797315507112e9185') in 0.295340625 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 530
 
+========================================================================
+Received Import Request.
+  Time since last request: 211.568575 seconds.
+  path: Assets/02.Assets/TWD/FreeButtonSet/Fonts/Poppins-MediumItalic.ttf
+  artifactKey: Guid(d1fe0bc1ac9782f4c8f875e1a7cea6d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/TWD/FreeButtonSet/Fonts/Poppins-MediumItalic.ttf using Guid(d1fe0bc1ac9782f4c8f875e1a7cea6d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '556bed3c5e6f88c19203f41b777ec680') in 0.103048833 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 138.158563 seconds.
+  path: Assets/02.Assets/Supermarket/Prefabs/Bin.prefab
+  artifactKey: Guid(38678a227ec9448409ac4d51cf537719) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/Supermarket/Prefabs/Bin.prefab using Guid(38678a227ec9448409ac4d51cf537719) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9ac77060bbc222e9fbad3f561d202eac') in 0.032850375 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/02.Assets/Supermarket/Prefabs/Floor_Supermarket.prefab
+  artifactKey: Guid(614ca13ab34a885449b1ee3e4748be88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/Supermarket/Prefabs/Floor_Supermarket.prefab using Guid(614ca13ab34a885449b1ee3e4748be88) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5fb2f85ce91fc2e4c3ea2c1137d14f0d') in 0.055389708 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.358487 seconds.
+  path: Assets/02.Assets/Supermarket/Prefabs/Baskets/Basket_Single.prefab
+  artifactKey: Guid(396815017e53cf04dbe903cf4e2f2280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/Supermarket/Prefabs/Baskets/Basket_Single.prefab using Guid(396815017e53cf04dbe903cf4e2f2280) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1ef9d2c0018962034c5d4b28fa34cca1') in 0.004737792 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.810405 seconds.
+  path: Assets/02.Assets/Supermarket/Prefabs/CheeseCounter/CheeseCounter.prefab
+  artifactKey: Guid(22925b0b7546c324280006d92f845e8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/Supermarket/Prefabs/CheeseCounter/CheeseCounter.prefab using Guid(22925b0b7546c324280006d92f845e8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '62bb75267f73d1c089e36cb8cead136a') in 0.005249792 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 38
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/02.Assets/Supermarket/Prefabs/CheeseCounter/CheeseText.prefab
+  artifactKey: Guid(7a577f0972fb9b9438f4eacfaefb503b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/Supermarket/Prefabs/CheeseCounter/CheeseText.prefab using Guid(7a577f0972fb9b9438f4eacfaefb503b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'acf76e95f061691315b49809c765829f') in 0.00312425 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.526432 seconds.
+  path: Assets/02.Assets/Supermarket/Prefabs/Crates/Crate_M.prefab
+  artifactKey: Guid(bc05fa03a019d084eb58e126035bafd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/Supermarket/Prefabs/Crates/Crate_M.prefab using Guid(bc05fa03a019d084eb58e126035bafd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ccc365d4f00a58750f5d3d36ab8d3518') in 0.005081875 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.340874 seconds.
+  path: Assets/02.Assets/Supermarket/Prefabs/EntranceGate/GatePort.prefab
+  artifactKey: Guid(348d6f6f5170c544a861ab402a23629b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/Supermarket/Prefabs/EntranceGate/GatePort.prefab using Guid(348d6f6f5170c544a861ab402a23629b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2bee95d59fba4a9f2506d8f6b1903724') in 0.004683125 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 15
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/02.Assets/Supermarket/Prefabs/EntranceGate/Railing_Addon.prefab
+  artifactKey: Guid(b1b6e90c40c3b9f4b9aac03f71d787c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/Supermarket/Prefabs/EntranceGate/Railing_Addon.prefab using Guid(b1b6e90c40c3b9f4b9aac03f71d787c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '56451529ecbff9159ea8d3f698963b91') in 0.005867333 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.322385 seconds.
+  path: Assets/02.Assets/Supermarket/Prefabs/ShoppingCarts/ShoppingCart_Row.prefab
+  artifactKey: Guid(780e7033da5a9d54b8b18627d19ec74b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/Supermarket/Prefabs/ShoppingCarts/ShoppingCart_Row.prefab using Guid(780e7033da5a9d54b8b18627d19ec74b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '18d5f5b3f32c5e35835f4181f29a133f') in 0.006591292 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.762173 seconds.
+  path: Assets/02.Assets/Supermarket/Prefabs/Fridges&Freezers/Freezer/Freezer.prefab
+  artifactKey: Guid(340dc35a4585bbe41b8ba24ec0f2dada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/Supermarket/Prefabs/Fridges&Freezers/Freezer/Freezer.prefab using Guid(340dc35a4585bbe41b8ba24ec0f2dada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c7cdd47b737490388034f791f61c67f2') in 0.044222291 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 50
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.021680 seconds.
+  path: Assets/02.Assets/Supermarket/Prefabs/Fridges&Freezers/Fridge_Long/FridgeBox.prefab
+  artifactKey: Guid(5eb874579b6017e4faf278e5153fb3f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/Supermarket/Prefabs/Fridges&Freezers/Fridge_Long/FridgeBox.prefab using Guid(5eb874579b6017e4faf278e5153fb3f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1b0bdcfabbfaef40c26a80b8a40fd0fd') in 0.004887542 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.979823 seconds.
+  path: Assets/02.Assets/Supermarket/FBX/Supermarket.fbx
+  artifactKey: Guid(795fb7b186a59b249952182baff1efa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/Supermarket/FBX/Supermarket.fbx using Guid(795fb7b186a59b249952182baff1efa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '262eb2504954e1856bacc5392b0bf966') in 1.044494334 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1605
+
+========================================================================
+Received Import Request.
+  Time since last request: 39.989232 seconds.
+  path: Assets/02.Assets/Supermarket/Material/Supermarket_Floor.mat
+  artifactKey: Guid(ec083bd544b88a64381bd0232afb5367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/Supermarket/Material/Supermarket_Floor.mat using Guid(ec083bd544b88a64381bd0232afb5367) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8b99262bf275fdd5cc4bafe940f6e75e') in 0.005622416 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000115 seconds.
+  path: Assets/02.Assets/Supermarket/Material/Supermarket_Glass.mat
+  artifactKey: Guid(25280c570fa59694c9cf4a4c53da8154) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/Supermarket/Material/Supermarket_Glass.mat using Guid(25280c570fa59694c9cf4a4c53da8154) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '809c0b64cc10ff14623d0409e35b3616') in 0.015112291 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
