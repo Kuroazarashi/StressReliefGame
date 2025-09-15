@@ -209,3 +209,83 @@ Unloading 4356 unused Assets / (1.2 MB). Loaded Objects now: 4867.
 Memory consumption went from 98.3 MB to 97.1 MB.
 Total: 5.045875 ms (FindLiveObjects: 0.413000 ms CreateObjectMapping: 0.181667 ms MarkObjects: 3.728042 ms  DeleteObjects: 0.722916 ms)
 
+========================================================================
+Received Import Request.
+  Time since last request: 113313.497002 seconds.
+  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/30_0_baseColor.png
+  artifactKey: Guid(c760d96a2f1b745c4922fc25c905e4cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/30_0_baseColor.png using Guid(c760d96a2f1b745c4922fc25c905e4cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '971b27c22487967f1fb64b3a40724afb') in 0.07378675 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/New-Chouffe-e1367828078106_baseColor.jpeg
+  artifactKey: Guid(1f894133b179c4f84abf5b8281c03c09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/New-Chouffe-e1367828078106_baseColor.jpeg using Guid(1f894133b179c4f84abf5b8281c03c09) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ed45bfd5191982c9b7fac219f6a46fb5') in 0.003969416 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 89.170529 seconds.
+  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/water-bottles/source/Water_Bottles_ 3.obj
+  artifactKey: Guid(c9cd38f0961ca40c8a4bf0efa205f31e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/water-bottles/source/Water_Bottles_ 3.obj using Guid(c9cd38f0961ca40c8a4bf0efa205f31e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cfb747b43019fed386ffea8c6ceb9431') in 0.100433792 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 45.598339 seconds.
+  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/banana.png
+  artifactKey: Guid(c81ca146416ee45a2a6f95783bf67e84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/banana.png using Guid(c81ca146416ee45a2a6f95783bf67e84) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e1ed01d691cdefc04509d6f0ef265c72') in 0.004770625 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/soda_BaseMap.png
+  artifactKey: Guid(6c6aa2a218eff451ea125e8dd2623b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/soda_BaseMap.png using Guid(6c6aa2a218eff451ea125e8dd2623b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1aa9dfeacf4d8948ec0bc24413c14868') in 0.00354425 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000122 seconds.
+  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/cereal02.png
+  artifactKey: Guid(9392e22fdd7b74f54a62d6959dad2b08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/cereal02.png using Guid(9392e22fdd7b74f54a62d6959dad2b08) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2d0230aa4d88dc2e866a257dcb6c10f0') in 0.003650791 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/internal_ground_ao_texture.jpeg
+  artifactKey: Guid(bdd66252cd3824fdabcd162be9f8613e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/internal_ground_ao_texture.jpeg using Guid(bdd66252cd3824fdabcd162be9f8613e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ea59c0a19b7cd0447a3fbf9a067c9314') in 0.00365975 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/milk.png
+  artifactKey: Guid(67014369f27d04fe38a0dd7311187b79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/milk.png using Guid(67014369f27d04fe38a0dd7311187b79) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5d24fa99e02a754aa152178ed76caeee') in 0.0036245 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000078 seconds.
+  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/eggplant.png
+  artifactKey: Guid(c32040c1246f64861b0e1ec252e49d3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/eggplant.png using Guid(c32040c1246f64861b0e1ec252e49d3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7eb9ad70064ee643135be80cd00d2701') in 0.003883584 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000101 seconds.
+  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/lemon.png
+  artifactKey: Guid(df5bf647e125c4a689323948e0846fd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/lemon.png using Guid(df5bf647e125c4a689323948e0846fd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '192398503728fd6285471ed4e1dbf0c8') in 0.005381292 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
