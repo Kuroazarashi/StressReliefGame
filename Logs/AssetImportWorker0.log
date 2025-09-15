@@ -217,3 +217,51 @@ Received Import Request.
 Start importing Assets/02.Assets/011.Stage2 using Guid(5d6796af6a89f4c99a7d29e58c3d98ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b97253affa32d7447ac81148c45d169e') in 0.002905083 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
+========================================================================
+Received Import Request.
+  Time since last request: 94.493667 seconds.
+  path: Assets/02.Assets/011.Stage2/super_market_asset_low_poly_.glb
+  artifactKey: Guid(f3177d1966d4946c4a4e7cc6a89e2293) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/011.Stage2/super_market_asset_low_poly_.glb using Guid(f3177d1966d4946c4a4e7cc6a89e2293) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8fbb9827d20555bf52ef5e77f115b0bc') in 0.030194208 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.665055 seconds.
+  path: Assets/02.Assets/011.Stage2/supermarket_drinks_shelf_asset.glb
+  artifactKey: Guid(d53454b6b16fc445c9eaf6fe981b7890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/011.Stage2/supermarket_drinks_shelf_asset.glb using Guid(d53454b6b16fc445c9eaf6fe981b7890) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2a09a66063b6d584cd7ca8bbc052df51') in 0.000562625 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 136.849522 seconds.
+  path: Assets/02.Assets/011.Stage2/instant_noodles.glb
+  artifactKey: Guid(555ec3fa612f44aecbc40424260f2bfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/011.Stage2/instant_noodles.glb using Guid(555ec3fa612f44aecbc40424260f2bfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '41d1a7394992abd4fdcbaab364ed3686') in 0.000582417 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 126.365096 seconds.
+  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel
+  artifactKey: Guid(fa2fa64ae6c1b4e49a762436fc180f22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel using Guid(fa2fa64ae6c1b4e49a762436fc180f22) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '79006a708472a5e630c0005df7b99a65') in 0.000303792 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.862852 seconds.
+  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/source
+  artifactKey: Guid(3eb993e63d8d8411e8b3c48c16aa2cde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/source using Guid(3eb993e63d8d8411e8b3c48c16aa2cde) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '629d6ead9c41230bf73689e9761a5dce') in 0.000481916 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.135822 seconds.
+  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/source/Shopping_cart.fbx
+  artifactKey: Guid(370107409703441eeafecc091b7a895c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/source/Shopping_cart.fbx using Guid(370107409703441eeafecc091b7a895c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b9cb80a8ba77f0aa4cbb624ec59b982c') in 0.221497334 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 254
+
