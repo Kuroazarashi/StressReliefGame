@@ -21,7 +21,7 @@ AssetImportWorker0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60669
+62643
 -job-worker-count
 3
 -background-job-worker-count
@@ -67,7 +67,7 @@ Successfully changed project path to: /Users/sakashita_kohei/Desktop/start/repos
     "memorysetup-temp-allocator-size-gfx=262144"
 Player connection [8502042816]  Target information:
 
-Player connection [8502042816]  * "[IP] 192.168.0.183 [Port] 0 [Flags] 2 [Guid] 2015061791 [EditorId] 2015061791 [Version] 1048832 [Id] OSXEditor(0,sakashitakouheinoMacBook-Pro.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+Player connection [8502042816]  * "[IP] 192.168.0.183 [Port] 0 [Flags] 2 [Guid] 2642572460 [EditorId] 2642572460 [Version] 1048832 [Id] OSXEditor(0,sakashitakouheinoMacBook-Pro.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
 
 Player connection [8502042816] Host joined multi-casting on [225.0.0.222:54997]...
 Player connection [8502042816] Host joined alternative multi-casting on [225.0.0.222:34997]...
@@ -82,7 +82,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 0.85 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.82 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.51f1 (01c3ff5872c5)
 [Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Resources/UnitySubsystems
@@ -97,51 +97,51 @@ Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
 Mono config path = '/Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56368
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56363
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/6000.0.51f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/6000.0.51f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
-Registered in 0.004481 seconds.
-- Loaded All Assemblies, in  0.309 seconds
+Registered in 0.003587 seconds.
+- Loaded All Assemblies, in  0.306 seconds
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
 [usbmuxd] Send listen message
 Native extension for iOS target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 80 ms
+Android Extension - Scanning For ADB Devices 70 ms
 Native extension for OSXStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.377 seconds
-Domain Reload Profiling: 686ms
-	BeginReloadAssembly (111ms)
+- Finished resetting the current domain, in  0.373 seconds
+Domain Reload Profiling: 679ms
+	BeginReloadAssembly (112ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (0ms)
-	RebuildCommonClasses (29ms)
+	RebuildCommonClasses (27ms)
 	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (33ms)
-	LoadAllAssembliesAndSetupDomain (126ms)
-		LoadAssemblies (112ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (125ms)
+		LoadAssemblies (113ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
 		AnalyzeDomain (122ms)
-			TypeCache.Refresh (121ms)
-				TypeCache.ScanAssembly (111ms)
+			TypeCache.Refresh (120ms)
+				TypeCache.ScanAssembly (109ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (378ms)
+	FinalizeReload (373ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (346ms)
+		SetupLoadedEditorAssemblies (342ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (182ms)
-			SetLoadedEditorAssemblies (3ms)
+			InitializePlatformSupportModulesInManaged (179ms)
+			SetLoadedEditorAssemblies (4ms)
 			BeforeProcessingInitializeOnLoad (44ms)
-			ProcessInitializeOnLoadAttributes (77ms)
-			ProcessInitializeOnLoadMethodAttributes (39ms)
+			ProcessInitializeOnLoadAttributes (76ms)
+			ProcessInitializeOnLoadMethodAttributes (40ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -153,11 +153,11 @@ Import Worker Mode flag is 0x00
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.488 seconds
+- Loaded All Assemblies, in  0.499 seconds
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
 'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
 'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 0.21 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.27 ms, found 2 plugins.
 Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
@@ -167,475 +167,59 @@ Package Manager log level set to [2]
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.420 seconds
-Domain Reload Profiling: 908ms
-	BeginReloadAssembly (100ms)
+- Finished resetting the current domain, in  0.428 seconds
+Domain Reload Profiling: 927ms
+	BeginReloadAssembly (105ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (30ms)
 	RebuildCommonClasses (29ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (23ms)
-	LoadAllAssembliesAndSetupDomain (325ms)
-		LoadAssemblies (198ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (22ms)
+	LoadAllAssembliesAndSetupDomain (335ms)
+		LoadAssemblies (209ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (167ms)
-			TypeCache.Refresh (139ms)
-				TypeCache.ScanAssembly (124ms)
+		AnalyzeDomain (168ms)
+			TypeCache.Refresh (140ms)
+				TypeCache.ScanAssembly (125ms)
 			BuildScriptInfoCaches (21ms)
 			ResolveRequiredComponents (5ms)
-	FinalizeReload (420ms)
+	FinalizeReload (428ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (338ms)
+		SetupLoadedEditorAssemblies (342ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (13ms)
+			InitializePlatformSupportModulesInManaged (14ms)
 			SetLoadedEditorAssemblies (3ms)
-			BeforeProcessingInitializeOnLoad (66ms)
-			ProcessInitializeOnLoadAttributes (238ms)
-			ProcessInitializeOnLoadMethodAttributes (16ms)
+			BeforeProcessingInitializeOnLoad (63ms)
+			ProcessInitializeOnLoadAttributes (244ms)
+			ProcessInitializeOnLoadMethodAttributes (17ms)
 			AfterProcessingInitializeOnLoad (1ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (2ms)
 Launching external process: /Applications/Unity/Hub/Editor/6000.0.51f1/Unity.app/Contents/Tools/UnityShaderCompiler
-Launched and connected shader compiler UnityShaderCompiler after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.27 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 4356 unused Assets / (1.2 MB). Loaded Objects now: 4867.
-Memory consumption went from 98.4 MB to 97.2 MB.
-Total: 4.717709 ms (FindLiveObjects: 0.261000 ms CreateObjectMapping: 0.147917 ms MarkObjects: 3.628625 ms  DeleteObjects: 0.679750 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 112495.854155 seconds.
-  path: Assets/02.Assets/011.Stage2
-  artifactKey: Guid(5d6796af6a89f4c99a7d29e58c3d98ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2 using Guid(5d6796af6a89f4c99a7d29e58c3d98ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b97253affa32d7447ac81148c45d169e') in 0.002905083 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 94.493667 seconds.
-  path: Assets/02.Assets/011.Stage2/super_market_asset_low_poly_.glb
-  artifactKey: Guid(f3177d1966d4946c4a4e7cc6a89e2293) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super_market_asset_low_poly_.glb using Guid(f3177d1966d4946c4a4e7cc6a89e2293) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8fbb9827d20555bf52ef5e77f115b0bc') in 0.030194208 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 26.665055 seconds.
-  path: Assets/02.Assets/011.Stage2/supermarket_drinks_shelf_asset.glb
-  artifactKey: Guid(d53454b6b16fc445c9eaf6fe981b7890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/supermarket_drinks_shelf_asset.glb using Guid(d53454b6b16fc445c9eaf6fe981b7890) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2a09a66063b6d584cd7ca8bbc052df51') in 0.000562625 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 136.849522 seconds.
-  path: Assets/02.Assets/011.Stage2/instant_noodles.glb
-  artifactKey: Guid(555ec3fa612f44aecbc40424260f2bfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/instant_noodles.glb using Guid(555ec3fa612f44aecbc40424260f2bfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '41d1a7394992abd4fdcbaab364ed3686') in 0.000582417 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 126.365096 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel
-  artifactKey: Guid(fa2fa64ae6c1b4e49a762436fc180f22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel using Guid(fa2fa64ae6c1b4e49a762436fc180f22) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '79006a708472a5e630c0005df7b99a65') in 0.000303792 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.862852 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/source
-  artifactKey: Guid(3eb993e63d8d8411e8b3c48c16aa2cde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/source using Guid(3eb993e63d8d8411e8b3c48c16aa2cde) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '629d6ead9c41230bf73689e9761a5dce') in 0.000481916 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.135822 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/source/Shopping_cart.fbx
-  artifactKey: Guid(370107409703441eeafecc091b7a895c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/source/Shopping_cart.fbx using Guid(370107409703441eeafecc091b7a895c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b9cb80a8ba77f0aa4cbb624ec59b982c') in 0.221497334 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 254
-
-========================================================================
-Received Import Request.
-  Time since last request: 424.492175 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2
-  artifactKey: Guid(6a06e6e3943ef4ede894eb4eeff353f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2 using Guid(6a06e6e3943ef4ede894eb4eeff353f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8a197a35d77664243bc4dfa88fcbac9e') in 0.000919833 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.312795 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/source
-  artifactKey: Guid(56112b0203106476f9dbd132814836ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/source using Guid(56112b0203106476f9dbd132814836ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a77b97ec380d6de0bf313ca2cd480c85') in 0.00034475 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.036514 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures
-  artifactKey: Guid(cd18e3fc5cc544aee961294633914ec4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures using Guid(cd18e3fc5cc544aee961294633914ec4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00a6d120559b30c2f24b9c846ba95d88') in 0.000276333 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.159468 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/20_1_small_baseColor.jpeg
-  artifactKey: Guid(84b2f6dfe49a444fcbfc3f6a43860bab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/20_1_small_baseColor.jpeg using Guid(84b2f6dfe49a444fcbfc3f6a43860bab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ceca935139fb5992e40cc501502b76d2') in 0.013883708 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000059 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/beer_10130_baseColor.jpeg
-  artifactKey: Guid(11863e3dc782c4dbdbe3595b5f4579f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/beer_10130_baseColor.jpeg using Guid(11863e3dc782c4dbdbe3595b5f4579f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '374ae48c20eb5fc818b795ef1e5e4d0e') in 0.003657625 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000079 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/birra-baladin-nora-egizia_baseColor.jpeg
-  artifactKey: Guid(bbf96ca4fe2a145cf953c2a0f1689144) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/birra-baladin-nora-egizia_baseColor.jpeg using Guid(bbf96ca4fe2a145cf953c2a0f1689144) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'badfd19f72fb50097eab4235e6d76a56') in 0.003565125 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000095 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/24113_baseColor.jpeg
-  artifactKey: Guid(1d2e9948f46984bd5b3f478a42c5c4a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/24113_baseColor.jpeg using Guid(1d2e9948f46984bd5b3f478a42c5c4a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '22ee37f2e965fd9422fc5379a51a7d89') in 0.004104083 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000133 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/Leffe_-_vieille_cuve_baseColor.jpeg
-  artifactKey: Guid(a7db4da9afdd649958e125aa93687824) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/Leffe_-_vieille_cuve_baseColor.jpeg using Guid(a7db4da9afdd649958e125aa93687824) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '274faff4de27e178516892ceb13a1261') in 0.003897333 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000204 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/68_1_med_baseColor.jpeg
-  artifactKey: Guid(41d9f0aa354804581b933f6a24e604a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/68_1_med_baseColor.jpeg using Guid(41d9f0aa354804581b933f6a24e604a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7d8d367e055e1965af605c320d0ec006') in 0.004932791 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000085 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/biereduboucanier75_baseColor.jpeg
-  artifactKey: Guid(e8952ce396b22484aaa25e91658d8161) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/biereduboucanier75_baseColor.jpeg using Guid(e8952ce396b22484aaa25e91658d8161) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '38c6f0b409f7309e58847b537112ea41') in 0.003824 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000084 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/AugustinerLagerbierHell_baseColor.jpeg
-  artifactKey: Guid(6e171f33ca23b4e43accf382a808d765) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/AugustinerLagerbierHell_baseColor.jpeg using Guid(6e171f33ca23b4e43accf382a808d765) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '69fac252d726e88ca4119a1ada6400fc') in 0.003151709 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000149 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/Hoegaarden_baseColor.jpeg
-  artifactKey: Guid(7b9541df61074439ca0d5a3ea44c82e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/Hoegaarden_baseColor.jpeg using Guid(7b9541df61074439ca0d5a3ea44c82e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '21fba81408ec2f45b9713e01841c6570') in 0.00410075 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000174 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/tumblr_inline_ncoobx4ZW41qhtrwl_baseColor.jpeg
-  artifactKey: Guid(d6dada88170164a5686b35a6f6486f87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/tumblr_inline_ncoobx4ZW41qhtrwl_baseColor.jpeg using Guid(d6dada88170164a5686b35a6f6486f87) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ad5e2c86b71c4bd827cd6b0c98714268') in 0.005834333 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000095 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/rodenbachgrandcrubox_baseColor.jpeg
-  artifactKey: Guid(c152c77103d8846d587fdf99e375b705) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/rodenbachgrandcrubox_baseColor.jpeg using Guid(c152c77103d8846d587fdf99e375b705) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c167b8da41056e5026dbd71d4ae2115b') in 0.0044475 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000064 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/72_1_small_baseColor.jpeg
-  artifactKey: Guid(28d2c10de1c934b2d9072640451a18cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/72_1_small_baseColor.jpeg using Guid(28d2c10de1c934b2d9072640451a18cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'faa9bd8e54fba9f05d9cabbc5b853ccc') in 0.004375792 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000064 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/duvel_750ml_baseColor.jpeg
-  artifactKey: Guid(0e08d7ddcf86b43df804d588f099762f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/duvel_750ml_baseColor.jpeg using Guid(0e08d7ddcf86b43df804d588f099762f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3c99a797295a71896164e85960719911') in 0.005857959 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/material_10_baseColor.jpeg
-  artifactKey: Guid(1d64eb5c4abb747afb647c392e52d765) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/textures/material_10_baseColor.jpeg using Guid(1d64eb5c4abb747afb647c392e52d765) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '29176fbd5cb565c6d5163fa78fee8981') in 0.003632834 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.657382 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/source/bottles.usdz
-  artifactKey: Guid(9c655f4a0695a46bea226f424785daa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/bottles-pack-2/source/bottles.usdz using Guid(9c655f4a0695a46bea226f424785daa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0722fe41ce27521a6ff73e64c1b084c9') in 0.000563208 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.867345 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/water-bottles
-  artifactKey: Guid(54ded3f5e0c474e84be96de83a8c592a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/water-bottles using Guid(54ded3f5e0c474e84be96de83a8c592a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cd1e65f86532f7b3d104cac489ab3b33') in 0.000521958 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.062708 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/water-bottles/source
-  artifactKey: Guid(d96b00e8beb4a4b4181d78781c539bf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/water-bottles/source using Guid(d96b00e8beb4a4b4181d78781c539bf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '68698f556854812419757e80fe5ccd97') in 0.000398208 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.767929 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/water-bottles/source/Plastic_bottles_LP.zip
-  artifactKey: Guid(27d06bc2bbb224dbc9abecfedd35e91b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/water-bottles/source/Plastic_bottles_LP.zip using Guid(27d06bc2bbb224dbc9abecfedd35e91b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '85cae18352d8393840611f284d80cc86') in 0.001023042 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 28.641348 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/water-bottles/source/Water_Bottles_.obj
-  artifactKey: Guid(82202e69c87824281af481268da01fec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/water-bottles/source/Water_Bottles_.obj using Guid(82202e69c87824281af481268da01fec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a5b4df22ad58bfa85c836731bb1f70cd') in 0.040108833 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 35.866225 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/water-bottles/textures
-  artifactKey: Guid(5e3ca900a24774dc6b356b25637054c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/water-bottles/textures using Guid(5e3ca900a24774dc6b356b25637054c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a287b2e0099af2a65b6460c369fd6242') in 0.001628375 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.060261 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/water-bottles/textures/Water_brandHD_-_Copia.jpeg
-  artifactKey: Guid(beeb67210c331404dbe84969a5ae5b18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/water-bottles/textures/Water_brandHD_-_Copia.jpeg using Guid(beeb67210c331404dbe84969a5ae5b18) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e5aef1bcf1b5a8db1d2d4e6c18097777') in 0.011755625 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.189000 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/water-bottles/source/Water_Bottles_ 2.obj
-  artifactKey: Guid(c6c999cf78cd54e0baea3b699489cccc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/water-bottles/source/Water_Bottles_ 2.obj using Guid(c6c999cf78cd54e0baea3b699489cccc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '67cc85130f14331c5dfbe47446604a81') in 0.016757958 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 44.833748 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures
-  artifactKey: Guid(084ca1fd1bf284df5afc9225a22df49a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures using Guid(084ca1fd1bf284df5afc9225a22df49a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3f70c2252eeac9cc22949185bf5556f9') in 0.000321167 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.848736 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/apple_BaseMap.png
-  artifactKey: Guid(072888a654d1f49d9aaeceb6dd9f4cf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/apple_BaseMap.png using Guid(072888a654d1f49d9aaeceb6dd9f4cf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2f0f8b0fd8cd60f9ced3e6c115405608') in 0.004450958 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000078 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/egg.png
-  artifactKey: Guid(2352121bcd19f4ee39c369cc6ed94281) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/egg.png using Guid(2352121bcd19f4ee39c369cc6ed94281) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b923a758771ff89f37b62014bdf81d43') in 0.003541708 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000129 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/cucumber.png
-  artifactKey: Guid(bccdbe7e18f004ee888ce71216826863) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/cucumber.png using Guid(bccdbe7e18f004ee888ce71216826863) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5930a80c06085e473aae1d6ec17358e8') in 0.003911375 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000069 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/can_BaseMap.png
-  artifactKey: Guid(95e373239f791419990988c9bf791ab0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/can_BaseMap.png using Guid(95e373239f791419990988c9bf791ab0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '63cf29bf09dc17ced7e78766edfc2679') in 0.004361375 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/cereal.png
-  artifactKey: Guid(2f86504db56c24d1bb293ed588b11b0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/cereal.png using Guid(2f86504db56c24d1bb293ed588b11b0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f51c5629f48c41442bb690c5b4fbef92') in 0.003989083 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000131 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/chip.png
-  artifactKey: Guid(6f41a645abf9c4077896270df2fd2dcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/chip.png using Guid(6f41a645abf9c4077896270df2fd2dcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0966d82fa7a4e3be9e9c50b6d8d4471a') in 0.005289208 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000105 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/meat.png
-  artifactKey: Guid(7bb5a0e884d804f60beb4e0930e4e0a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/meat.png using Guid(7bb5a0e884d804f60beb4e0930e4e0a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cd14fedabb33946a169c4a60b2a8b8db') in 0.003961875 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000128 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/knife.png
-  artifactKey: Guid(10a66b25b6f3e4e8db029d46a6889c47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/textures/knife.png using Guid(10a66b25b6f3e4e8db029d46a6889c47) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c92595d25caf84b3b11e320664745feb') in 0.002865042 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.480144 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/supermarket-drinks-shelf-asset
-  artifactKey: Guid(3ac540f9934e946ed98bbba548c0039d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/supermarket-drinks-shelf-asset using Guid(3ac540f9934e946ed98bbba548c0039d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fceb71ff1bf8fa7c9455412f98235807') in 0.000376833 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.581462 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/supermarket-drinks-shelf-asset/source
-  artifactKey: Guid(18e5eb97d814d4a7a882309cadf5a1a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/supermarket-drinks-shelf-asset/source using Guid(18e5eb97d814d4a7a882309cadf5a1a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f4a59587d83dd4b352ab9fc98e56fa7e') in 0.000346083 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.066867 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/supermarket-drinks-shelf-asset/source/Supermarket Drinks Shelf.fbx
-  artifactKey: Guid(ba94d55e6884d4ff7b37f8eefffc2ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/supermarket-drinks-shelf-asset/source/Supermarket Drinks Shelf.fbx using Guid(ba94d55e6884d4ff7b37f8eefffc2ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'aba0747b2fee776fbfdd73d5add2ebb3') in 0.015405792 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 47.385862 seconds.
-  path: Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/Shopping_cart.prefab
-  artifactKey: Guid(295c829a62d8449f485d43ea1734abe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/super-market-asset-low-poly-pixel/Shopping_cart.prefab using Guid(295c829a62d8449f485d43ea1734abe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '404e7765a0ac878a526f8cc2f64cf19e') in 0.024204042 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 439
-
-========================================================================
-Received Import Request.
-  Time since last request: 162.821722 seconds.
-  path: Assets/02.Assets/011.Stage2/lays-bags-10-different-flavours-gameready
-  artifactKey: Guid(b2c5e6801ffec4e35b6a0ad93125fd92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/lays-bags-10-different-flavours-gameready using Guid(b2c5e6801ffec4e35b6a0ad93125fd92) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e9132f5949ada25eee45872fbc1eb016') in 0.007226333 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.070637 seconds.
-  path: Assets/02.Assets/011.Stage2/lays-bags-10-different-flavours-gameready/source
-  artifactKey: Guid(43abf8224875f4c4aaaea4589055e2e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/lays-bags-10-different-flavours-gameready/source using Guid(43abf8224875f4c4aaaea4589055e2e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '43f4e2d26ecaa49ef18a637523c78b2c') in 0.000457917 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.065796 seconds.
-  path: Assets/02.Assets/011.Stage2/lays-bags-10-different-flavours-gameready/source/Lays_Bags.fbx
-  artifactKey: Guid(32aae6bb913724a24ad9e0a98c229b20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/lays-bags-10-different-flavours-gameready/source/Lays_Bags.fbx using Guid(32aae6bb913724a24ad9e0a98c229b20) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9b4e3771ee2503fb567580faee433e44') in 0.162574167 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 75
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.490302 seconds.
-  path: Assets/02.Assets/011.Stage2/Snacks
-  artifactKey: Guid(b2c5e6801ffec4e35b6a0ad93125fd92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/Snacks using Guid(b2c5e6801ffec4e35b6a0ad93125fd92) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9d5ea33d90351296ff51e195e763ee7a') in 0.00105075 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.761885 seconds.
-  path: Assets/02.Assets/011.Stage2/Items
-  artifactKey: Guid(fa2fa64ae6c1b4e49a762436fc180f22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/Items using Guid(fa2fa64ae6c1b4e49a762436fc180f22) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '719e0fe89ee2af80cb39395bb5456687') in 0.0002895 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 401.031072 seconds.
-  path: Assets/02.Assets/011.Stage2/Supermarket/Prefabs/Walls&pylons
-  artifactKey: Guid(9b7d7d95d2d991b48be73425e7c70e64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/Supermarket/Prefabs/Walls&pylons using Guid(9b7d7d95d2d991b48be73425e7c70e64) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8afcef36e125d0fcec52abf83f38c42c') in 0.000309084 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.064124 seconds.
-  path: Assets/02.Assets/011.Stage2/Supermarket/Prefabs/Walls&pylons/Pylon.prefab
-  artifactKey: Guid(eb251cd1ce3e97f4caa2da2dfd8d17d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/Supermarket/Prefabs/Walls&pylons/Pylon.prefab using Guid(eb251cd1ce3e97f4caa2da2dfd8d17d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e9cabbab81ad71fec6a7b90473fb7061') in 0.005776917 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+Memory consumption went from 98.6 MB to 97.4 MB.
+Total: 4.985458 ms (FindLiveObjects: 0.431125 ms CreateObjectMapping: 0.180500 ms MarkObjects: 3.558500 ms  DeleteObjects: 0.815000 ms)
 
 ========================================================================
 Received Prepare
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
 Begin MonoManager ReloadAssembly
-Thread 0x30a61f000 may have been prematurely finalized
-- Loaded All Assemblies, in  0.423 seconds
+Thread 0x17dc87000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.408 seconds
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
 'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
 'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.25 ms, found 2 plugins.
 Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
@@ -644,148 +228,104 @@ Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInter
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.455 seconds
-Domain Reload Profiling: 880ms
-	BeginReloadAssembly (142ms)
+- Finished resetting the current domain, in  0.414 seconds
+Domain Reload Profiling: 823ms
+	BeginReloadAssembly (108ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (55ms)
+		CreateAndSetChildDomain (38ms)
 	RebuildCommonClasses (26ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (13ms)
-	LoadAllAssembliesAndSetupDomain (235ms)
-		LoadAssemblies (166ms)
+	initialDomainReloadingComplete (12ms)
+	LoadAllAssembliesAndSetupDomain (253ms)
+		LoadAssemblies (180ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (109ms)
+		AnalyzeDomain (107ms)
 			TypeCache.Refresh (7ms)
 				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (96ms)
+			BuildScriptInfoCaches (93ms)
 			ResolveRequiredComponents (5ms)
-	FinalizeReload (455ms)
+	FinalizeReload (414ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (374ms)
+		SetupLoadedEditorAssemblies (335ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (14ms)
-			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (73ms)
-			ProcessInitializeOnLoadAttributes (265ms)
-			ProcessInitializeOnLoadMethodAttributes (18ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (65ms)
+			ProcessInitializeOnLoadAttributes (238ms)
+			ProcessInitializeOnLoadMethodAttributes (16ms)
 			AfterProcessingInitializeOnLoad (1ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (3ms)
+		AwakeInstancesAfterBackupRestoration (2ms)
 Refreshing native plugins compatible for Editor in 0.31 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 4354 unused Assets / (0.9 MB). Loaded Objects now: 4919.
-Memory consumption went from 104.2 MB to 103.3 MB.
-Total: 5.332042 ms (FindLiveObjects: 0.298584 ms CreateObjectMapping: 0.258833 ms MarkObjects: 3.971375 ms  DeleteObjects: 0.802750 ms)
+Unloading 4354 unused Assets / (452.3 KB). Loaded Objects now: 4868.
+Memory consumption went from 101.3 MB to 100.8 MB.
+Total: 5.998583 ms (FindLiveObjects: 0.378958 ms CreateObjectMapping: 0.347042 ms MarkObjects: 4.367416 ms  DeleteObjects: 0.904667 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 ========================================================================
-Received Import Request.
-  Time since last request: 668.258147 seconds.
-  path: Assets/10.Prefub/02.Items/011.Stage2
-  artifactKey: Guid(92eac14efeeb54ff5bdb25e5cff03999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/10.Prefub/02.Items/011.Stage2 using Guid(92eac14efeeb54ff5bdb25e5cff03999) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '55c4ab8d25b8ee34d8028444443de59b') in 0.001006084 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+Received Prepare
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Begin MonoManager ReloadAssembly
+Thread 0x17dc87000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.396 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 0.24 ms, found 2 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.436 seconds
+Domain Reload Profiling: 834ms
+	BeginReloadAssembly (112ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (41ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (13ms)
+	LoadAllAssembliesAndSetupDomain (237ms)
+		LoadAssemblies (163ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (108ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (94ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (436ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (355ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (16ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (71ms)
+			ProcessInitializeOnLoadAttributes (247ms)
+			ProcessInitializeOnLoadMethodAttributes (17ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (2ms)
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 4354 unused Assets / (0.5 MB). Loaded Objects now: 4868.
+Memory consumption went from 101.2 MB to 100.7 MB.
+Total: 6.545000 ms (FindLiveObjects: 0.279459 ms CreateObjectMapping: 0.205666 ms MarkObjects: 5.042292 ms  DeleteObjects: 1.016750 ms)
 
-========================================================================
-Received Import Request.
-  Time since last request: 11.886218 seconds.
-  path: Assets/10.Prefub/06.Stage/010 1.Stage1
-  artifactKey: Guid(9ee3cb577cd6843749b8776b0caa036e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/10.Prefub/06.Stage/010 1.Stage1 using Guid(9ee3cb577cd6843749b8776b0caa036e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8728d6e4f175d76f14790d2b7e99b134') in 0.000362167 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.214619 seconds.
-  path: Assets/10.Prefub/06.Stage/011.Stage2
-  artifactKey: Guid(de435f27ab5284f6ea20db84e78ac081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/10.Prefub/06.Stage/011.Stage2 using Guid(de435f27ab5284f6ea20db84e78ac081) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f98a7e1d5a41de8cd57bd580c770aba6') in 0.000375917 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 25.753701 seconds.
-  path: Assets/10.Prefub/06.Stage/010 1.Stage1/01.Environment
-  artifactKey: Guid(99ee04b3052a94b52a7dab30b276326f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/10.Prefub/06.Stage/010 1.Stage1/01.Environment using Guid(99ee04b3052a94b52a7dab30b276326f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '23d9e7d4320da4a2c823fc2676b5f434') in 0.000317208 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 34.499849 seconds.
-  path: Assets/10.Prefub/06.Stage/010 1.Stage1/02.Items
-  artifactKey: Guid(779b366a1332c4c518aaa389e978b44d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/10.Prefub/06.Stage/010 1.Stage1/02.Items using Guid(779b366a1332c4c518aaa389e978b44d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ad9b1a6e34601e03cc5d50291c108ef9') in 0.000331625 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 43.550318 seconds.
-  path: Assets/10.Prefub/06.Stage/010 1.Stage1/99.function
-  artifactKey: Guid(e41e4f606dfc549ecbe9ad2ea238ba98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/10.Prefub/06.Stage/010 1.Stage1/99.function using Guid(e41e4f606dfc549ecbe9ad2ea238ba98) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '85d6f956649f419d919eb885304406c7') in 0.0003345 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 17.142315 seconds.
-  path: Assets/10.Prefub/06.Stage/010 2.Stage1
-  artifactKey: Guid(8c2be773cf2bb44569f653a748b0340e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/10.Prefub/06.Stage/010 2.Stage1 using Guid(8c2be773cf2bb44569f653a748b0340e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c0725486ed86b1a5cbc6453876e0bbc5') in 0.000346542 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.150017 seconds.
-  path: Assets/10.Prefub/06.Stage/011.Stage2
-  artifactKey: Guid(8c2be773cf2bb44569f653a748b0340e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/10.Prefub/06.Stage/011.Stage2 using Guid(8c2be773cf2bb44569f653a748b0340e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '09f5f831e79486cbddcba8233e23d4bb') in 0.00029325 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.532915 seconds.
-  path: Assets/10.Prefub/06.Stage/011.Stage2/02.Items
-  artifactKey: Guid(c10ebb3459a394ff3a3446b8b72f6eed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/10.Prefub/06.Stage/011.Stage2/02.Items using Guid(c10ebb3459a394ff3a3446b8b72f6eed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '637ddc140b495d03832381b81e2acb11') in 0.000332 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.015321 seconds.
-  path: Assets/10.Prefub/06.Stage/011.Stage2/01.Environment
-  artifactKey: Guid(83f939eea833b4aca8afb94ff5038d16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/10.Prefub/06.Stage/011.Stage2/01.Environment using Guid(83f939eea833b4aca8afb94ff5038d16) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1a49e8d829888bc441054629e2c1a8f5') in 0.00027525 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 27.573023 seconds.
-  path: Assets/10.Prefub/06.Stage/011.Stage2/SuperMarket.prefab
-  artifactKey: Guid(da3a2d5ac93dc460fb8c02caec79bd68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/10.Prefub/06.Stage/011.Stage2/SuperMarket.prefab using Guid(da3a2d5ac93dc460fb8c02caec79bd68) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '09ba80e1b9e6904935216cd19d7c8c8d') in 0.08803775 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1050
-
-========================================================================
-Received Import Request.
-  Time since last request: 37.702647 seconds.
-  path: Assets/02.Assets/011.Stage2/Items/Shopping_cart.prefab
-  artifactKey: Guid(295c829a62d8449f485d43ea1734abe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/Items/Shopping_cart.prefab using Guid(295c829a62d8449f485d43ea1734abe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b589049a4536026f86f07ddcd81bcb23') in 0.01279275 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 439
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.034950 seconds.
-  path: Assets/02.Assets/011.Stage2/Items/source/Shopping_cart.fbx
-  artifactKey: Guid(370107409703441eeafecc091b7a895c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02.Assets/011.Stage2/Items/source/Shopping_cart.fbx using Guid(370107409703441eeafecc091b7a895c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9ccdbfb3481065e8a2ee33b6f1a6b4fb') in 0.140983875 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 254
-
+Prepare: number of updated asset objects reloaded= 0
