@@ -7,6 +7,9 @@ public class AttackColliderHandler : MonoBehaviour
     public float AttackForce { get; set; }
     private Rigidbody rb;
 
+    [SerializeField]
+    private LayerMask wallLayerMask; // 壁と判定するレイヤー
+
     public void SetPlayerController(PlayerController controller)
     {
         playerController = controller;
@@ -60,9 +63,6 @@ public class AttackColliderHandler : MonoBehaviour
 
         // ▼▼▼▼▼ ここから下がRaycastによる遮蔽チェック ▼▼▼▼▼
 
-        // Wallsレイヤーを取得 (文字列ではなくLayerMaskで指定するのが確実)
-        int wallLayerMask = LayerMask.GetMask("Walls");
-
         // プレイヤーの中心あたりから、ヒットしたオブジェクトの中心への方向と距離を計算
         Vector3 playerCenter = playerController.transform.position + Vector3.up * 1.0f; // 少し高さを調整
         Vector3 direction = other.transform.position - playerCenter;
@@ -95,4 +95,3 @@ public class AttackColliderHandler : MonoBehaviour
         }
     }
 }
-
