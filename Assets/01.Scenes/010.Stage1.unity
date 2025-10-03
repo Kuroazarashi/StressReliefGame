@@ -23420,6 +23420,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 314395764}
     m_Modifications:
+    - target: {fileID: 669088081909603226, guid: cc9f7b79fb8e74991849f548327d6419, type: 3}
+      propertyPath: wallLayerMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 4080057188606966627, guid: cc9f7b79fb8e74991849f548327d6419, type: 3}
       propertyPath: joystick
       value: 
@@ -23471,6 +23475,10 @@ PrefabInstance:
     - target: {fileID: 4946906655212676316, guid: cc9f7b79fb8e74991849f548327d6419, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367247203755246879, guid: cc9f7b79fb8e74991849f548327d6419, type: 3}
+      propertyPath: wallLayerMask.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
